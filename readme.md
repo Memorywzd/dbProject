@@ -66,7 +66,13 @@
 
    ```sql
    CREATE TABLE teachers (
-       
+    teacherID char(50) NOT NULL,
+    teacherName varchar(200) NOT NULL,
+    teacherSex int NOT NULL,
+    teacherSubjectID char(50) NOT NULL,
+    teacherType int NOT NULL,
+    teacherContact longtext,
+    PRIMARY KEY (`teacherID`)
    );
    ```
 
@@ -84,7 +90,14 @@
 
    ```sql
    CREATE TABLE courses (
-       
+       courseID char(50) NOT NULL,
+       courseName varchar(200) NOT NULL,
+       courseHour int default 32  NOT NULL,
+       courseSelectedNum int default 0 NOT NULL,
+       courseTarget int NOT NULL,
+       courseType int NOT NULL,
+       courseTime longtext,
+       PRIMARY KEY (`courseID`)
    );
    ```
 
@@ -97,7 +110,9 @@
 
       ```sql
       CREATE TABLE subjects (
-          
+          subjectID char(50) NOT NULL,
+          subjectName varchar(200) NOT NULL,
+          PRIMARY KEY (`subjectID`)
       );
       ```
 

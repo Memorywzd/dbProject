@@ -26,7 +26,7 @@
 
 格式：关系表文字说明，关系表，DDL语句
 
-命名全部使用英文全称，遵循驼峰命名法，如需翻译请使用 [DeepL翻译](https://www.deepl.com)。例studentName。命名时考虑可识别性，难以设计时对命名添加备注说明。
+命名全部使用英文全称，遵循驼峰命名法，如需翻译请使用 [DeepL翻译](https://www.deepl.com)。例studentName。命名时考虑可识别性，难以设计时对命名添加备注说明。库的名字为dbProject。
 
 ##### 全局表格
 
@@ -40,7 +40,7 @@
    | studentSubjectID | char(50)     | 外键 | 是   |        | 学生学科id                |
    | studentType      | int          |      | 是   |        | 学生类型，0专硕1学硕2博士 |
    | studentContact   | longtext     |      |      |        | 学生联系方式              |
-   
+
    ```sql
    CREATE TABLE students (
        studentID char(50) NOT NULL,

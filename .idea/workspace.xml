@@ -1,44 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="35afe48c-4129-4bf2-bc3f-bf2cf9b0cd0a" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/druid-1.2.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/sqljdbc4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/design/DAO/AbstractDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/design/DAO/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/design/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/design/assistant/AbstractAssistant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/design/forTest/AbstractForTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/design/forTest/forTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+    <list default="true" id="35afe48c-4129-4bf2-bc3f-bf2cf9b0cd0a" name="变更" comment="修正数据库数据，完成远端建表">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/AbstractAdminApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/AbstractStudentApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/AbstractTeacherApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/impl/AdminApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/impl/StudentApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/impl/TeacherApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/StudentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/TeacherDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/impl/DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/impl/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/achievement/Award.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/achievement/Paper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/achievement/Patent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/achievement/Platform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/achievement/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/achievement/Standard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/assistant/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/assistant/Rate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/attendance/Attendance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/exchange/Exchange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/user/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/user/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/user/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/common/user/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/druid.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/AbstractConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/ConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/RunTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/DAO/AbstractDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/DAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/forTest/AbstractForTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/forTest/forTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2IcCtp3LjWCB4ZXGSEpz01Z8PT2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/dbProject/lib/sqljdbc4.jar",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/dbz/dataBaseDesign&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.20804597&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;java.sql.Driver&quot;,
+      &quot;azure&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -52,8 +113,27 @@
       <workItem from="1673266917980" duration="48000" />
       <workItem from="1673266979151" duration="49000" />
       <workItem from="1673272401815" duration="10000" />
-      <workItem from="1673361103943" duration="110000" />
+      <workItem from="1673361103943" duration="6184000" />
+      <workItem from="1673412700274" duration="450000" />
+      <workItem from="1673422388150" duration="3401000" />
+      <workItem from="1673426355529" duration="20238000" />
+      <workItem from="1673456898185" duration="3479000" />
     </task>
+    <task id="LOCAL-00001" summary="数据库连接测试">
+      <created>1673361594486</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673361594486</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修正数据库数据，完成远端建表">
+      <created>1673366986730</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673366986730</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,8 +151,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="数据库连接测试" />
+    <MESSAGE value="修正数据库数据，完成远端建表" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正数据库数据，完成远端建表" />
   </component>
 </project>

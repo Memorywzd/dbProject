@@ -1,0 +1,100 @@
+package design.common.project;
+
+import java.sql.Date;
+
+public class project {
+    private String studentID;
+    private String studentName;
+    private String subject;
+    private String projectID;
+    private String projectKind;
+    private String projectName;
+
+    public String getStudentID() {
+        return studentID;
+    }
+
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getProjectID() {
+        return projectID;
+    }
+
+    public void setProjectID(String projectID) {
+        this.projectID = projectID;
+    }
+
+    public String getProjectKind() {
+        return projectKind;
+    }
+
+    public void setProjectKind(String projectKind) {
+        this.projectKind = projectKind;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public Date getProjectStartDate() {
+        return projectStartDate;
+    }
+
+    public void setProjectStartDate(Date projectStartDate) {
+        this.projectStartDate = projectStartDate;
+    }
+
+    public Date getProjectfinishDate() {
+        return projectfinishDate;
+    }
+
+    public void setProjectfinishDate(Date projectfinishDate) {
+        this.projectfinishDate = projectfinishDate;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public int getProjectFund() {
+        return projectFund;
+    }
+
+    public void setProjectFund(int projectFund) {
+        this.projectFund = projectFund;
+    }
+
+    private Date projectStartDate;
+    private Date projectfinishDate;
+    private String job;
+    private int projectFund;
+
+
+
+}

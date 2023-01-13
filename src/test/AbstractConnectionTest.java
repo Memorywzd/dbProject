@@ -9,6 +9,4 @@ public interface AbstractConnectionTest {
     void testConnection();
 
 
-
-
 }

@@ -5,39 +5,131 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35afe48c-4129-4bf2-bc3f-bf2cf9b0cd0a" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/AbstractAchievementDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/AbstractAssistantDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/AbstractAttendanceDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/AbstractCourseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/AbstractExchangeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/AbstractUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/impl/AchievementDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/impl/AssistantDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/impl/AttendanceDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/impl/CourseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/impl/ExchangeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/DAO/impl/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/console/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/console/StudentApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/controller/AbstractUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/controller/impl/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/controller/impl/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design/controller/impl/TeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/common/assistant/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/common/assistant/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/common/assistant/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/common/assistant/Rate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/common/attendance/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/common/attendance/Attendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/AbstractAdminApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/controller/AbstractAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/AbstractStudentApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/controller/AbstractStudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/AbstractTeacherApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/controller/AbstractTeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/impl/AdminApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/impl/StudentApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/impl/TeacherApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/DAO/AbstractDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/StudentDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/TeacherDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/DAO/impl/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/achievement/Award.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/achievement/Award.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/achievement/Paper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/achievement/Paper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/achievement/Patent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/achievement/Patent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/achievement/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/achievement/Platform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/achievement/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/achievement/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/achievement/Standard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/achievement/Standard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/achievement/Textbook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/achievement/Textbook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/assistant/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/assistant/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/assistant/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/assistant/Rate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/attendance/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/Attendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/exchange/Exchange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/Exchange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/outcome/paper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/outcome/patent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/outcome/platform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/outcome/report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/outcome/reward.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/outcome/standard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/outcome/textbook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/project/project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/user/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/user/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/user/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/user/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/user/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/user/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/common/user/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/user/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/druid.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/AbstractConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/AbstractConnectionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2IcCtp3LjWCB4ZXGSEpz01Z8PT2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/idea/dataBaseDesign-master",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/dbz/dataBaseDesign&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="design.controller" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="design.console.Main" />
+      <module name="dbProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="design.console.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -52,6 +144,12 @@
       <workItem from="1673266979151" duration="49000" />
       <workItem from="1673272401815" duration="10000" />
       <workItem from="1673361103943" duration="110000" />
+      <workItem from="1673537708177" duration="3831000" />
+      <workItem from="1673588853409" duration="1307000" />
+      <workItem from="1673590174391" duration="1464000" />
+      <workItem from="1673591654058" duration="982000" />
+      <workItem from="1673592717488" duration="3538000" />
+      <workItem from="1673600899682" duration="7235000" />
     </task>
     <servers />
   </component>

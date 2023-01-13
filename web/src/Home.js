@@ -29,7 +29,7 @@ function Home() {
                 console.log(res);
                 if (res.data.code === 200) {
                     if (res.data.type === "admin" && res.data.role === "1") {
-                        setIsAdminLogin(true);
+                        setIsMentorLogin(true);
                     }
                 }
             });
@@ -38,31 +38,70 @@ function Home() {
     function afterAdminLogin() {
 
         return (
-            <h1>研究生培养管理员登录成功</h1>
-        )
+            <div>
+                <h1>研究生培养管理员登录成功</h1>
+                <p><button>新建项目</button></p>
+                <p><button>新建研究生</button></p>
+                <p><button>新建导师</button></p>
+                <p><button>新建学科负责人</button></p>
+            </div>
+         )
+
     }
 
     function afterLeaderLogin() {
         return (
-            <h1>学科负责人登录成功</h1>
+            <div>
+                <h1>学科负责人登录成功</h1>
+                <p><button>配置助教课程优先级</button></p>
+                <p><button>配置助教可选志愿数量</button></p>
+                <p><button>配置参与项目经费</button></p>
+                <p><button>配置学术交流次数</button></p>
+                <p><button>查看学科下的导师和研究生情况</button></p>
+            </div>
         )
     }
 
     function afterTeacherLogin() {
         return (
-            <h1>授课教师登录成功</h1>
+            <div>
+                <h1>授课教师登录成功</h1>
+                <p><button>课程信息录入</button></p>
+                <p><button>志愿审核</button></p>
+                <p><button>助教评定表审核</button></p>
+            </div>
         )
     }
 
     function afterMentorLogin() {
         return (
-            <h1>导师登录成功</h1>
+            <div>
+                <h1>导师登录成功</h1>
+                <p><button>查看导师个人项目</button></p>
+                <p><button>为未完成项目认定的研究生分配项目</button></p>
+                <p><button>查看项目认定表，确认金额</button></p>
+                <p><button>学术交流情况审核</button></p>
+                <p><button>查看/修改学生成果认证</button></p>
+            </div>
         )
     }
 
     function afterStudentLogin() {
         return (
-            <h1>学生登录成功</h1>
+            <div >
+                 <h1>学生登录成功</h1>
+                 <p><button>项目认定情况</button></p>
+                 <p><button>项目认定表填写</button></p>
+                 <p><button>项目进度填写</button></p>
+                 <p><button>学术交流认定资料提交</button></p>
+                 <p><button>学术交流情况统计</button></p>
+                 <p><button>成果认定情况</button></p>
+                 <p><button>填写成果认定</button></p>
+                 <p><button>助教志愿选择</button></p>
+                 <p><button>助教评定表填写</button></p>
+                 <p><button>查看助教志愿选择结果</button></p>
+                 <p><button>查看助教评定结果</button></p>
+            </div>
         )
     }
 
@@ -99,7 +138,9 @@ function Home() {
             {isTeacherLogin && afterTeacherLogin()}
             {isMentorLogin && afterMentorLogin()}
             {isStudentLogin && afterStudentLogin()}
+
         </div>
+
     );
 }
 

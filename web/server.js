@@ -43,6 +43,6 @@ app.get("/users", (req, res) => {
     res.send(users);
 });
 
-app.listen(3001, () => {
-    console.log("server is running at 3001");
+app.listen(3054, () => {
+    console.log("server is running at 3054");
 });

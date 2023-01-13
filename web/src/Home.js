@@ -19,7 +19,7 @@ function Home() {
     //登录函数
     function doLogin() {
         axios
-            .get("http://localhost:3001/user", {
+            .get("http://localhost:3054/user", {
                 params: {
                     username: username,
                     password: password,

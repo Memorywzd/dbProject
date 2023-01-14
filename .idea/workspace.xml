@@ -4,28 +4,119 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35afe48c-4129-4bf2-bc3f-bf2cf9b0cd0a" name="变更" comment="定义接口">
-      <change afterPath="$PROJECT_DIR$/web/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/setupTests.js" afterDir="false" />
+    <list default="true" id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAchievementDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAppDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAssistantDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAttendanceDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractCourseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractExchangeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractSubjectDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AchievementDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AppDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AssistantDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AttendanceDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/CourseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/ExchangeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/SubjectDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/DbProjectApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/controller/AbstractAdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/controller/AbstractAppController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/controller/AbstractStudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/controller/AbstractTeacherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/controller/impl/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/controller/impl/AppController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/controller/impl/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/controller/impl/TeacherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/Attendance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/Exchange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/achievement/Award.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/achievement/Paper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/achievement/Patent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/achievement/Platform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/achievement/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/achievement/Standard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/achievement/Textbook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/assistant/Assistant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/assistant/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/assistant/Rate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/user/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/user/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/user/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/user/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/druid-1.2.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/druid.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sqljdbc4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sureness.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/design/DbProjectApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/admin/addTeacherUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/druid-1.2.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sqljdbc4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractAchievementDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractAssistantDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractAttendanceDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractCourseDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractExchangeDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractUserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/AchievementDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/AssistantDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/AttendanceDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/CourseDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/DAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/DAOFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/ExchangeDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/console/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/console/StudentApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/controller/AbstractAdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/controller/AbstractStudentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/controller/AbstractTeacherController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/controller/AbstractUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/controller/impl/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/controller/impl/StudentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/controller/impl/TeacherController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/Attendance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/Exchange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/Project.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Award.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Paper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Patent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Platform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Standard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Textbook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/assistant/Course.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/assistant/Rate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/user/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/user/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/user/Subject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/user/Teacher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/druid.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/AbstractConnectionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/ConnectionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/RunTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +126,31 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2IcCtp3LjWCB4ZXGSEpz01Z8PT2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2KHQRRPNPCyBjEywJrWslj7jjEu" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -61,100 +164,57 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "D:/dbz/dataBaseDesign",
+    "last_opened_file_path": "D:/dbz/sureness-master/sample-tom",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.20804597",
+    "settings.editor.selected.configurable": "preferences.packagesearch.PackageSearchGeneralConfigurable",
+    "spring.configuration.checksum": "31c13f47ad87dd7baa2d558a91e0fbb9",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver"
+    ]
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="design.controller" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="design.console.Main" />
-      <module name="dbProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="design.console.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="应用程序.Main" />
-      </list>
-    </recent_temporary>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="35afe48c-4129-4bf2-bc3f-bf2cf9b0cd0a" name="变更" comment="" />
-      <created>1670471702016</created>
+      <changelist id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="" />
+      <created>1673629020706</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1670471702016</updated>
-      <workItem from="1670471703059" duration="1312000" />
-      <workItem from="1672133840818" duration="5000" />
-      <workItem from="1673266917980" duration="48000" />
-      <workItem from="1673266979151" duration="49000" />
-      <workItem from="1673272401815" duration="10000" />
-      <workItem from="1673361103943" duration="110000" />
-      <workItem from="1673537708177" duration="3831000" />
-      <workItem from="1673588853409" duration="1307000" />
-      <workItem from="1673590174391" duration="1464000" />
-      <workItem from="1673591654058" duration="982000" />
-      <workItem from="1673592717488" duration="3538000" />
-      <workItem from="1673600899682" duration="8024000" />
-      <workItem from="1673614733407" duration="23000" />
-      <workItem from="1673614766490" duration="10000" />
-      <workItem from="1673615054682" duration="1634000" />
-      <workItem from="1673618106733" duration="232000" />
-      <workItem from="1673618409035" duration="1513000" />
+      <updated>1673629020706</updated>
+      <workItem from="1673629022252" duration="132000" />
+      <workItem from="1673629263885" duration="3172000" />
+      <workItem from="1673632445801" duration="2063000" />
+      <workItem from="1673667096602" duration="31274000" />
+      <workItem from="1673709763367" duration="11498000" />
     </task>
-    <task id="LOCAL-00001" summary="定义接口">
-      <created>1673614176650</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1673614176650</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
-    <MESSAGE value="定义接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="定义接口" />
   </component>
 </project>

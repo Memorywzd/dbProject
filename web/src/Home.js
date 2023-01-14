@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+const serverURL = "http://localhost:3054";
 function Home() {
     //定义页面跳转函数
     const Navigate = useNavigate();
@@ -15,11 +15,11 @@ function Home() {
     const [isTeacherLogin, setIsTeacherLogin] = useState(false);
     const [isMentorLogin, setIsMentorLogin] = useState(false);
     const [isStudentLogin, setIsStudentLogin] = useState(false);
-
+    const [token, setToken] = useState("");
     //登录函数
     function doLogin() {
         axios
-            .get("http://localhost:3054/user", {
+            .get(serverURL + "/user", {
                 params: {
                     username: username,
                     password: password,
@@ -29,20 +29,25 @@ function Home() {
                 console.log(res);
                 if (res.data.code === 200) {
                     if (res.data.type === "admin" && res.data.role === "1") {
-                        setIsMentorLogin(true);
+                        setIsAdminLogin(true);
+                        setToken(res.data.token);
                     }
                 }
             });
     }
 
     function afterAdminLogin() {
-
+        function addTeacherUser() {
+            Navigate("/addTeacherUser",{
+                state: {token: token}
+            });
+        }
         return (
             <div>
                 <h1>研究生培养管理员登录成功</h1>
                 <p><button>新建项目</button></p>
                 <p><button>新建研究生</button></p>
-                <p><button>新建导师</button></p>
+                <p><button onClick={addTeacherUser}>新建导师</button></p>
                 <p><button>新建学科负责人</button></p>
             </div>
          )

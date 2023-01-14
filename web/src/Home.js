@@ -37,18 +37,34 @@ function Home() {
     }
 
     function afterAdminLogin() {
+
         function addTeacherUser() {
             Navigate("/addTeacherUser",{
+                state: {token: token}
+            });
+        }
+        function addProject(){
+            Navigate("/addProject",{
+                state: {token: token}
+            });
+        }
+        function addStudentUser(){
+            Navigate("/addStudentUser",{
+                state: {token: token}
+            });
+        }
+        function addSubjectUser(){
+            Navigate("/addSubjectUser",{
                 state: {token: token}
             });
         }
         return (
             <div>
                 <h1>研究生培养管理员登录成功</h1>
-                <p><button>新建项目</button></p>
-                <p><button>新建研究生</button></p>
-                <p><button onClick={addTeacherUser}>新建导师</button></p>
-                <p><button>新建学科负责人</button></p>
+                <p><button onClick={addProject}>新建项目</button></p>
+                <p><button onClick={addTeacherUser}>新建教师用户</button></p>
+                <p><button onClick={addStudentUser}>新建研究生用户</button></p>
+                <p><button onClick={addSubjectUser}>新建学科负责人用户</button></p>
             </div>
          )
 

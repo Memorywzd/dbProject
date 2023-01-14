@@ -5,13 +5,15 @@ import { Navigate, useLocation, NavLink } from "react-router-dom";
 
 const serverURL = "http://localhost:3054";
 
-export default function AddTeacherUser() {
+export default function AddStudentUser() {
     const location = useLocation();
     const [token, setToken] = useState("");
-    const [teacherName, setteacherName] = useState("");
+    const [studentName, setstudentName] = useState("");
+    const [studentId, setstudentId] = useState("");
     const [password, setpassword] = useState("");
-    const [teacherID, setteacherID] = useState("");
-    const [teacherSubjectID, setteacherSubjectID] = useState("");
+    const [studentType, setstudentType] = useState("");
+    const [MentorId, setMentorId] = useState("");
+
     const [isLogin, setIsLogin] = useState(false);
 
     useEffect(() => {
@@ -23,13 +25,14 @@ export default function AddTeacherUser() {
     }, []);
 
 
-    function  submitTeacher() {
+    function  submitStudent() {
         axios
-            .post(serverURL + "/admin/addTecaherUser", {
-                teacherName: teacherName,
+            .post(serverURL + "/admin/addStudentUser", {
+                studentName: studentName,
+                studentId: studentId,
                 password: password,
-                teacherID: teacherID,
-                teacherSubjectID: teacherSubjectID,
+                studentType: studentType,
+                MentorId: MentorId,
                 token: token,
             })
             .then((res) => {
@@ -45,54 +48,65 @@ export default function AddTeacherUser() {
     }
     return (
         <div className="App">
-            <h1>教师用户创建</h1>
+            <h1>研究生用户创建</h1>
             {isLogin ? (
                 <div>
                     <form className="form">
-                        <label>教师用户账号:</label>
+
+                        <label>研究生姓名:</label>
                         <input
                             className="input"
                             type="text"
-                            placeholder="请输入教师账号"
+                            placeholder="请输入姓名"
                             onChange={(e) => {
-                                setteacherID(e.target.value);
+                                setstudentName(e.target.value);
                             }}
                         />
 
-                        <label>教师密码:</label>
+                        <label>研究生账号:</label>
                         <input
                             className="input"
                             type="text"
-                            placeholder="请输入教师密码"
+                            placeholder="请输入研究生账号"
+                            onChange={(e) => {
+                                setstudentId(e.target.value);
+                            }}
+                        />
+
+                        <label>密码:</label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="请输入密码"
                             onChange={(e) => {
                                 setpassword(e.target.value);
                             }}
                         />
 
-                        <label>教师姓名:</label>
+                        <label>项目类型:</label>
                         <input
                             className="input"
                             type="text"
-                            placeholder="请输入教师姓名"
+                            placeholder="请输入项目类型"
                             onChange={(e) => {
-                                setteacherName(e.target.value);
+                                setstudentType(e.target.value);
                             }}
                         />
 
-                        <label>教师所属学科ID:</label>
+                        <label>导师ID:</label>
                         <input
                             className="input"
                             type="text"
-                            placeholder="请输入教师所属学科"
+                            placeholder="请输入导师ID"
                             onChange={(e) => {
-                                setteacherSubjectID(e.target.value);
+                                setMentorId(e.target.value);
                             }}
                         />
-                     </form>
+                    </form>
 
-                        <button onClick={submitTeacher}>
-                                创建教师用户
-                        </button>
+                    <button onClick={submitStudent}>
+                            创建研究生用户
+                    </button>
                 </div>
             ) : (
                 <div>请登录</div>

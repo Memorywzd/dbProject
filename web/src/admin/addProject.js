@@ -5,13 +5,14 @@ import { Navigate, useLocation, NavLink } from "react-router-dom";
 
 const serverURL = "http://localhost:3054";
 
-export default function AddTeacherUser() {
+export default function AddProject() {
     const location = useLocation();
     const [token, setToken] = useState("");
-    const [teacherName, setteacherName] = useState("");
-    const [password, setpassword] = useState("");
-    const [teacherID, setteacherID] = useState("");
-    const [teacherSubjectID, setteacherSubjectID] = useState("");
+    const [projectName, setprojectName] = useState("");
+    const [MentorIdID, setMentorId] = useState("");
+    const [projectID, setprojectID] = useState("");
+    const [projectFund, setprojectFund] = useState("");
+    const [projectType, setprojectType] = useState("");
     const [isLogin, setIsLogin] = useState(false);
 
     useEffect(() => {
@@ -23,13 +24,14 @@ export default function AddTeacherUser() {
     }, []);
 
 
-    function  submitTeacher() {
+    function  submitProject() {
         axios
-            .post(serverURL + "/admin/addTecaherUser", {
-                teacherName: teacherName,
-                password: password,
-                teacherID: teacherID,
-                teacherSubjectID: teacherSubjectID,
+            .post(serverURL + "/admin/addProject", {
+                projectName: projectName,
+                MentorIdID: MentorIdID,
+                projectID: projectID,
+                projectFund: projectFund,
+                projectType: projectType,
                 token: token,
             })
             .then((res) => {
@@ -45,54 +47,64 @@ export default function AddTeacherUser() {
     }
     return (
         <div className="App">
-            <h1>教师用户创建</h1>
+            <h1>项目创建</h1>
             {isLogin ? (
                 <div>
                     <form className="form">
-                        <label>教师用户账号:</label>
+                        <label>项目账号:</label>
                         <input
                             className="input"
                             type="text"
-                            placeholder="请输入教师账号"
+                            placeholder="请输入项目账号"
                             onChange={(e) => {
-                                setteacherID(e.target.value);
+                                setprojectID(e.target.value);
                             }}
                         />
 
-                        <label>教师密码:</label>
+                        <label>项目名称:</label>
                         <input
                             className="input"
                             type="text"
-                            placeholder="请输入教师密码"
+                            placeholder="请输入项目名称"
                             onChange={(e) => {
-                                setpassword(e.target.value);
+                                setprojectName(e.target.value);
                             }}
                         />
 
-                        <label>教师姓名:</label>
+                        <label>项目类型:</label>
                         <input
                             className="input"
                             type="text"
-                            placeholder="请输入教师姓名"
+                            placeholder="请输入项目类型"
                             onChange={(e) => {
-                                setteacherName(e.target.value);
+                                setprojectType(e.target.value);
                             }}
                         />
 
-                        <label>教师所属学科ID:</label>
+                        <label>项目负责人（导师）ID:</label>
                         <input
                             className="input"
                             type="text"
-                            placeholder="请输入教师所属学科"
+                            placeholder="请输入导师ID"
                             onChange={(e) => {
-                                setteacherSubjectID(e.target.value);
+                                setMentorId(e.target.value);
                             }}
                         />
-                     </form>
 
-                        <button onClick={submitTeacher}>
-                                创建教师用户
-                        </button>
+                        <label>项目经费:</label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="请输入项目经费"
+                            onChange={(e) => {
+                                setprojectFund(e.target.value);
+                            }}
+                        />
+                    </form>
+
+                    <button onClick={submitProject}>
+                         创建项目
+                    </button>
                 </div>
             ) : (
                 <div>请登录</div>

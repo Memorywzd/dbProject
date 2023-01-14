@@ -5,13 +5,13 @@ import { Navigate, useLocation, NavLink } from "react-router-dom";
 
 const serverURL = "http://localhost:3054";
 
-export default function AddTeacherUser() {
+export default function AddSubjectUser() {
     const location = useLocation();
     const [token, setToken] = useState("");
-    const [teacherName, setteacherName] = useState("");
+    const [adminName, setadminName] = useState("");
+    const [adminID, setadminID] = useState("");
     const [password, setpassword] = useState("");
-    const [teacherID, setteacherID] = useState("");
-    const [teacherSubjectID, setteacherSubjectID] = useState("");
+    const [adminSubjectID, setadminSubjectID] = useState("");
     const [isLogin, setIsLogin] = useState(false);
 
     useEffect(() => {
@@ -23,13 +23,13 @@ export default function AddTeacherUser() {
     }, []);
 
 
-    function  submitTeacher() {
+    function  submitSubject() {
         axios
-            .post(serverURL + "/admin/addTecaherUser", {
-                teacherName: teacherName,
+            .post(serverURL + "/admin/addSubjectUser", {
+                adminName: adminName,
                 password: password,
-                teacherID: teacherID,
-                teacherSubjectID: teacherSubjectID,
+                adminID: adminID,
+                adminSubjectID: adminSubjectID,
                 token: token,
             })
             .then((res) => {
@@ -49,50 +49,50 @@ export default function AddTeacherUser() {
             {isLogin ? (
                 <div>
                     <form className="form">
-                        <label>教师用户账号:</label>
+                        <label>学科负责人姓名:</label>
                         <input
                             className="input"
                             type="text"
-                            placeholder="请输入教师账号"
+                            placeholder="请输入学科负责人姓名"
                             onChange={(e) => {
-                                setteacherID(e.target.value);
+                                setadminName(e.target.value);
                             }}
                         />
 
-                        <label>教师密码:</label>
+                        <label>学科负责人ID:</label>
                         <input
                             className="input"
                             type="text"
-                            placeholder="请输入教师密码"
+                            placeholder="请输入学科负责人ID"
+                            onChange={(e) => {
+                                setadminID(e.target.value);
+                            }}
+                        />
+
+                        <label>密码:</label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="请输入密码"
                             onChange={(e) => {
                                 setpassword(e.target.value);
                             }}
                         />
 
-                        <label>教师姓名:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入教师姓名"
-                            onChange={(e) => {
-                                setteacherName(e.target.value);
-                            }}
-                        />
-
-                        <label>教师所属学科ID:</label>
+                        <label>学科负责人所属学科ID:</label>
                         <input
                             className="input"
                             type="text"
                             placeholder="请输入教师所属学科"
                             onChange={(e) => {
-                                setteacherSubjectID(e.target.value);
+                                setadminSubjectID(e.target.value);
                             }}
                         />
-                     </form>
+                    </form>
 
-                        <button onClick={submitTeacher}>
-                                创建教师用户
-                        </button>
+                    <button onClick={submitSubject}>
+                        创建学科负责人用户
+                    </button>
                 </div>
             ) : (
                 <div>请登录</div>

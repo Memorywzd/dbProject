@@ -36,14 +36,12 @@
 
    ```sql
    CREATE VIEW users AS
-   SELECT studentID, password FROM students
+   SELECT studentName as username, studentID as userID, 0 as userRole, studentType as userType, password FROM students
    UNION
-   SELECT teacherID, password FROM teachers
+   SELECT teacherName as username, teacherID as userID, 1 as userRole, teacherType as userType, password FROM teachers
    UNION
-   SELECT adminID, password FROM admins;
+   SELECT adminName as username, adminID as userID, 2 as userRole, adminType as userType, password FROM admins;
    ```
-
-   
 
 3. 
 
@@ -51,20 +49,20 @@
 
 0. 系统用户情况loginStatus
 
-    | 属性名       | 数据类型      | 键型 | 非空 | 备注 |
-    | ------------ | :------------ | :--- | :--- | :--- |
-    | userID       | varchar(50)   | 主键 | 是   |      |
-    | password     | varchar(50)   |      | 是   |      |
-    | userRole     | int           |      | 是   |      |
-    | userType     | int           | 外键 | 是   |      |
-    | token        | nvarchar(200) |      | 是   |      |
-    | isTokenValid | int           |      |      |      |
+     | 属性名       | 数据类型      | 键型 | 非空 | 备注 |
+     | ------------ | :------------ | :--- | :--- | :--- |
+     | userID       | varchar(50)   | 主键 | 是   |      |
+     | password     | varchar(50)   |      | 是   |      |
+     | userRole     | int           |      | 是   |      |
+     | userType     | int           |      | 是   |      |
+     | token        | nvarchar(200) |      | 是   |      |
+     | isTokenValid | int           |      | 是   |      |
 
-    ```sql
-    CREATE TABLE students (
-        
-    );
-    ```
+     ```sql
+     CREATE TABLE students (
+         
+     );
+     ```
 
 1. 研究生表 students(studentID, studentName, studentSex, studentSubjectID, studentType, studentContact)
 
@@ -156,6 +154,24 @@
       );
       ```
 
+5. 环境要求requirements
+
+   | 属性名           | 数据类型     | 键型 | 非空 | 备注   |
+   | ---------------- | :----------- | :--- | :--- | :----- |
+   | volunteerNumber  | int          |      | 是   | 学科id |
+   | projectFounding  | decimal(9,3) |      | 是   | 学科名 |
+   | academicExchange | int          |      | 是   |        |
+   
+      ```sql
+      CREATE TABLE subjects (
+          subjectID varchar(50) NOT NULL,
+          subjectName nvarchar(200) NOT NULL,
+          PRIMARY KEY (subjectID)
+      );
+      ```
+   
+    
+
 ##### 助教子系统表格
 0. 课程表 courses(courseID, courseName, courseHour, courseSelectedNum, courseTarget, courseType, courseTime)
 
@@ -167,8 +183,8 @@
     | courseSelectedNum | int           |      | 是   | 选课人数                 |
     | courseTarget      | int           |      | 是   | 授课对象，0本科1研究生   |
     | courseType        | int           |      | 是   | 课程类型，0必修课1选修课 |
-    | courseTime        | nvarchar(MAX) |      | 是   | 授课时间                 |
-    | coursePriority    |               |      |      |                          |
+    | courseTime        | nvarchar(200) |      | 是   | 授课时间                 |
+    | coursePriority    | int           |      | 是   | 课程优先级               |
 
     ```sql
     CREATE TABLE courses (
@@ -200,13 +216,12 @@
 
 2. 助教选定表 assistants(assistantID, assistantTeacherID, assistantStudentID, assistantCourseID, assistantRateID)
 
-   | 属性名             | 数据类型    | 键型 | 非空 | 默认值 | 备注          |
-   | ------------------ | :---------- | :--- | :--- | ------ | :------------ |
-   | assistantID        | int         | 主键 | 是   |        | 助教id， 自增 |
-   | assistantTeacherID | varchar(50) | 外键 | 是   |        | 助教教师id    |
-   | assistantStudentID | varchar(50) | 外键 | 是   |        | 助教学生id    |
-   | assistantCourseID  | varchar(50) | 外键 | 是   |        | 助教课程id    |
-   | assistantRateID    | int         |      |      |        |               |
+   | 属性名             | 数据类型    | 键型 | 非空 | 备注          |
+   | ------------------ | :---------- | :--- | :--- | :------------ |
+   | assistantID        | int         | 主键 | 是   | 助教id， 自增 |
+   | assistantTeacherID | varchar(50) | 外键 | 是   | 助教教师id    |
+   | assistantStudentID | varchar(50) | 外键 | 是   | 助教学生id    |
+   | assistantCourseID  | varchar(50) | 外键 | 是   | 助教课程id    |
    
       ```sql
       CREATE TABLE assistants (
@@ -216,14 +231,14 @@
    
 3. 助教情况表 rates(rateID, rateAssistantID, rateSelf, rateTeacher)
 
-   | 属性名          | 数据类型    | 键型 | 非空 | 备注                   |
-   | --------------- | :---------- | :--- | :--- | :--------------------- |
-   | rateID          | int         | 主键 | 是   | 评定id， 自增          |
-   | rateAssistantID | int         | 外键 | 是   | 助教id                 |
-   | rateSelf        | varchar(50) |      | 是   | 助教工作自述           |
-   | rateTeacher     | varchar(50) |      | 是   | 授课教师评价           |
-   | isTeacherRated  |             |      |      |                        |
-   | rateResult      | int         |      | 是   | 评价结果，0合格1不合格 |
+   | 属性名          | 数据类型      | 键型 | 非空 | 备注                   |
+   | --------------- | :------------ | :--- | :--- | :--------------------- |
+   | rateID          | int           | 主键 | 是   | 评定id， 自增          |
+   | rateAssistantID | int           | 外键 | 是   | 助教id                 |
+   | rateSelf        | nvarchar(MAX) |      | 是   | 助教工作自述           |
+   | rateTeacher     | nvarchar(MAX) |      | 是   | 授课教师评价           |
+   | isTeacherRated  | int           |      |      |                        |
+   | rateResult      | int           |      |      | 评价结果，0合格1不合格 |
    
       ```sql
       CREATE TABLE rates (
@@ -383,14 +398,14 @@
 
 1. 项目表 projects
 
-   | 属性名           | 数据类型    | 键型 | 非空 | 备注          |
-   | ---------------- | :---------- | :--- | :--- | :------------ |
-   | projectID        | varchar(50) | 主键 | 是   | 评定id， 自增 |
-   | projectSubjectID | varchar(50) |      |      |               |
-   | projectMentorID  | varchar(50) |      |      |               |
-   | projectType      |             |      |      |               |
-   | projectName      |             |      |      |               |
-   | projectFund      |             |      |      |               |
+   | 属性名           | 数据类型      | 键型 | 非空 | 备注          |
+   | ---------------- | :------------ | :--- | :--- | :------------ |
+   | projectID        | varchar(50)   | 主键 | 是   | 评定id， 自增 |
+   | projectSubjectID | varchar(50)   | 外键 | 是   |               |
+   | projectMentorID  | varchar(50)   | 外键 | 是   |               |
+   | projectType      | int           |      | 是   |               |
+   | projectName      | nvarchar(200) |      | 是   |               |
+   | projectFund      | decimal(9,3)  |      | 是   |               |
    
       ```sql
       CREATE TABLE rates (
@@ -422,19 +437,19 @@
 
 1. 交流表 exchanges
 
-   | 属性名             | 数据类型    | 键型 | 非空 | 备注          |
-   | ------------------ | :---------- | :--- | :--- | :------------ |
-   | exchangeID         | int         | 主键 | 是   | 评定id， 自增 |
-   | exchangeStudentID  | varchar(50) |      |      |               |
-   | exchangeSubjectID  | varchar(50) |      |      |               |
-   | exchangeName       |             |      |      |               |
-   | exchangeLocation   |             |      |      |               |
-   | exchangeTime       |             |      |      |               |
-   | exchangeReportName |             |      |      |               |
-   | exchangeImagePath  |             |      |      |               |
-   | exchangeNote       |             |      |      |               |
-   | isMentorValid      |             |      |      |               |
-   | isLeaderValid      |             |      |      |               |
+   | 属性名             | 数据类型      | 键型 | 默认值 | 非空 | 备注          |
+   | ------------------ | :------------ | :--- | ------ | :--- | :------------ |
+   | exchangeID         | int           | 主键 |        | 是   | 评定id， 自增 |
+   | exchangeStudentID  | varchar(50)   | 外键 |        |      |               |
+   | exchangeSubjectID  | varchar(50)   | 外键 |        |      |               |
+   | exchangeName       | nvarchar(200) |      |        |      |               |
+   | exchangeLocation   | nvarchar(200) |      |        |      |               |
+   | exchangeTime       | nvarchar(200) |      |        |      |               |
+   | exchangeReportName | nvarchar(200) |      |        |      |               |
+   | exchangeImagePath  | nvarchar(200) |      |        |      |               |
+   | exchangeNote       | nvarchar(200) |      |        |      |               |
+   | isMentorValid      | int           |      | 0      |      |               |
+   | isLeaderValid      | int           |      | 0      |      |               |
    
       ```sql
       CREATE TABLE rates (

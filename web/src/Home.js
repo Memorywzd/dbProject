@@ -1,9 +1,10 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import App from "./App";
-const serverURL = "http://localhost:3054";
+const cache = window.localStorage;
+const serverURL = "http://localhost:8080";
+
 function Home() {
     //定义页面跳转函数
     const Navigate = useNavigate();
@@ -16,47 +17,58 @@ function Home() {
     const [isTeacherLogin, setIsTeacherLogin] = useState(false);
     const [isMentorLogin, setIsMentorLogin] = useState(false);
     const [isStudentLogin, setIsStudentLogin] = useState(false);
+    const [userRole, setUserRole] = useState("0");
     const [token, setToken] = useState("");
+
+    useEffect(() => {
+        //判断是否登录
+        if (cache.getItem("token") && cache.getItem("role")) {
+            console.log("已经登录");
+            setToken(cache.getItem("token"));
+        }
+    }, []);
     //登录函数
     function doLogin() {
+        const formData = new FormData();
+        formData.append("username", username);
+        formData.append("password", password);
+        formData.append("role", userRole);
+
         axios
-            .get(serverURL + "/user", {
-                params: {
-                    username: username,
-                    password: password,
-                },
-            })
+            .post(serverURL + "/app/login", formData)
             .then((res) => {
                 console.log(res);
-                if (res.data.code === 200) {
-                    if (res.data.type === "admin" && res.data.role === "1") {
-                        setIsStudentLogin(true);
-                        setToken(res.data.token);
-                    }
+                if (res.status === 200) {
+                    console.log("登录成功");
+                    console.log(res.data);
+                    setToken(res.data);
+                    cache.setItem("token", token);
+                    cache.setItem("role", userRole);
                 }
-            });
+            })
+
     }
 
     function afterAdminLogin() {
 
         function addTeacherUser() {
-            Navigate("/addTeacherUser",{
-                state: {token: token}
+            Navigate("/addTeacherUser", {
+                state: { token: token }
             });
         }
-        function addProject(){
-            Navigate("/addProject",{
-                state: {token: token}
+        function addProject() {
+            Navigate("/addProject", {
+                state: { token: token }
             });
         }
-        function addStudentUser(){
-            Navigate("/addStudentUser",{
-                state: {token: token}
+        function addStudentUser() {
+            Navigate("/addStudentUser", {
+                state: { token: token }
             });
         }
-        function addSubjectUser(){
-            Navigate("/addSubjectUser",{
-                state: {token: token}
+        function addSubjectUser() {
+            Navigate("/addSubjectUser", {
+                state: { token: token }
             });
         }
         return (
@@ -67,7 +79,7 @@ function Home() {
                 <p><button onClick={addStudentUser}>新建研究生用户</button></p>
                 <p><button onClick={addSubjectUser}>新建学科负责人用户</button></p>
             </div>
-         )
+        )
     }
 
     function afterLeaderLogin() {
@@ -109,34 +121,34 @@ function Home() {
 
     function afterStudentLogin() {
 
-        function addAttendance(){
-            Navigate("/addAttendance",{
-                state: {token: token}
+        function addAttendance() {
+            Navigate("/addAttendance", {
+                state: { token: token }
             });
         }
-        function showAttendance(){
-            Navigate("/showAttendance",{
-                state: {token: token}
+        function showAttendance() {
+            Navigate("/showAttendance", {
+                state: { token: token }
             });
         }
-        function addExchange(){
-            Navigate("/addExchange",{
-                state: {token: token}
+        function addExchange() {
+            Navigate("/addExchange", {
+                state: { token: token }
             });
         }
         return (
             <div >
-                 <h1>研究生登录成功</h1>
-                 <p><button onClick={showAttendance}>查看项目认定情况</button></p>
-                 <p><button onClick={addAttendance}>项目认定表填写</button></p>
-                 <p><button onClick={addExchange}>学术交流认定资料提交</button></p>
-                 <p><button>学术交流情况统计</button></p>
-                 <p><button>成果认定情况</button></p>
-                 <p><button>填写成果认定</button></p>
-                 <p><button>助教志愿选择</button></p>
-                 <p><button>助教评定表填写</button></p>
-                 <p><button>查看助教志愿选择结果</button></p>
-                 <p><button>查看助教评定结果</button></p>
+                <h1>研究生登录成功</h1>
+                <p><button onClick={showAttendance}>查看项目认定情况</button></p>
+                <p><button onClick={addAttendance}>项目认定表填写</button></p>
+                <p><button onClick={addExchange}>学术交流认定资料提交</button></p>
+                <p><button>学术交流情况统计</button></p>
+                <p><button>成果认定情况</button></p>
+                <p><button>填写成果认定</button></p>
+                <p><button>助教志愿选择</button></p>
+                <p><button>助教评定表填写</button></p>
+                <p><button>查看助教志愿选择结果</button></p>
+                <p><button>查看助教评定结果</button></p>
 
             </div>
         )
@@ -145,26 +157,35 @@ function Home() {
     return (
         <div className="App">
             <h1>研究生培养环节和成果认定综合管理系统</h1>
+            <label>用户角色：
+                <select onChange={(e) => {
+                    setUserRole(e.target.selectedIndex);
+                }}>
+                    <option>研究生</option>
+                    <option>授课教师</option>
+                    <option>导师</option>
+                    <option>管理员</option>
+                    <option>学科负责人</option>
+                </select></label>
             <form className="form">
-                <label>用户名：</label>
-                <input
-                    className="input"
-                    type="text"
-                    placeholder="请输入用户名"
-                    onChange={(e) => {
-                        setUsername(e.target.value);
-                    }}
-                />
-
-                <label>密码：</label>
-                <input
-                    className="input"
-                    type="password"
-                    placeholder="请输入密码"
-                    onChange={(e) => {
-                        setPassword(e.target.value);
-                    }}
-                />
+                <label>用户名：
+                    <input
+                        className="input"
+                        type="text"
+                        placeholder="请输入用户名"
+                        onChange={(e) => {
+                            setUsername(e.target.value);
+                        }}
+                    /></label>
+                <label>密&emsp;码：
+                    <input
+                        className="input"
+                        type="password"
+                        placeholder="请输入密码"
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                        }}
+                    /></label>
             </form>
             <button onClick={doLogin} className="input">
                 登录

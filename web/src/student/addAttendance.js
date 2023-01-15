@@ -20,6 +20,7 @@ export default function AddAttendance() {
     const [isLogin, setIsLogin] = useState(false);
 
     useEffect(() => {
+        //判断是否登录
         if (location.state) {
             console.log("登录成功");
             setToken(location.state.token);

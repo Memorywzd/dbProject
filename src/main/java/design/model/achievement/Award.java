@@ -8,6 +8,8 @@ public class Award {
     private String awardRanking;
     private String awardPublishTime;
     private String awardAttachment;
+    private boolean isMentorValid;      //导师是否确认
+    private boolean isAdminValid;       //管理员是否确认
 
     public String getAchievementID() {
         return achievementID;
@@ -63,5 +65,21 @@ public class Award {
 
     public void setAwardAttachment(String awardAttachment) {
         this.awardAttachment = awardAttachment;
+    }
+
+    public boolean isMentorValid() {
+        return isMentorValid;
+    }
+
+    public void setMentorValid(boolean mentorValid) {
+        isMentorValid = mentorValid;
+    }
+
+    public boolean isAdminValid() {
+        return isAdminValid;
+    }
+
+    public void setAdminValid(boolean adminValid) {
+        isAdminValid = adminValid;
     }
 }

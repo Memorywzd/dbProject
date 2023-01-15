@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="完成DAO实现">
-      <change afterPath="$PROJECT_DIR$/src/main/java/design/config/AdminRequestInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/design/config/Auth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/design/config/InterceptorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/design/config/StudentRequestInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/design/config/TeacherRequestInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/LoginStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/design/model/exchange/ExchangeStatistics.java" afterDir="false" />
+    <list default="true" id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="完成后端实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAppDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAppDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AppDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AppDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/AbstractAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/AbstractAppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/impl/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/impl/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/achievement/Award.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/model/achievement/Award.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/assistant/Assistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/model/assistant/Assistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/assistant/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/model/assistant/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/user/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/model/user/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/user/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/model/user/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/user/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/model/user/Teacher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +58,10 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "OverrideImplement.generate.javadoc": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "15",
+    "RequestMappingsPanelWidth1": "15",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -131,7 +130,7 @@
       <workItem from="1673632445801" duration="2063000" />
       <workItem from="1673667096602" duration="31274000" />
       <workItem from="1673709763367" duration="11679000" />
-      <workItem from="1673750161786" duration="21998000" />
+      <workItem from="1673750161786" duration="27015000" />
     </task>
     <task id="LOCAL-00001" summary="使用springboot，实现接口和大多数dao">
       <created>1673721470312</created>
@@ -147,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673771030832</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="完成后端实现">
+      <created>1673777770074</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673777770074</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +174,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="使用springboot，实现接口和大多数dao" />
     <MESSAGE value="完成DAO实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成DAO实现" />
+    <MESSAGE value="完成后端实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成后端实现" />
   </component>
 </project>

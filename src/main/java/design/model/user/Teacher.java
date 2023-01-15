@@ -7,7 +7,7 @@ public class Teacher {
     private int teacherSex;             //教师性别 0:男 1:女
     private String teacherSubjectID;    //教师所教科目ID
     private String teacherContact;      //教师联系方式
-    private String teacherPassword;    //密码
+    private String password;    //密码
     public final int role = 1;           //角色 0:学生 1:教师 2:管理员
 
     public String getTeacherID() {
@@ -58,11 +58,11 @@ public class Teacher {
         this.teacherContact = teacherContact;
     }
 
-    public String getTeacherPassword() {
-        return teacherPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setTeacherPassword(String teacherPassword) {
-        this.teacherPassword = teacherPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

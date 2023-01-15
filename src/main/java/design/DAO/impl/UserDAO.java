@@ -61,7 +61,7 @@ public class UserDAO extends DAO implements AbstractUserDAO {
             stmt.setInt(4, teacher.getTeacherSex());
             stmt.setString(5, teacher.getTeacherSubjectID());
             stmt.setString(6, teacher.getTeacherContact());
-            stmt.setString(7, teacher.getTeacherPassword());
+            stmt.setString(7, teacher.getPassword());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -94,7 +94,7 @@ public class UserDAO extends DAO implements AbstractUserDAO {
             stmt.setBoolean(6, student.isStudentAssistantStatus());
             stmt.setBoolean(7, student.isStudentAssistantRateStatus());
             stmt.setInt(8, student.getStudentExchangeNum());
-            stmt.setString(9, student.getStudentPassword());
+            stmt.setString(9, student.getPassword());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

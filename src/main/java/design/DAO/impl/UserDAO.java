@@ -61,7 +61,7 @@ public class UserDAO extends DAO implements AbstractUserDAO {
             stmt.setInt(4, teacher.getTeacherSex());
             stmt.setString(5, teacher.getTeacherSubjectID());
 //            stmt.setString(6, teacher.getTeacherContact());
-            stmt.setString(7, teacher.getPassword());
+            stmt.setString(6, teacher.getPassword());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

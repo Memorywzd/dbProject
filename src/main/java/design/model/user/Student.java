@@ -9,7 +9,7 @@ public class Student {
     private boolean studentAssistantStatus;        //是否做过助教 0:否 1:是
     private boolean studentAssistantRateStatus;    //助教评价 0:未评价 1:已评价
     private int studentExchangeNum;                //交换次数
-    private String studentPassword;                //密码
+    private String password;                //密码
     public final int role = 0;              //角色 0:学生 1:教师 2:管理员
 
     public String getStudentID() {
@@ -76,12 +76,12 @@ public class Student {
         this.studentExchangeNum = studentExchangeNum;
     }
 
-    public String getStudentPassword() {
-        return studentPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setStudentPassword(String studentPassword) {
-        this.studentPassword = studentPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

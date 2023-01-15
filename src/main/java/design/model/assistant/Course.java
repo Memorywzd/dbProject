@@ -1,7 +1,5 @@
 package design.model.assistant;
 
-import java.sql.Date;
-
 public class Course {
     private String courseID;
     private String courseName;

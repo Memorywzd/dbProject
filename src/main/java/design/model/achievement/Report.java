@@ -2,12 +2,16 @@ package design.model.achievement;
 
 public class Report {
     private String achievementID;   //成果ID
-    private String reportNam;
+    private String achievementStudentID; //学生ID
+    private String reportName;
     private String reportType;
     private String reportServiceOffice;
-    private String reportTime;
+    private String reportPublishTime;
     private int reportContribution;
     private String reportAttachment;
+
+    private boolean isMentorValid;      //导师是否确认
+    private boolean isAdminValid;       //管理员是否确认
 
     public String getAchievementID() {
         return achievementID;
@@ -17,12 +21,20 @@ public class Report {
         this.achievementID = achievementID;
     }
 
-    public String getReportNam() {
-        return reportNam;
+    public String getAchievementStudentID() {
+        return achievementStudentID;
     }
 
-    public void setReportNam(String reportNam) {
-        this.reportNam = reportNam;
+    public void setAchievementStudentID(String achievementStudentID) {
+        this.achievementStudentID = achievementStudentID;
+    }
+
+    public String getReportName() {
+        return reportName;
+    }
+
+    public void setReportName(String reportName) {
+        this.reportName = reportName;
     }
 
     public String getReportType() {
@@ -41,12 +53,12 @@ public class Report {
         this.reportServiceOffice = reportServiceOffice;
     }
 
-    public String getReportTime() {
-        return reportTime;
+    public String getReportPublishTime() {
+        return reportPublishTime;
     }
 
-    public void setReportTime(String reportTime) {
-        this.reportTime = reportTime;
+    public void setReportPublishTime(String reportPublishTime) {
+        this.reportPublishTime = reportPublishTime;
     }
 
     public int getReportContribution() {
@@ -63,5 +75,21 @@ public class Report {
 
     public void setReportAttachment(String reportAttachment) {
         this.reportAttachment = reportAttachment;
+    }
+
+    public boolean isMentorValid() {
+        return isMentorValid;
+    }
+
+    public void setMentorValid(boolean mentorValid) {
+        isMentorValid = mentorValid;
+    }
+
+    public boolean isAdminValid() {
+        return isAdminValid;
+    }
+
+    public void setAdminValid(boolean adminValid) {
+        isAdminValid = adminValid;
     }
 }

@@ -1,7 +1,7 @@
 package design.controller;
 
-import design.model.Exchange;
-import design.model.Project;
+import design.model.attendance.Attendance;
+import design.model.exchange.Exchange;
 import design.model.assistant.Assistant;
 import design.model.assistant.Rate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,17 +36,17 @@ public interface AbstractStudentController {
     boolean submitAcademicExchange(Exchange newExchange);
 
     @GetMapping("getAcademicExchangeList")
-    boolean applyAcademicExchangeStatistics(@RequestParam("exchangeID") String exchangeID);
+    boolean applyAcademicExchangeStatistics(
+            @RequestParam("exchangeID") String exchangeID,
+            @RequestParam("studentID") String studentID
+    );
 
     //参与项目
     @GetMapping("getProjectStatus")
     List<String> getAttendProjectStatus(@RequestParam("studentID") String studentID);
 
     @PostMapping("getProjectList")
-    boolean submitAttendProject(
-            @RequestParam("projectID") String projectID,
-            @RequestParam("studentID") String studentID
-    );
+    boolean submitAttendProject(Attendance newAttendance);
 
     //成果认定
     @PostMapping("getAchievementStatus")

@@ -75,4 +75,17 @@ public class Course {
     public void setCoursePriority(int coursePriority) {
         this.coursePriority = coursePriority;
     }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseName='" + courseName + '\'' +
+                ", courseHour=" + courseHour +
+                ", courseSelectedNum=" + courseSelectedNum +
+                ", courseTarget=" + courseTarget +
+                ", courseType=" + courseType +
+                ", courseTime='" + courseTime + '\'' +
+                ", coursePriority=" + coursePriority +
+                '}';
+    }
 }

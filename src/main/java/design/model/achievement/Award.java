@@ -2,9 +2,12 @@ package design.model.achievement;
 
 public class Award {
     private String achievementID;   //成果ID
+    private String achievementStudentID; //学生ID
     private String awardName;
     private String awardLevel;
     private String awardRanking;
+    private String awardPublishTime;
+    private String awardAttachment;
 
     public String getAchievementID() {
         return achievementID;
@@ -12,6 +15,14 @@ public class Award {
 
     public void setAchievementID(String achievementID) {
         this.achievementID = achievementID;
+    }
+
+    public String getAchievementStudentID() {
+        return achievementStudentID;
+    }
+
+    public void setAchievementStudentID(String achievementStudentID) {
+        this.achievementStudentID = achievementStudentID;
     }
 
     public String getAwardName() {
@@ -53,8 +64,4 @@ public class Award {
     public void setAwardAttachment(String awardAttachment) {
         this.awardAttachment = awardAttachment;
     }
-
-    private String awardPublishTime;
-    private String awardAttachment;
-
 }

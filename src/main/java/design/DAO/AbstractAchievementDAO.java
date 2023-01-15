@@ -21,5 +21,5 @@ public interface AbstractAchievementDAO {
 
     List<String> getAchievementList(String studentID);
 
-    boolean updateAchievementValid(String type, String achievementID);
+    boolean updateAchievementMentorValid(String type, String achievementID, boolean isValid);
 }

@@ -43,12 +43,6 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/druid-1.2.9.jar</systemPath>
         </dependency>
-
-        <dependency>
-            <groupId>com.usthe.sureness</groupId>
-            <artifactId>sureness-core</artifactId>
-            <version>1.0.8</version>
-        </dependency>
     </dependencies>
 
     <build>

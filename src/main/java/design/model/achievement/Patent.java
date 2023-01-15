@@ -2,6 +2,7 @@ package design.model.achievement;
 
 public class Patent {
     private String achievementID;   //成果ID
+    private String achievementStudentID; //专利学生ID
     private String patentName;
     private String patentType;
     private String patentID;
@@ -9,6 +10,8 @@ public class Patent {
     private String patentState;
     private int patentContribution;
     private String patentAttachment;
+    private boolean isMentorValid;      //导师是否确认
+    private boolean isAdminValid;       //管理员是否确认
 
     public String getAchievementID() {
         return achievementID;
@@ -16,6 +19,14 @@ public class Patent {
 
     public void setAchievementID(String achievementID) {
         this.achievementID = achievementID;
+    }
+
+    public String getAchievementStudentID() {
+        return achievementStudentID;
+    }
+
+    public void setAchievementStudentID(String achievementStudentID) {
+        this.achievementStudentID = achievementStudentID;
     }
 
     public String getPatentName() {
@@ -72,5 +83,21 @@ public class Patent {
 
     public void setPatentAttachment(String patentAttachment) {
         this.patentAttachment = patentAttachment;
+    }
+
+    public boolean isMentorValid() {
+        return isMentorValid;
+    }
+
+    public void setMentorValid(boolean mentorValid) {
+        isMentorValid = mentorValid;
+    }
+
+    public boolean isAdminValid() {
+        return isAdminValid;
+    }
+
+    public void setAdminValid(boolean adminValid) {
+        isAdminValid = adminValid;
     }
 }

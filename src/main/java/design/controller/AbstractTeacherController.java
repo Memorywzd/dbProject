@@ -16,13 +16,13 @@ public interface AbstractTeacherController {
     boolean addCourse(Course newCourse);
 
     @GetMapping("getVolunteerList")
-    List<String> getVolunteerList(@RequestParam (value = "courseID") String courseID);
+    List<String> getVolunteerList(@RequestParam(value = "courseID") String courseID);
 
     @GetMapping("selectAssistant")
     boolean selectAssistant(@RequestParam(value = "volunteerID") String volunteerID);
 
     @GetMapping("getRateList")
-    List<String> getRateList(@RequestParam (value = "courseID") String courseID);
+    List<String> getRateList(@RequestParam(value = "courseID") String courseID);
 
     @PostMapping("rateAssistant")
     boolean rateAssistant(
@@ -35,7 +35,10 @@ public interface AbstractTeacherController {
     List<String> getAcademicExchangeList();
 
     @GetMapping("rateAcademicExchange")
-    boolean rateAcademicExchange(@RequestParam(value = "exchangeID") String exchangeID);
+    boolean rateAcademicExchange(
+            @RequestParam(value = "exchangeID") String exchangeID,
+            @RequestParam(value = "teacherRate") boolean teacherRate
+    );
 
     @GetMapping("getProjectList")
     List<String> getProjectList();
@@ -55,7 +58,8 @@ public interface AbstractTeacherController {
     @GetMapping("reviewAchievement")
     boolean reviewAchievement(
             @RequestParam(value = "type") String type,
-            @RequestParam(value = "achievementID") String achievementID
+            @RequestParam(value = "achievementID") String achievementID,
+            @RequestParam(value = "isValid") boolean isValid
     );
 
 }

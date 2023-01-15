@@ -1,4 +1,4 @@
-package design.model;
+package design.model.exchange;
 
 public class Exchange {
     private String exchangeID;          //交流项目ID
@@ -12,6 +12,20 @@ public class Exchange {
     private String exchangeNote;        //交流项目备注
     private boolean isMentorValid;      //交流项目导师有效
     private boolean isLeaderValid;      //交流学科负责人有效
+
+    public Exchange(String exchangeID, String exchangeStudentID, String exchangeSubjectID, String exchangeName, String exchangeLocation, String exchangeTime, String exchangeReportName, String exchangeImagePath, String exchangeNote, boolean isMentorValid, boolean isLeaderValid) {
+        this.exchangeID = exchangeID;
+        this.exchangeStudentID = exchangeStudentID;
+        this.exchangeSubjectID = exchangeSubjectID;
+        this.exchangeName = exchangeName;
+        this.exchangeLocation = exchangeLocation;
+        this.exchangeTime = exchangeTime;
+        this.exchangeReportName = exchangeReportName;
+        this.exchangeImagePath = exchangeImagePath;
+        this.exchangeNote = exchangeNote;
+        this.isMentorValid = isMentorValid;
+        this.isLeaderValid = isLeaderValid;
+    }
 
     public String getExchangeID() {
         return exchangeID;

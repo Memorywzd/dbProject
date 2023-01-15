@@ -1,4 +1,4 @@
-package design.model;
+package design.model.attendance;
 
 public class Project {
     private String projectID;
@@ -54,5 +54,17 @@ public class Project {
 
     public void setProjectFund(double projectFund) {
         this.projectFund = projectFund;
+    }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "projectID='" + projectID + '\'' +
+                ", projectSubjectID='" + projectSubjectID + '\'' +
+                ", projectMentorID='" + projectMentorID + '\'' +
+                ", projectType='" + projectType + '\'' +
+                ", projectName='" + projectName + '\'' +
+                ", projectFund=" + projectFund +
+                '}';
     }
 }

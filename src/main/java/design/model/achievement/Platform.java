@@ -2,11 +2,14 @@ package design.model.achievement;
 
 public class Platform {
     private String achievementID;   //成果ID
+    private String achievementStudentID;   //平台学生ID
     private String platformName;
     private String platformServiceOffice;
     private String platformPublishTime;
     private int platformContribution;
     private String platformAttachment;
+    private boolean isMentorValid;      //导师是否确认
+    private boolean isAdminValid;       //管理员是否确认
 
     public String getAchievementID() {
         return achievementID;
@@ -14,6 +17,14 @@ public class Platform {
 
     public void setAchievementID(String achievementID) {
         this.achievementID = achievementID;
+    }
+
+    public String getAchievementStudentID() {
+        return achievementStudentID;
+    }
+
+    public void setAchievementStudentID(String achievementStudentID) {
+        this.achievementStudentID = achievementStudentID;
     }
 
     public String getPlatformName() {
@@ -54,5 +65,21 @@ public class Platform {
 
     public void setPlatformAttachment(String platformAttachment) {
         this.platformAttachment = platformAttachment;
+    }
+
+    public boolean isMentorValid() {
+        return isMentorValid;
+    }
+
+    public void setMentorValid(boolean mentorValid) {
+        isMentorValid = mentorValid;
+    }
+
+    public boolean isAdminValid() {
+        return isAdminValid;
+    }
+
+    public void setAdminValid(boolean adminValid) {
+        isAdminValid = adminValid;
     }
 }

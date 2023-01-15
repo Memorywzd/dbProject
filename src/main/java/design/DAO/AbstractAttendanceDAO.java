@@ -1,6 +1,7 @@
 package design.DAO;
 
-import design.model.Project;
+import design.model.attendance.Attendance;
+import design.model.attendance.Project;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ public interface AbstractAttendanceDAO {
 
     boolean addProject(Project newProject);
 
-    boolean attendProject(String projectID, String studentID);
+    boolean updateAttendance(Attendance newAttendance);
 
-    boolean updateProjectStudentID(String projectID, String studentID);
+    boolean addAttendanceByID(String projectID, String studentID);
 }

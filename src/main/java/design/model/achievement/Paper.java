@@ -1,14 +1,17 @@
 package design.model.achievement;
 
 public class Paper {
-    private String magazineName;
-    private String state;
-    private String publicTime;
-    private String index;
-    private String paperDatabase;
-    private String attachmentFile;
-
-    private String achievementID;   //成果ID
+    private String achievementID;       //成果ID
+    private String achievementStudentID;      //论文学生ID
+    private String paperName;           //论文名称
+    private String paperPublication;    //论文发表刊物名
+    private String paperStatus;         //论文状态
+    private String paperPublishTime;    //论文发表时间
+    private String paperIndex;          //论文索引类型
+    private String paperBelong;         //论文归属
+    private String paperAttachment;     //论文扫描或PDF
+    private boolean isMentorValid;      //导师是否确认
+    private boolean isAdminValid;       //管理员是否确认
 
     public String getAchievementID() {
         return achievementID;
@@ -18,51 +21,83 @@ public class Paper {
         this.achievementID = achievementID;
     }
 
-    public String getMagazineName() {
-        return magazineName;
+    public String getAchievementStudentID() {
+        return achievementStudentID;
     }
 
-    public void setMagazineName(String magazineName) {
-        this.magazineName = magazineName;
+    public void setAchievementStudentID(String achievementStudentID) {
+        this.achievementStudentID = achievementStudentID;
     }
 
-    public String getState() {
-        return state;
+    public String getPaperName() {
+        return paperName;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setPaperName(String paperName) {
+        this.paperName = paperName;
     }
 
-    public String getPublicTime() {
-        return publicTime;
+    public String getPaperPublication() {
+        return paperPublication;
     }
 
-    public void setPublicTime(String publicTime) {
-        this.publicTime = publicTime;
+    public void setPaperPublication(String paperPublication) {
+        this.paperPublication = paperPublication;
     }
 
-    public String getIndex() {
-        return index;
+    public String getPaperStatus() {
+        return paperStatus;
     }
 
-    public void setIndex(String index) {
-        this.index = index;
+    public void setPaperStatus(String paperStatus) {
+        this.paperStatus = paperStatus;
     }
 
-    public String getPaperDatabase() {
-        return paperDatabase;
+    public String getPaperPublishTime() {
+        return paperPublishTime;
     }
 
-    public void setPaperDatabase(String paperDatabase) {
-        this.paperDatabase = paperDatabase;
+    public void setPaperPublishTime(String paperPublishTime) {
+        this.paperPublishTime = paperPublishTime;
     }
 
-    public String getAttachmentFile() {
-        return attachmentFile;
+    public String getPaperIndex() {
+        return paperIndex;
     }
 
-    public void setAttachmentFile(String attachmentFile) {
-        this.attachmentFile = attachmentFile;
+    public void setPaperIndex(String paperIndex) {
+        this.paperIndex = paperIndex;
+    }
+
+    public String getPaperBelong() {
+        return paperBelong;
+    }
+
+    public void setPaperBelong(String paperBelong) {
+        this.paperBelong = paperBelong;
+    }
+
+    public String getPaperAttachment() {
+        return paperAttachment;
+    }
+
+    public void setPaperAttachment(String paperAttachment) {
+        this.paperAttachment = paperAttachment;
+    }
+
+    public boolean isMentorValid() {
+        return isMentorValid;
+    }
+
+    public void setMentorValid(boolean mentorValid) {
+        isMentorValid = mentorValid;
+    }
+
+    public boolean isAdminValid() {
+        return isAdminValid;
+    }
+
+    public void setAdminValid(boolean adminValid) {
+        isAdminValid = adminValid;
     }
 }

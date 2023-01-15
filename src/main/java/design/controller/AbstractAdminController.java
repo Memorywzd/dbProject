@@ -1,6 +1,6 @@
 package design.controller;
 
-import design.model.Project;
+import design.model.attendance.Project;
 import design.model.user.Student;
 import design.model.user.Teacher;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,4 +56,22 @@ public interface AbstractAdminController {
 
     @GetMapping("getStudentList")
     List<String> getStudentListBySubjectID(@RequestParam(value = "subjectID") String subjectID);
+
+    @GetMapping("getVolunteerNumber")
+    int getVolunteerNumber();
+
+    @GetMapping("getProjectFounding")
+    double getProjectFounding();
+
+    @GetMapping("getAcademicExchange")
+    int getAcademicExchange();
+
+    @GetMapping("editVolunteerNumber")
+    boolean editVolunteerNumber(@RequestParam(value = "num") int num);
+
+    @GetMapping("editProjectFounding")
+    boolean editProjectFounding(@RequestParam(value = "num") double num);
+
+    @GetMapping("editAcademicExchange")
+    boolean editAcademicExchange(@RequestParam(value = "num") int num);
 }

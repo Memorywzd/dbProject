@@ -2,7 +2,7 @@ package design.controller.impl;
 
 import design.DAO.impl.DAOFactory;
 import design.controller.AbstractAdminController;
-import design.model.Project;
+import design.model.attendance.Project;
 import design.model.user.Student;
 import design.model.user.Teacher;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -124,5 +124,53 @@ public class AdminController implements AbstractAdminController {
     @Override
     public List<String> getStudentListBySubjectID(@RequestParam(value = "subjectID") String subjectID) {
         return DAOFactory.getDAO().getUserDAO().getStudentListBySubjectID(subjectID);
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public int getVolunteerNumber() {
+        return DAOFactory.getDAO().getUserDAO().getVolunteerNumber();
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public double getProjectFounding() {
+        return DAOFactory.getDAO().getUserDAO().getProjectFounding();
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public int getAcademicExchange() {
+        return DAOFactory.getDAO().getUserDAO().getAcademicExchange();
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public boolean editVolunteerNumber(@RequestParam(value = "num") int num) {
+        return DAOFactory.getDAO().getUserDAO().editVolunteerNumber(num);
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public boolean editProjectFounding(@RequestParam(value = "num") double num) {
+        return DAOFactory.getDAO().getUserDAO().editProjectFounding(num);
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public boolean editAcademicExchange(@RequestParam(value = "num") int num) {
+        return DAOFactory.getDAO().getUserDAO().editAcademicExchange(num);
     }
 }

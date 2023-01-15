@@ -2,9 +2,10 @@ package design.controller.impl;
 
 import design.DAO.impl.DAOFactory;
 import design.controller.AbstractStudentController;
-import design.model.Exchange;
 import design.model.assistant.Assistant;
 import design.model.assistant.Rate;
+import design.model.attendance.Attendance;
+import design.model.exchange.Exchange;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -77,8 +78,11 @@ public class StudentController implements AbstractStudentController {
      * @return
      */
     @Override
-    public boolean applyAcademicExchangeStatistics(String exchangeID) {
-        return DAOFactory.getDAO().getExchangeDAO().applyAcademicExchangeStatistics(exchangeID);
+    public boolean applyAcademicExchangeStatistics(
+            @RequestParam("exchangeID") String exchangeID,
+            @RequestParam("studentID") String studentID
+    ) {
+        return DAOFactory.getDAO().getExchangeDAO().applyAcademicExchangeStatistics(exchangeID, studentID);
     }
 
     /**
@@ -91,19 +95,16 @@ public class StudentController implements AbstractStudentController {
     }
 
     /**
-     * @param newProject
+     * @param newAttendance
      * @return
      */
     @Override
-    public boolean submitAttendProject(
-            @RequestParam("projectID") String projectID,
-            @RequestParam("studentID") String studentID
-    ) {
-        return DAOFactory.getDAO().getAttendanceDAO().attendProject(projectID, studentID);
+    public boolean submitAttendProject(Attendance newAttendance) {
+        return DAOFactory.getDAO().getAttendanceDAO().updateAttendance(newAttendance);
     }
 
     /**
-     * @param newAchievement
+     * @param params
      * @return
      */
     @Override

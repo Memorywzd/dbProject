@@ -28,5 +28,17 @@ public interface AbstractUserDAO {
 
     List<String> getStudentListByMentorID(String mentorID);
 
+    int getVolunteerNumber();
+
+    double getProjectFounding();
+
+    int getAcademicExchange();
+
+    boolean editVolunteerNumber(int num);
+
+    boolean editProjectFounding(double num);
+
+    boolean editAcademicExchange(int num);
+
     //Student getStudentByStudentID(String studentID);
 }

@@ -77,8 +77,11 @@ public class TeacherController implements AbstractTeacherController {
      *
      */
     @Override
-    public boolean rateAcademicExchange(@RequestParam(value = "exchangeID") String exchangeID) {
-        return DAOFactory.getDAO().getExchangeDAO().updateExchangeValid(exchangeID);
+    public boolean rateAcademicExchange(
+            @RequestParam(value = "exchangeID") String exchangeID,
+            @RequestParam(value = "isValid") boolean isValid
+    ) {
+        return DAOFactory.getDAO().getExchangeDAO().updateExchangeMentorValid(exchangeID, isValid);
     }
 
     /**
@@ -106,7 +109,7 @@ public class TeacherController implements AbstractTeacherController {
             @RequestParam(value = "projectID") String projectID,
             @RequestParam(value = "studentID") String studentID
     ) {
-        return DAOFactory.getDAO().getAttendanceDAO().updateProjectStudentID(projectID, studentID);
+        return DAOFactory.getDAO().getAttendanceDAO().addAttendanceByID(projectID, studentID);
     }
 
     /**
@@ -123,8 +126,9 @@ public class TeacherController implements AbstractTeacherController {
     @Override
     public boolean reviewAchievement(
             @RequestParam(value = "type") String type,
-            @RequestParam(value = "achievementID") String achievementID
+            @RequestParam(value = "achievementID") String achievementID,
+            @RequestParam(value = "isValid") boolean isValid
     ) {
-        return DAOFactory.getDAO().getAchievementDAO().updateAchievementValid(type, achievementID);
+        return DAOFactory.getDAO().getAchievementDAO().updateAchievementMentorValid(type, achievementID, isValid);
     }
 }

@@ -1,6 +1,6 @@
 package design.DAO;
 
-import design.model.Exchange;
+import design.model.exchange.Exchange;
 
 import java.util.List;
 
@@ -10,7 +10,9 @@ public interface AbstractExchangeDAO {
 
     boolean addExchange(Exchange newExchange);
 
-    boolean applyAcademicExchangeStatistics(String exchangeID);
+    boolean applyAcademicExchangeStatistics(String exchangeID, String studentID);
 
-    boolean updateExchangeValid(String exchangeID);
+    boolean updateExchangeMentorValid(String exchangeID, Boolean isMentorValid);
+
+    boolean updateExchangeLeaderValid(String exchangeID, Boolean isLeaderValid);
 }

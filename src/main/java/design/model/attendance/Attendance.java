@@ -1,4 +1,4 @@
-package design.model;
+package design.model.attendance;
 
 public class Attendance {
     private int attendanceID;
@@ -6,7 +6,7 @@ public class Attendance {
     private String attendanceStudentID;
     private String attendanceTime;
     private String attendanceTask;
-    private String attendanceFund;
+    private double attendanceFund;
     private boolean isMentorValid;      //交流项目导师有效
     private boolean isLeaderValid;      //交流学科负责人有效
 
@@ -50,11 +50,11 @@ public class Attendance {
         this.attendanceTask = attendanceTask;
     }
 
-    public String getAttendanceFund() {
+    public double getAttendanceFund() {
         return attendanceFund;
     }
 
-    public void setAttendanceFund(String attendanceFund) {
+    public void setAttendanceFund(double attendanceFund) {
         this.attendanceFund = attendanceFund;
     }
 

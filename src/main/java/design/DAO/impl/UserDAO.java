@@ -1,8 +1,7 @@
 package design.DAO.impl;
 
 import design.DAO.AbstractUserDAO;
-import design.model.Exchange;
-import design.model.Project;
+import design.model.exchange.Exchange;
 import design.model.user.Student;
 import design.model.user.Teacher;
 
@@ -254,13 +253,19 @@ public class UserDAO extends DAO implements AbstractUserDAO {
             stmt.setString(1, studentID);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                Exchange tempExchange = new Exchange();
-                tempExchange.setExchangeName(rs.getString("exchangeName"));
-                tempExchange.setExchangeLocation(rs.getString("exchangeLocation"));
-                tempExchange.setExchangeTime(rs.getString("exchangeTime"));
-                tempExchange.setExchangeReportName(rs.getString("exchangeReportName"));
-                tempExchange.setExchangeImagePath(rs.getString("exchangeImagePath"));
-                tempExchange.setExchangeNote(rs.getString("exchangeNote"));
+                Exchange tempExchange = new Exchange(
+                        rs.getString("exchangeID"),
+                        rs.getString("studentID"),
+                        rs.getString("exchangeSubjectID"),
+                        rs.getString("exchangeName"),
+                        rs.getString("exchangeLocation"),
+                        rs.getString("exchangeTime"),
+                        rs.getString("exchangeReportName"),
+                        rs.getString("exchangeImagePath"),
+                        rs.getString("exchangeNote"),
+                        rs.getBoolean("isMentorValid"),
+                        rs.getBoolean("isLeaderValid")
+                );
                 exchangeList.add(tempExchange.toString());
             }
         } catch (SQLException e) {
@@ -336,5 +341,140 @@ public class UserDAO extends DAO implements AbstractUserDAO {
         }
         closeAll(conn, stmt, rs);
         return studentList;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public int getVolunteerNumber() {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        int number = 0;
+        String sql = "SELECT volunteerNumber FROM requirements";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                number = rs.getInt("volunteerNumber");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+        closeAll(conn, stmt, null);
+        return number;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public double getProjectFounding() {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        double founding = 0;
+        String sql = "SELECT projectFounding FROM requirements";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                founding = rs.getDouble("projectFounding");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+        closeAll(conn, stmt, null);
+        return founding;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public int getAcademicExchange() {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        int exchange = 0;
+        String sql = "SELECT academicExchange FROM requirements";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                exchange = rs.getInt("academicExchange");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+        closeAll(conn, stmt, null);
+        return exchange;
+    }
+
+    /**
+     * @param num
+     * @return
+     */
+    @Override
+    public boolean editVolunteerNumber(int num) {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        String sql = "UPDATE requirements SET volunteerNumber = ?";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, num);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return closeAll(conn, stmt, null);
+    }
+
+    /**
+     * @param num
+     * @return
+     */
+    @Override
+    public boolean editProjectFounding(double num) {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        String sql = "UPDATE requirements SET projectFounding = ?";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            stmt.setDouble(1, num);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return closeAll(conn, stmt, null);
+    }
+
+    /**
+     * @param num
+     * @return
+     */
+    @Override
+    public boolean editAcademicExchange(int num) {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        String sql = "UPDATE requirements SET academicExchange = ?";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, num);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return closeAll(conn, stmt, null);
     }
 }

@@ -2,12 +2,13 @@ package design.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 public interface AbstractAppController {
     @PostMapping("login")
-    void login();
-
-    //系统要求相关
-    @GetMapping("getUserType")
-    int getUserType();
+    String login(
+            @RequestParam("username") String username,
+            @RequestParam("password") String password,
+            @RequestParam("role") int role
+    );
 }

@@ -44,4 +44,8 @@ public class DAOFactory {
     public AbstractSubjectDAO getSubjectDAO() {
         return new SubjectDAO();
     }
+
+    public AbstractAppDAO getAppDAO() {
+        return new AppDAO();
+    }
 }

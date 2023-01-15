@@ -1,7 +1,9 @@
 package design.controller.impl;
 
+import design.DAO.impl.DAOFactory;
 import design.controller.AbstractAppController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -12,15 +14,12 @@ public class AppController implements AbstractAppController {
      *
      */
     @Override
-    public void login() {
-
+    public String login(@RequestParam("username") String username,
+                        @RequestParam("password") String password,
+                        @RequestParam("role") int role
+    ) {
+        return DAOFactory.getDAO().getAppDAO().login(username, password, role);
     }
 
-    /**
-     * @return
-     */
-    @Override
-    public int getUserType() {
-        return 0;
-    }
+
 }

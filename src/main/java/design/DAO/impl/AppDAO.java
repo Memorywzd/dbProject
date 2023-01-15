@@ -43,6 +43,8 @@ public class AppDAO extends DAO implements AbstractAppDAO {
         };
     }
 
+
+
     String getToken(int role) {
         return switch (role) {
             case 0 -> "student-token";
@@ -68,7 +70,7 @@ public class AppDAO extends DAO implements AbstractAppDAO {
             if (stmt.executeQuery().next()) {
                 List<Integer> list = getSystemRole(role);
                 token = getToken(role);
-                if (!auth(token,role)) {
+                if (!auth(token,list.get(0))) {
                     addLoginStatus(new LoginStatus(
                             username, password, list.get(0),
                             list.get(1), token, true

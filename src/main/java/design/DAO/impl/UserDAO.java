@@ -11,8 +11,32 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
 
 public class UserDAO extends DAO implements AbstractUserDAO {
+
+    String getIdentity(String userRole,String userType)
+    {
+        String identity = null;
+        switch (userRole){
+            case "0"->identity = "student";
+            case "1"->{
+                if (Objects.equals(userType, "0"))
+                    identity = "teacher";
+                else
+                    identity = "mentor";
+            }
+            case "2"->{
+                if (Objects.equals(userType, "0"))
+                    identity = "admin";
+                else
+                    identity = "leader";
+            }
+        }
+        return identity;
+    }
+
     /**
      * @return
      */
@@ -29,8 +53,9 @@ public class UserDAO extends DAO implements AbstractUserDAO {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String tempUser = "用户名：" + rs.getString("userID") +
-                        " 用户姓名：" + rs.getString("userName") +
-                        " 身份：" + rs.getString("identity");
+                        " 用户姓名：" + rs.getString("username") +
+                        " 身份：" + getIdentity(rs.getString("userRole"),
+                        rs.getString("userType"));
                 userList.add(tempUser);
             }
         } catch (SQLException e) {
@@ -50,7 +75,7 @@ public class UserDAO extends DAO implements AbstractUserDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "INSERT INTO teachers" +
-                "(teacherID,teacherType,teacherName,teacherSex,teacherSubjectID,teacherPassword) " +
+                "(teacherID,teacherType,teacherName,teacherSex,teacherSubjectID,Password) " +
                 "VALUES(?,?,?,?,?,?)";
         try {
             conn = getDruidConnection();

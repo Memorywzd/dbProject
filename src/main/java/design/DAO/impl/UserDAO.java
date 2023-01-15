@@ -50,8 +50,8 @@ public class UserDAO extends DAO implements AbstractUserDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "INSERT INTO teachers" +
-                "(teacherID,teacherType,teacherName,teacherSex,teacherSubjectID,teacherContact,teacherPassword) " +
-                "VALUES(?,?,?,?,?,?,?)";
+                "(teacherID,teacherType,teacherName,teacherSex,teacherSubjectID,teacherPassword) " +
+                "VALUES(?,?,?,?,?,?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
@@ -60,7 +60,7 @@ public class UserDAO extends DAO implements AbstractUserDAO {
             stmt.setString(3, teacher.getTeacherName());
             stmt.setInt(4, teacher.getTeacherSex());
             stmt.setString(5, teacher.getTeacherSubjectID());
-            stmt.setString(6, teacher.getTeacherContact());
+//            stmt.setString(6, teacher.getTeacherContact());
             stmt.setString(7, teacher.getPassword());
             stmt.executeUpdate();
         } catch (SQLException e) {

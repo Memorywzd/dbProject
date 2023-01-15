@@ -68,10 +68,12 @@ public class AppDAO extends DAO implements AbstractAppDAO {
             if (stmt.executeQuery().next()) {
                 List<Integer> list = getSystemRole(role);
                 token = getToken(role);
-                addLoginStatus(new LoginStatus(
-                        username, password, list.get(0),
-                        list.get(1), token, true
-                ));
+                if (!auth(token,role)) {
+                    addLoginStatus(new LoginStatus(
+                            username, password, list.get(0),
+                            list.get(1), token, true
+                    ));
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

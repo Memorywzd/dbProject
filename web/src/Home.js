@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import App from "./App";
 const serverURL = "http://localhost:3054";
 function Home() {
     //定义页面跳转函数
@@ -29,7 +30,7 @@ function Home() {
                 console.log(res);
                 if (res.data.code === 200) {
                     if (res.data.type === "admin" && res.data.role === "1") {
-                        setIsAdminLogin(true);
+                        setIsStudentLogin(true);
                         setToken(res.data.token);
                     }
                 }
@@ -67,7 +68,6 @@ function Home() {
                 <p><button onClick={addSubjectUser}>新建学科负责人用户</button></p>
             </div>
          )
-
     }
 
     function afterLeaderLogin() {
@@ -108,13 +108,28 @@ function Home() {
     }
 
     function afterStudentLogin() {
+
+        function addAttendance(){
+            Navigate("/addAttendance",{
+                state: {token: token}
+            });
+        }
+        function showAttendance(){
+            Navigate("/showAttendance",{
+                state: {token: token}
+            });
+        }
+        function addExchange(){
+            Navigate("/addExchange",{
+                state: {token: token}
+            });
+        }
         return (
             <div >
-                 <h1>学生登录成功</h1>
-                 <p><button>项目认定情况</button></p>
-                 <p><button>项目认定表填写</button></p>
-                 <p><button>项目进度填写</button></p>
-                 <p><button>学术交流认定资料提交</button></p>
+                 <h1>研究生登录成功</h1>
+                 <p><button onClick={showAttendance}>查看项目认定情况</button></p>
+                 <p><button onClick={addAttendance}>项目认定表填写</button></p>
+                 <p><button onClick={addExchange}>学术交流认定资料提交</button></p>
                  <p><button>学术交流情况统计</button></p>
                  <p><button>成果认定情况</button></p>
                  <p><button>填写成果认定</button></p>
@@ -122,6 +137,7 @@ function Home() {
                  <p><button>助教评定表填写</button></p>
                  <p><button>查看助教志愿选择结果</button></p>
                  <p><button>查看助教评定结果</button></p>
+
             </div>
         )
     }
@@ -149,7 +165,6 @@ function Home() {
                         setPassword(e.target.value);
                     }}
                 />
-
             </form>
             <button onClick={doLogin} className="input">
                 登录
@@ -159,7 +174,6 @@ function Home() {
             {isTeacherLogin && afterTeacherLogin()}
             {isMentorLogin && afterMentorLogin()}
             {isStudentLogin && afterStudentLogin()}
-
         </div>
 
     );

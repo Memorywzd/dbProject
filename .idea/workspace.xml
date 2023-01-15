@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35afe48c-4129-4bf2-bc3f-bf2cf9b0cd0a" name="变更" comment="实现了各个管理员页面的按钮">
-      <change afterPath="$PROJECT_DIR$/web/src/admin/addProject.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/admin/addStudentUser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/admin/addSubjectUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/student/addAttendance.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/student/addExchange.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/student/showAttendance.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/DAO/impl/DAOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/design/controller/impl/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/controller/impl/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design/model/Exchange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/Exchange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/design/model/assistant/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/assistant/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/design/model/assistant/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/assistant/Rate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/design/model/user/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/model/user/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/admin/addTeacherUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/admin/addTeacherUser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +33,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -113,7 +112,8 @@
       <workItem from="1673591654058" duration="982000" />
       <workItem from="1673592717488" duration="3538000" />
       <workItem from="1673600899682" duration="7235000" />
-      <workItem from="1673694270808" duration="13767000" />
+      <workItem from="1673694270808" duration="14067000" />
+      <workItem from="1673736056748" duration="11789000" />
     </task>
     <task id="LOCAL-00001" summary="实现了各个管理员页面的按钮">
       <created>1673628571280</created>
@@ -129,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673701697027</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="实现管理员界面跳转">
+      <created>1673711674427</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673711674427</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +171,7 @@
     </ignored-roots>
     <MESSAGE value="实现了各个管理员页面的按钮" />
     <MESSAGE value="实现了创建导师的页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了创建导师的页面" />
+    <MESSAGE value="实现管理员界面跳转" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现管理员界面跳转" />
   </component>
 </project>

@@ -1,91 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4d60fc4-d9d1-434e-a879-e79b4caa4aa2" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ER图/助教子系统/助教子系统er图V0.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ER图/助教子系统/助教子系统er图V0.1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/druid-1.2.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sqljdbc4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractAchievementDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractAssistantDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractAttendanceDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractCourseDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractExchangeDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/AbstractUserDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/AchievementDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/AssistantDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/AttendanceDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/CourseDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/DAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/DAOFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/ExchangeDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/DAO/impl/UserDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/console/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/console/StudentApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/controller/AbstractAdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/controller/AbstractStudentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/controller/AbstractTeacherController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/controller/AbstractUserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/controller/impl/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/controller/impl/StudentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/controller/impl/TeacherController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/Attendance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/Exchange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/Project.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Award.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Paper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Patent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Platform.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Report.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Standard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/achievement/Textbook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/assistant/Course.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/assistant/Rate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/user/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/user/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/user/Subject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design/model/user/Teacher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/druid.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/AbstractConnectionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/ConnectionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/RunTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/Home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/admin/addProject.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/admin/addStudentUser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/admin/addSubjectUser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/admin/addTeacherUser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/student/addAttendance.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/student/addExchange.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/student/showAttendance.js" beforeDir="false" />
+    <list default="true" id="b4d60fc4-d9d1-434e-a879-e79b4caa4aa2" name="变更" comment="仅保留前端代码">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,18 +20,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "H:/dbProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/dbProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -124,7 +50,18 @@
       <option name="presentableId" value="Default" />
       <updated>1673846573901</updated>
       <workItem from="1673846576462" duration="33000" />
+      <workItem from="1673846640002" duration="213000" />
+      <workItem from="1673846886383" duration="33000" />
+      <workItem from="1673847148990" duration="18000" />
     </task>
+    <task id="LOCAL-00001" summary="仅保留前端代码">
+      <created>1673846707578</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673846707578</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,5 +77,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="仅保留前端代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="仅保留前端代码" />
   </component>
 </project>

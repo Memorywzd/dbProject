@@ -14,25 +14,43 @@
         * [succeed](#i-example-request-succeed)
 * [admin](#admin)
     1. [addStudentUser](#1-addstudentuser)
+        * [addStudentUser](#i-example-request-addstudentuser)
     1. [addTeacherUser](#2-addteacheruser)
         * [addTeacherUser](#i-example-request-addteacheruser)
     1. [assignProject](#3-assignproject)
+        * [assignProject](#i-example-request-assignproject)
     1. [bindMentorWithStudent](#4-bindmentorwithstudent)
+        * [bindMentorWithStudent](#i-example-request-bindmentorwithstudent)
     1. [editAcademicExchange](#5-editacademicexchange)
+        * [editAcademicExchange](#i-example-request-editacademicexchange)
     1. [editCourseList](#6-editcourselist)
+        * [editCourseList](#i-example-request-editcourselist)
     1. [editProjectFounding](#7-editprojectfounding)
+        * [editProjectFounding](#i-example-request-editprojectfounding)
     1. [editVolunteerNumber](#8-editvolunteernumber)
+        * [editVolunteerNumber](#i-example-request-editvolunteernumber)
     1. [getAcademicExchange](#9-getacademicexchange)
+        * [getAcademicExchange](#i-example-request-getacademicexchange)
     1. [getMentorList](#10-getmentorlist)
+        * [getMentorList](#i-example-request-getmentorlist)
     1. [getProjectFounding](#11-getprojectfounding)
+        * [getProjectFounding](#i-example-request-getprojectfounding)
     1. [getStudentList](#12-getstudentlist)
+        * [getStudentList](#i-example-request-getstudentlist)
     1. [getSystemAcademicExchangeList](#13-getsystemacademicexchangelist)
+        * [getSystemAcademicExchangeList](#i-example-request-getsystemacademicexchangelist)
     1. [getSystemCourseList](#14-getsystemcourselist)
+        * [getSystemCourseList](#i-example-request-getsystemcourselist)
     1. [getSystemProjectList](#15-getsystemprojectlist)
+        * [getSystemProjectList](#i-example-request-getsystemprojectlist)
     1. [getSystemSubjectList](#16-getsystemsubjectlist)
+        * [getSystemSubjectList](#i-example-request-getsystemsubjectlist)
     1. [getSystemUserList](#17-getsystemuserlist)
+        * [getSystemUserList](#i-example-request-getsystemuserlist)
     1. [getVolunteerNumber](#18-getvolunteernumber)
-    1. [reviewInfo](#19-reviewinfo)
+        * [getVolunteerNumber](#i-example-request-getvolunteernumber)
+    1. [reviewInfo(Not implemented)](#19-reviewinfonot-implemented)
+        * [reviewInfo](#i-example-request-reviewinfo)
 * [teacher](#teacher)
     1. [assignProject](#1-assignproject)
     1. [getAcademicExchangeList](#2-getacademicexchangelist)
@@ -160,6 +178,46 @@ URL: {{host}}/admin/addStudentUser
 
 
 
+***More example Requests/Responses:***
+
+
+#### I. Example Request: addStudentUser
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+| studentID | 0002 | str,学号，uid |
+| studentType | 0 | int,学生类型，0-专硕，1-学硕，2-博士 |
+| studentName | test | str,学生姓名 |
+| studentSex | 0 | int,性别，0-男，1-女 |
+| studentMentorId | 1001 | str,导师工号 |
+| studentAssistantStatus | 0 | int,是否做过助教，0-否，1-是 |
+| studentAssistantRateStatus | 1 | int,助教评价，0-未评价，1-已评价 |
+| studentExchangeNum | 0 | int,交换次数 |
+| password | passwd | str,密码 |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: addStudentUser
+```js
+true // 返回成功
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
 ### 2. addTeacherUser
 
 
@@ -243,13 +301,50 @@ URL: {{host}}/admin/assignProject
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
-| projectID |  | str,评定id |
-| projectSubjectID |  | str,项目学科id |
-| projectMentorID |  | str,项目导师id |
-| projectType |  | str,项目类型 |
-| projectName |  | str,项目名称 |
-| projectFund |  | double,项目资金 |
+| token | admin-token | str,token |
+| projectID | 1001 | str,评定id |
+| projectSubjectID | 1001 | str,项目学科id |
+| projectMentorID | 1001 | str,项目导师id |
+| projectType | test | str,项目类型 |
+| projectName | test | str,项目名称 |
+| projectFund | 10.1 | double,项目资金 |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: assignProject
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+| projectID | 1001 | str,评定id |
+| projectSubjectID | 1001 | str,项目学科id |
+| projectMentorID | 1001 | str,项目导师id |
+| projectType | test | str,项目类型 |
+| projectName | test | str,项目名称 |
+| projectFund | 10.1 | double,项目资金 |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: assignProject
+```js
+true //成功
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -271,9 +366,42 @@ URL: {{host}}/admin/bindMentorWithStudent
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
-| studentID |  | str,学生id |
-| mentorID |  | str,导师id |
+| token | admin-token | str,token |
+| studentID | 0002 | str,学生id |
+| mentorID | 1001 | str,导师id |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: bindMentorWithStudent
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+| studentID | 0002 | str,学生id |
+| mentorID | 1001 | str,导师id |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: bindMentorWithStudent
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -295,8 +423,40 @@ URL: {{host}}/admin/editAcademicExchange
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
-| num |  | int,更新后的次数 |
+| token | admin-token | str,token |
+| num | 9 | int,更新后的次数 |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: editAcademicExchange
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+| num | 9 | int,更新后的次数 |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: editAcademicExchange
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -318,9 +478,42 @@ URL: {{host}}/admin/editCourseList
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
-| courseID |  | str,课程id |
-| priority |  | int,新的优先级 |
+| token | admin-token | str,token |
+| courseID | 1001 | str,课程id |
+| priority | 2 | int,新的优先级 |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: editCourseList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+| courseID | 1001 | str,课程id |
+| priority | 2 | int,新的优先级 |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: editCourseList
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -342,8 +535,40 @@ URL: {{host}}/admin/editProjectFounding
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
-| num |  | double,新的项目资金 |
+| token | admin-token | str,token |
+| num | 20.0 | double,新的项目资金 |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: editProjectFounding
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+| num | 20.0 | double,新的项目资金 |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: editProjectFounding
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -365,8 +590,40 @@ URL: {{host}}/admin/editVolunteerNumber
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token	 |  | str,token |
-| num |  | int,新的助教数量 |
+| token | admin-token | str,token |
+| num | 100 | int,新的助教数量 |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: editVolunteerNumber
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+| num | 100 | int,新的助教数量 |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: editVolunteerNumber
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -388,7 +645,38 @@ URL: {{host}}/admin/getAcademicExchange
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
+| token | admin-token | str,token |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getAcademicExchange
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getAcademicExchange
+```js
+9
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -410,8 +698,42 @@ URL: {{host}}/admin/getMentorList
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
-| subjectID |  | str,科目id |
+| token | admin-token | str,token |
+| subjectID | 1001 | str,科目id |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getMentorList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+| subjectID | 1001 | str,科目id |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getMentorList
+```js
+[
+    "导师ID：1002 导师姓名：test"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -433,7 +755,38 @@ URL: {{host}}/admin/getProjectFounding
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
+| token | admin-token | str,token |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getProjectFounding
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getProjectFounding
+```js
+20
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -455,8 +808,42 @@ URL: {{host}}/admin/getStudentList
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
-| subjectID |  | str,科目id |
+| token | admin-token | str,token |
+| subjectID | 1001 | str,科目id |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getStudentList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+| subjectID | 1001 | str,科目id |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getStudentList
+```js
+[
+    "学生ID：0002 学生姓名：test"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -478,7 +865,40 @@ URL: {{host}}/admin/getSystemAcademicExchangeList
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
+| token | admin-token | str,token |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getSystemAcademicExchangeList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getSystemAcademicExchangeList
+```js
+[
+    "Exchange{exchangeName='test', exchangeLocation='test', exchangeTime='test', exchangeReportName='test', exchangeImagePath='test', exchangeNote='test', isMentorValid=false, isLeaderValid=false}"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -500,7 +920,40 @@ URL: {{host}}/admin/getSystemCourseList
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
+| token | admin-token | str,token |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getSystemCourseList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getSystemCourseList
+```js
+[
+    "Course{courseName='test', courseHour=48, courseSelectedNum=100, courseTarget=0, courseType=0, courseTime='test', coursePriority=2}"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -522,7 +975,40 @@ URL: {{host}}/admin/getSystemProjectList
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
+| token | admin-token | str,token |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getSystemProjectList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getSystemProjectList
+```js
+[
+    "Project{projectID='1001', projectSubjectID='1001', projectMentorID='1001', projectType='test', projectName='test', projectFund=10.1}"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -548,6 +1034,39 @@ URL: {{host}}/admin/getSystemSubjectList
 
 
 
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getSystemSubjectList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getSystemSubjectList
+```js
+[
+    "Subject{subjectID='1001', subjectName='test'}"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
 ### 17. getSystemUserList
 
 
@@ -567,6 +1086,42 @@ URL: {{host}}/admin/getSystemUserList
 | Key | Value | Description |
 | --- | ------|-------------|
 | token | admin-token | str,token |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getSystemUserList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getSystemUserList
+```js
+[
+    "用户名：2001 用户姓名：admin 身份：admin",
+    "用户名：0002 用户姓名：test 身份：student",
+    "用户名：1001 用户姓名：test 身份：teacher",
+    "用户名：1002 用户姓名：test 身份：mentor"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -592,7 +1147,38 @@ URL: {{host}}/admin/getVolunteerNumber
 
 
 
-### 19. reviewInfo
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getVolunteerNumber
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getVolunteerNumber
+```js
+100
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+### 19. reviewInfo(Not implemented)
 
 
 
@@ -601,7 +1187,7 @@ URL: {{host}}/admin/getVolunteerNumber
 ```bash
 Method: GET
 Type: 
-URL: {{url}}/admin/reviewInfo
+URL: {{host}}/admin/reviewInfo
 ```
 
 
@@ -610,7 +1196,38 @@ URL: {{url}}/admin/reviewInfo
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
+| token | admin-token | str,token |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: reviewInfo
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | admin-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: reviewInfo
+```js
+false
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -1201,4 +1818,4 @@ URL: {{host}}/student/submitAchievement
 ---
 [Back to top](#new-collection)
 
->Generated at 2023-01-16 17:04:36 by [docgen](https://github.com/thedevsaddam/docgen)
+>Generated at 2023-01-16 18:00:23 by [docgen](https://github.com/thedevsaddam/docgen)

@@ -3,7 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Navigate, useLocation, NavLink } from "react-router-dom";
 
-const serverURL = "http://localhost:3054";
+const serverURL = "http://az.pizzel.me";
+//const serverURL = "http://localhost:8080";
 
 export default function AddAttendance() {
     const location = useLocation();

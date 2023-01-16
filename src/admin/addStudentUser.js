@@ -3,42 +3,52 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Navigate, useLocation, NavLink } from "react-router-dom";
 
-const serverURL = "http://localhost:3054";
+const cache = localStorage;
+const serverURL = "http://az.pizzel.me";
+//const serverURL = "http://localhost:8080";
 
 export default function AddStudentUser() {
     const location = useLocation();
-    const [token, setToken] = useState("");
-    const [studentName, setstudentName] = useState("");
-    const [studentId, setstudentId] = useState("");
-    const [password, setpassword] = useState("");
-    const [studentType, setstudentType] = useState("");
-    const [MentorId, setMentorId] = useState("");
 
+    const [studentId, setStudentId] = useState("");
+    const [studentType, setStudentType] = useState(0);
+    const [studentName, setStudentName] = useState("");
+    const [studentSex, setStudentSex] = useState(0);
+    const [studentSubjectID, setStudentSubjectID] = useState("");
+    const [password, setPassword] = useState("");
     const [isLogin, setIsLogin] = useState(false);
+
+    let token = cache.getItem("token");
+    function setToken(temp) {
+        token = temp;
+        console.log("token: " + token);
+    }
 
     useEffect(() => {
         if (location.state) {
-            console.log("登录成功");
+            console.log("已经登录");
+            console.log(location.state.token);
             setToken(location.state.token);
             setIsLogin(true);
         }
-    }, []);
+    }, [location.state]);
 
 
     function  submitStudent() {
         const formData = new FormData();
-        formData.append("studentName", studentName);
-        formData.append("studentId", studentId);
-        formData.append("password", password);
+        formData.append("studentID", studentId);
         formData.append("studentType", studentType);
-        formData.append("mentorId", MentorId);
+        formData.append("studentName", studentName);
+        formData.append("studentSex", studentSex);
+        formData.append("studentSubjectID", studentSubjectID);
+        formData.append("password", password);
         formData.append("token", token);
         
         axios
             .post(serverURL + "/admin/addStudentUser", formData)
             .then((res) => {
                     console.log(res);
-                    if (res.data.code === 200 && res.data === "true") {
+                    if (res.status === 200 && res.data === true) {
                         alert("添加成功")
                     }
                     else {
@@ -60,7 +70,31 @@ export default function AddStudentUser() {
                             type="text"
                             placeholder="请输入姓名"
                             onChange={(e) => {
-                                setstudentName(e.target.value);
+                                setStudentName(e.target.value);
+                            }}
+                        />
+                        <label>研究生性别:</label>
+                        <select>
+                            <option value="0" onClick={() => setStudentSex(0)}>男</option>
+                            <option value="1" onClick={() => setStudentSex(1)}>女</option>
+                        </select>
+
+                        <label>学生类型:</label>
+                        <select onChange={(e) => {
+                            setStudentType(e.target.selectedIndex);
+                        }}>
+                            <option>专硕</option>
+                            <option>学硕</option>
+                            <option>博士</option>
+                        </select>
+
+                        <label>学生学科ID:</label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="请输入学生学科ID"
+                            onChange={(e) => {
+                                setStudentSubjectID(e.target.value);
                             }}
                         />
 
@@ -70,37 +104,17 @@ export default function AddStudentUser() {
                             type="text"
                             placeholder="请输入研究生账号"
                             onChange={(e) => {
-                                setstudentId(e.target.value);
+                                setStudentId(e.target.value);
                             }}
                         />
 
                         <label>密码:</label>
                         <input
                             className="input"
-                            type="text"
+                            type="password"
                             placeholder="请输入密码"
                             onChange={(e) => {
-                                setpassword(e.target.value);
-                            }}
-                        />
-
-                        <label>项目类型:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入项目类型"
-                            onChange={(e) => {
-                                setstudentType(e.target.value);
-                            }}
-                        />
-
-                        <label>导师ID:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入导师ID"
-                            onChange={(e) => {
-                                setMentorId(e.target.value);
+                                setPassword(e.target.value);
                             }}
                         />
                     </form>

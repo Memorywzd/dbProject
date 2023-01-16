@@ -11,6 +11,7 @@ import AddAttendance from "./student/addAttendance";
 import ShowAttendance from "./student/showAttendance";
 import AddExchange from "./student/addExchange";
 // 新页面在这里导入
+import CheckInfo from "./leader/checkInfo";
 
 // 结束导入新页面
 
@@ -27,6 +28,8 @@ function App() {
         <Route path="/addAttendance" element={<AddAttendance />} />
         <Route path="/showAttendance" element={<ShowAttendance />} />
         <Route path="/addExchange" element={<AddExchange />} />
+        <Route path="/checkInfo" element={<CheckInfo />} />
+
         {/* 结束添加新页面 */}
       </Routes>
     </Router>

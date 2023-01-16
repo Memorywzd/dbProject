@@ -3,16 +3,27 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Navigate, useLocation, NavLink } from "react-router-dom";
 
-const serverURL = "http://localhost:3054";
+const cache = localStorage;
+const serverURL = "http://az.pizzel.me";
+//const serverURL = "http://localhost:8080";
 
 export default function AddTeacherUser() {
     const location = useLocation();
-    const [token, setToken] = useState("");
-    const [teacherName, setteacherName] = useState("");
-    const [password, setpassword] = useState("");
-    const [teacherID, setteacherID] = useState("");
-    const [teacherSubjectID, setteacherSubjectID] = useState("");
+
+    const [teacherID, setTeacherID] = useState("");
+    const [teacherType, setTeacherType] = useState(0);
+    const [teacherName, setTeacherName] = useState("");
+    const [teacherSex, setTeacherSex] = useState(0);
+    const [teacherSubjectID, setTeacherSubjectID] = useState("");
+    const [password, setPassword] = useState("");
     const [isLogin, setIsLogin] = useState(false);
+
+    let token = cache.getItem("token");
+
+    function setToken(temp) {
+        token = temp;
+        console.log("token: " + token);
+    }
 
     useEffect(() => {
         if (location.state) {
@@ -25,17 +36,19 @@ export default function AddTeacherUser() {
 
     function  submitTeacher() {
         const formData = new FormData();
-        formData.append("teacherName", teacherName);
-        formData.append("password", password);
         formData.append("teacherID", teacherID);
+        formData.append("teacherType", "0");
+        formData.append("teacherName", teacherName);
+        formData.append("teacherSex", teacherSex);
         formData.append("teacherSubjectID", teacherSubjectID);
+        formData.append("password", password);
         formData.append("token", token);
         
         axios
-            .post(serverURL + "/admin/addTecaherUser", formData)
+            .post(serverURL + "/admin/addTeacherUser", formData)
             .then((res) => {
                     console.log(res);
-                    if (res.data.code === 200 && res.data === "true") {
+                    if (res.status === 200 && res.data === true) {
                         alert("添加成功")
                     }
                     else {
@@ -46,47 +59,53 @@ export default function AddTeacherUser() {
     }
     return (
         <div className="App">
-            <h1>教师用户创建</h1>
+            <h1>授课教师用户创建</h1>
             {isLogin ? (
                 <div>
                     <form className="form">
-                        <label>教师用户账号:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入教师账号"
-                            onChange={(e) => {
-                                setteacherID(e.target.value);
-                            }}
-                        />
-
-                        <label>教师密码:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入教师密码"
-                            onChange={(e) => {
-                                setpassword(e.target.value);
-                            }}
-                        />
-
-                        <label>教师姓名:</label>
+                        <label>授课教师姓名:</label>
                         <input
                             className="input"
                             type="text"
                             placeholder="请输入教师姓名"
                             onChange={(e) => {
-                                setteacherName(e.target.value);
+                                setTeacherName(e.target.value);
                             }}
                         />
 
-                        <label>教师所属学科ID:</label>
+                        <label>授课教师性别:</label>
+                        <select>
+                            <option value="0" onClick={() => setTeacherSex(0)}>男</option>
+                            <option value="1" onClick={() => setTeacherSex(1)}>女</option>
+                        </select>
+
+                        <label>授课教师所属学科ID:</label>
                         <input
                             className="input"
                             type="text"
                             placeholder="请输入教师所属学科"
                             onChange={(e) => {
-                                setteacherSubjectID(e.target.value);
+                                setTeacherSubjectID(e.target.value);
+                            }}
+                        />
+
+                        <label>授课教师账号:</label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="请输入教师账号"
+                            onChange={(e) => {
+                                setTeacherID(e.target.value);
+                            }}
+                        />
+
+                        <label>授课教师密码:</label>
+                        <input
+                            className="input"
+                            type="password"
+                            placeholder="请输入教师密码"
+                            onChange={(e) => {
+                                setPassword(e.target.value);
                             }}
                         />
                      </form>

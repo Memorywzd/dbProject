@@ -257,10 +257,10 @@ function Home() {
         return (
             <div>
                 <h1>导师登录成功</h1>
+                <p><button onClick={verifyCommuInfo}>审核学术交流情况</button></p>
                 <p><button onClick={checkTutorProject}>查看导师个人项目</button></p>
                 <p><button onClick={assignProject}>为未完成项目认定的研究生分配项目</button></p>
                 <p><button onClick={checkFund}>查看项目认定表，确认金额</button></p>
-                <p><button onClick={verifyCommuInfo}>学术交流情况审核</button></p>
                 <p><button onClick={checkStuCer}>查看/修改学生成果认证</button></p>
             </div>
         )
@@ -321,16 +321,16 @@ function Home() {
         return (
             <div >
                 <h1>研究生登录成功</h1>
-                <p><button onClick={showAttendance}>查看项目认定情况</button></p>
-                <p><button onClick={addAttendance}>项目认定表填写</button></p>
-                <p><button onClick={addExchange}>学术交流认定资料提交</button></p>
                 <p><button onClick={countCommuInfo}>学术交流情况统计</button></p>
-                <p><button onClick={showStuCer}>成果认定情况</button></p>
-                <p><button onClick={setStuCer}>填写成果认定</button></p>
+                <p><button onClick={addExchange}>学术交流认定资料提交</button></p>
+                <p><button onClick={showTAVolun}>查看助教志愿选择结果</button></p>
                 <p><button onClick={chooseVolun}>助教志愿选择</button></p>
                 <p><button onClick={setTAForm}>助教评定表填写</button></p>
-                <p><button onClick={showTAVolun}>查看助教志愿选择结果</button></p>
                 <p><button onClick={showTAEvaInfo}>查看助教评定结果</button></p>
+                <p><button onClick={showAttendance}>查看项目认定情况</button></p>
+                <p><button onClick={addAttendance}>项目认定表填写</button></p>
+                <p><button onClick={showStuCer}>成果认定情况</button></p>
+                <p><button onClick={setStuCer}>填写成果认定</button></p>
 
             </div>
         )

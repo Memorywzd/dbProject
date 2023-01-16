@@ -12,6 +12,14 @@ import ShowAttendance from "./student/showAttendance";
 import AddExchange from "./student/addExchange";
 // 新页面在这里导入
 import CheckInfo from "./leader/checkInfo";
+import SetVolunteer from './leader/setVolunteer';
+import SetFund from './leader/setFund';
+import SetCommu from './leader/setCommu';
+import SetPriority from './leader/setPriority';
+
+import AddClass from './teacher/addClass';
+import VerifyVolun from './teacher/verifyVolun';
+import VerifyForm from './teacher/verifyForm';
 
 import AddMentorUser from './admin/addMentorUser';
 import BindUser from './admin/bindUser';
@@ -35,6 +43,16 @@ function App() {
         <Route path="/showAttendance" element={<ShowAttendance />} />
         <Route path="/addExchange" element={<AddExchange />} />
         <Route path="/checkInfo" element={<CheckInfo />} />
+        <Route path="/setVolunteer" element={<SetVolunteer />} />
+        <Route path="/setFund" element={<SetFund />} />
+        <Route path="/setCommu" element={<SetCommu />} />
+        <Route path="/setPriority" element={<SetPriority />} />
+        
+        <Route path="/addClass" element={<AddClass />} />
+        <Route path="/VerifyVolun" element={<VerifyVolun />} />
+        <Route path="/VerifyForm" element={<VerifyForm />} />
+
+
         <Route path="/addMentorUser" element={<AddMentorUser />} />
         <Route path="/bindUser" element={<BindUser />} />
         <Route path="/addLeaderUser" element={<AddLeaderUser />} />

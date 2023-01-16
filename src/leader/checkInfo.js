@@ -5,7 +5,7 @@ import {Navigate, useLocation, NavLink} from "react-router-dom";
 
 const cache = localStorage;
 const serverURL = "http://az.pizzel.me";
-//const serverURL = "http://localhost:8080";
+
 
 export default function CheckInfo() {
     const location = useLocation();

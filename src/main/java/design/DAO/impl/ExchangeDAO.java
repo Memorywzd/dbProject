@@ -27,7 +27,7 @@ public class ExchangeDAO extends DAO implements AbstractExchangeDAO {
             while (rs.next()) {
                 Exchange tempExchange = new Exchange(
                         rs.getString("exchangeID"),
-                        rs.getString("studentID"),
+                        rs.getString("exchangeStudentID"),
                         rs.getString("exchangeSubjectID"),
                         rs.getString("exchangeName"),
                         rs.getString("exchangeLocation"),

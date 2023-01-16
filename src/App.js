@@ -12,6 +12,10 @@ import ShowAttendance from "./student/showAttendance";
 import AddExchange from "./student/addExchange";
 // 新页面在这里导入
 import CheckInfo from "./leader/checkInfo";
+import SetVolunteer from './leader/setVolunteer';
+import SetFund from './leader/setFund';
+import SetCommu from './leader/setCommu';
+import SetPriority from './leader/setPriority';
 
 // 结束导入新页面
 
@@ -29,6 +33,11 @@ function App() {
         <Route path="/showAttendance" element={<ShowAttendance />} />
         <Route path="/addExchange" element={<AddExchange />} />
         <Route path="/checkInfo" element={<CheckInfo />} />
+        <Route path="/setVolunteer" element={<SetVolunteer />} />
+        <Route path="/setFund" element={<SetFund />} />
+        <Route path="/setCommu" element={<SetCommu />} />
+        <Route path="/setPriority" element={<SetPriority />} />
+        
 
         {/* 结束添加新页面 */}
       </Routes>

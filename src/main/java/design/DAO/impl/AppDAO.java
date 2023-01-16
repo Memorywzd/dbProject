@@ -57,22 +57,22 @@ public class AppDAO extends DAO implements AbstractAppDAO {
     }
 
     @Override
-    public String login(String username, String password, int role) {
+    public String login(String userID, String password, int role) {
         PreparedStatement stmt = null;
         Connection conn = null;
         String token = null;
-        String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+        String sql = "SELECT * FROM users WHERE userID = ? AND password = ?";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, username);
+            stmt.setString(1, userID);
             stmt.setString(2, password);
             if (stmt.executeQuery().next()) {
                 List<Integer> list = getSystemRole(role);
                 token = getToken(role);
                 if (!auth(token,list.get(0))) {
                     addLoginStatus(new LoginStatus(
-                            username, password, list.get(0),
+                            userID, password, list.get(0),
                             list.get(1), token, true
                     ));
                 }

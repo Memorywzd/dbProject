@@ -6,7 +6,7 @@ public interface AbstractAppDAO {
 
     boolean addLoginStatus(LoginStatus newLoginStatus);
 
-    String login(String username, String password, int role);
+    String login(String userID, String password, int role);
 
     boolean auth(String token, int role);
 

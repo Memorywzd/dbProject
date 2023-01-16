@@ -14,11 +14,11 @@ public class AppController implements AbstractAppController {
      *
      */
     @Override
-    public String login(@RequestParam("username") String username,
+    public String login(@RequestParam("userID") String userID,
                         @RequestParam("password") String password,
                         @RequestParam("role") int role
     ) {
-        return DAOFactory.getDAO().getAppDAO().login(username, password, role);
+        return DAOFactory.getDAO().getAppDAO().login(userID, password, role);
     }
 
 

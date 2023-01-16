@@ -45,7 +45,7 @@ public interface AbstractStudentController {
     @GetMapping("getAttendProjectStatus")
     List<String> getAttendProjectStatus(@RequestParam("studentID") String studentID);
 
-    @PostMapping("getPsubmitAttendProjectrojectList")
+    @PostMapping("submitAttendProject")
     boolean submitAttendProject(Attendance newAttendance);
 
     //成果认定

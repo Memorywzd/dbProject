@@ -100,9 +100,9 @@
    | studentName                | nvarchar(200) |      | 是   |        | 学生姓名                   |
    | studentSex                 | int           |      | 是   |        | 学生性别，0男1女           |
    | studentMentorId            | varchar(50)   | 外键 |      |        | 学生导师id                 |
-   | studentAssistantStatus     | int           |      | 是   | 0      | 学生是否做过助教 0:否 1:是 |
-   | studentAssistantRateStatus | int           |      | 是   | 0      | 学生是否完成助教评价       |
-   | studentExchangeNum         | int           |      | 是   | 0      | 学生交换次数               |
+   | studentAssistantStatus     | int           |      |      | 0      | 学生是否做过助教 0:否 1:是 |
+   | studentAssistantRateStatus | int           |      |      | 0      | 学生是否完成助教评价       |
+   | studentExchangeNum         | int           |      |      | 0      | 学生交换次数               |
    | studentSubjectID           | varchar(50)   | 外键 | 是   |        | 学生学科id                 |
    | password                   | varchar(50)   |      | 是   |        | 密码                       |
 
@@ -263,7 +263,7 @@
    | rateID          | int           | 主键 | 是   | 评定id， 自增          |
    | rateAssistantID | int           | 外键 | 是   | 助教id                 |
    | rateSelf        | nvarchar(MAX) |      | 是   | 助教工作自述           |
-   | rateTeacher     | nvarchar(MAX) |      | 是   | 授课教师评价           |
+   | rateTeacher     | nvarchar(MAX) |      |      | 授课教师评价           |
    | isTeacherRated  | int           |      |      |                        |
    | rateResult      | int           |      |      | 评价结果，0合格1不合格 |
    
@@ -447,9 +447,9 @@
    | attendanceID        | int           | 主键 | 是   |        | 评定id， 自增 |
    | attendanceProjectID | varchar(50)   | 外键 | 是   |        |               |
    | attendanceStudentID | varchar(50)   | 外键 | 是   |        |               |
-   | attendanceTime      | nvarchar(200) |      | 是   |        |               |
-   | attendanceTask      | nvarchar(200) |      | 是   |        |               |
-   | attendanceFund      | decimal(9,3)  |      | 是   |        |               |
+   | attendanceTime      | nvarchar(200) |      |      |        |               |
+   | attendanceTask      | nvarchar(200) |      |      |        |               |
+   | attendanceFund      | decimal(9,3)  |      |      |        |               |
    | isMentorValid       | int           |      |      | 0      |               |
    | isLeaderValid       | int           |      |      | 0      |               |
    

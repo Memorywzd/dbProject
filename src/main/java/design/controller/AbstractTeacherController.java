@@ -24,7 +24,7 @@ public interface AbstractTeacherController {
     @GetMapping("getRateList")
     List<String> getRateList(@RequestParam(value = "courseID") String courseID);
 
-    @PostMapping("rateAssistant")
+    @GetMapping("rateAssistant")
     boolean rateAssistant(
             @RequestParam(value = "rateID") String rateID,
             @RequestParam(value = "teacherRate") String teacherRate

@@ -56,21 +56,23 @@ public class ExchangeDAO extends DAO implements AbstractExchangeDAO {
     public boolean addExchange(Exchange newExchange) {
         PreparedStatement stmt = null;
         Connection conn = null;
-        String sql = "INSERT INTO exchanges VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO exchanges" +
+                " (exchangeStudentID, exchangeSubjectID, exchangeName, exchangeLocation, exchangeTime, exchangeReportName, exchangeImagePath, exchangeNote,isMentorValid,isLeaderValid) " +
+                "VALUES(?,?,?,?,?,?,?,?,?,?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, newExchange.getExchangeID());
-            stmt.setString(2, newExchange.getExchangeStudentID());
-            stmt.setString(3, newExchange.getExchangeSubjectID());
-            stmt.setString(4, newExchange.getExchangeName());
-            stmt.setString(5, newExchange.getExchangeLocation());
-            stmt.setString(6, newExchange.getExchangeTime());
-            stmt.setString(7, newExchange.getExchangeReportName());
-            stmt.setString(8, newExchange.getExchangeImagePath());
-            stmt.setString(9, newExchange.getExchangeNote());
-            stmt.setBoolean(10, newExchange.isMentorValid());
-            stmt.setBoolean(11, newExchange.isLeaderValid());
+//            stmt.setString(1, newExchange.getExchangeID());
+            stmt.setString(1, newExchange.getExchangeStudentID());
+            stmt.setString(2, newExchange.getExchangeSubjectID());
+            stmt.setString(3, newExchange.getExchangeName());
+            stmt.setString(4, newExchange.getExchangeLocation());
+            stmt.setString(5, newExchange.getExchangeTime());
+            stmt.setString(6, newExchange.getExchangeReportName());
+            stmt.setString(7, newExchange.getExchangeImagePath());
+            stmt.setString(8, newExchange.getExchangeNote());
+            stmt.setBoolean(9, newExchange.isMentorValid());
+            stmt.setBoolean(10, newExchange.isLeaderValid());
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

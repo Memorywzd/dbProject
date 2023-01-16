@@ -32,23 +32,23 @@ public interface AbstractStudentController {
     @GetMapping("getAcademicExchangeStatus")
     List<String> getAcademicExchangeStatus(@RequestParam("studentID") String studentID);
 
-    @PostMapping("getAcademicExchangeList")
+    @PostMapping("submitAcademicExchange")
     boolean submitAcademicExchange(Exchange newExchange);
 
-    @GetMapping("getAcademicExchangeList")
+    @GetMapping("applyAcademicExchangeStatistics")
     boolean applyAcademicExchangeStatistics(
             @RequestParam("exchangeID") String exchangeID,
             @RequestParam("studentID") String studentID
     );
 
     //参与项目
-    @GetMapping("getProjectStatus")
+    @GetMapping("getAttendProjectStatus")
     List<String> getAttendProjectStatus(@RequestParam("studentID") String studentID);
 
-    @PostMapping("getProjectList")
+    @PostMapping("getPsubmitAttendProjectrojectList")
     boolean submitAttendProject(Attendance newAttendance);
 
     //成果认定
-    @PostMapping("getAchievementStatus")
+    @PostMapping("submitAchievement")
     boolean submitAchievement(@RequestParam Map<String, String> newAchievement);
 }

@@ -82,7 +82,7 @@ public class AssistantDAO extends DAO implements AbstractAssistantDAO {
                 Student tempStudent = new Student();
                 tempStudent.setStudentID(rs.getString("studentID"));
                 tempStudent.setStudentName(rs.getString("studentName"));
-                tempStudent.setStudentSex(rs.getInt("studentGender"));
+                tempStudent.setStudentSex(rs.getInt("studentSex"));
                 tempStudent.setStudentMentorId(rs.getString("studentMentorID"));
                 tempStudent.setStudentAssistantStatus(rs.getBoolean("studentAssistantStatus"));
                 tempStudent.setStudentAssistantRateStatus(rs.getBoolean("studentAssistantRateStatus"));

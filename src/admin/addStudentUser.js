@@ -26,15 +26,16 @@ export default function AddStudentUser() {
 
 
     function  submitStudent() {
+        const formData = new FormData();
+        formData.append("studentName", studentName);
+        formData.append("studentId", studentId);
+        formData.append("password", password);
+        formData.append("studentType", studentType);
+        formData.append("mentorId", MentorId);
+        formData.append("token", token);
+        
         axios
-            .post(serverURL + "/admin/addStudentUser", {
-                studentName: studentName,
-                studentId: studentId,
-                password: password,
-                studentType: studentType,
-                MentorId: MentorId,
-                token: token,
-            })
+            .post(serverURL + "/admin/addStudentUser", formData)
             .then((res) => {
                     console.log(res);
                     if (res.data.code === 200 && res.data === "true") {

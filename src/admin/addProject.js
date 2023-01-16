@@ -25,15 +25,16 @@ export default function AddProject() {
 
 
     function  submitProject() {
+        const formData = new FormData();
+        formData.append("projectName", projectName);
+        formData.append("mentorId", MentorIdID);
+        formData.append("projectID", projectID);
+        formData.append("projectFund", projectFund);
+        formData.append("projectType", projectType);
+        formData.append("token", token);
+        
         axios
-            .post(serverURL + "/admin/addProject", {
-                projectName: projectName,
-                MentorIdID: MentorIdID,
-                projectID: projectID,
-                projectFund: projectFund,
-                projectType: projectType,
-                token: token,
-            })
+            .post(serverURL + "/admin/addProject", formData)
             .then((res) => {
                     console.log(res);
                     if (res.data.code === 200 && res.data === "true") {

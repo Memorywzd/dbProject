@@ -24,14 +24,15 @@ export default function AddSubjectUser() {
 
 
     function  submitSubject() {
+        const formData = new FormData();
+        formData.append("adminName", adminName);
+        formData.append("password", password);
+        formData.append("adminID", adminID);
+        formData.append("adminSubjectID", adminSubjectID);
+        formData.append("token", token);
+        
         axios
-            .post(serverURL + "/admin/addSubjectUser", {
-                adminName: adminName,
-                password: password,
-                adminID: adminID,
-                adminSubjectID: adminSubjectID,
-                token: token,
-            })
+            .post(serverURL + "/admin/addSubjectUser", formData)
             .then((res) => {
                     console.log(res);
                     if (res.data.code === 200 && res.data === "true") {

@@ -24,14 +24,15 @@ export default function AddTeacherUser() {
 
 
     function  submitTeacher() {
+        const formData = new FormData();
+        formData.append("teacherName", teacherName);
+        formData.append("password", password);
+        formData.append("teacherID", teacherID);
+        formData.append("teacherSubjectID", teacherSubjectID);
+        formData.append("token", token);
+        
         axios
-            .post(serverURL + "/admin/addTecaherUser", {
-                teacherName: teacherName,
-                password: password,
-                teacherID: teacherID,
-                teacherSubjectID: teacherSubjectID,
-                token: token,
-            })
+            .post(serverURL + "/admin/addTecaherUser", formData)
             .then((res) => {
                     console.log(res);
                     if (res.data.code === 200 && res.data === "true") {

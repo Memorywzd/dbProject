@@ -1,169 +1,70 @@
-# 2022数据库课程设计
+# Getting Started with Create React App
 
-------
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 系统设计
+## Available Scripts
 
-- [ ] 助教子系统
-- [ ] 学术交流子系统
-- [ ] 项目参与子系统
-- [ ] 成果认定子系统
-- [ ] 管理子系统
+In the project directory, you can run:
 
-------
+### `npm start`
 
-### 系统ER图设计
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-见子文件夹图片和txt数据
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-使用工具辅助设计ER图，地址 [数据库 - Creately](https://app.creately.com/d/FUkOA74e2n8/edit) 账户名sakana07@proton.me 密码Chisato0923
+### `npm test`
 
-或者自行注册账号，复制txt数据粘贴至绘制ER图的界面即可。同理，导出ER图时全选图形，粘贴至txt文件种即可。
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-------
+### `npm run build`
 
-### 数据库设计
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-格式：关系表文字说明，关系表，DDL语句
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-命名全部使用英文全称，遵循驼峰命名法，如需翻译请使用 [DeepL翻译](https://www.deepl.com)。例studentName。命名时考虑可识别性，难以设计时对命名添加备注说明。库的名字为dbProject。
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-##### 全局表格
+### `npm run eject`
 
-1. 研究生表 students(studentID, studentName, studentSex, studentSubjectID, studentType, studentContact)
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-   | 属性名           | 数据类型      | 键型 | 非空 | 默认值 | 备注                      |
-   | ---------------- | :------------ | :--- | :--- | ------ | :------------------------ |
-   | studentID        | varchar(50)   | 主键 | 是   |        | 学生id                    |
-   | studentName      | nvarchar(200) |      | 是   |        | 学生姓名                  |
-   | studentSex       | int           |      | 是   |        | 学生性别，0男1女          |
-   | studentSubjectID | varchar(50)   | 外键 | 是   |        | 学生学科id                |
-   | studentType      | int           |      | 是   |        | 学生类型，0专硕1学硕2博士 |
-   | studentContact   | nvarchar(MAX) |      |      |        | 学生联系方式              |
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-   ```sql
-   CREATE TABLE students (
-       studentID varchar(50) NOT NULL,
-       studentName nvarchar(200) NOT NULL,
-       studentSex int NOT NULL,
-       studentSubjectID varchar(50) NOT NULL,
-       studentType int NOT NULL,
-       studentContact nvarchar(MAX),
-       PRIMARY KEY (studentID),
-       FOREIGN KEY (studentSubjectID) REFERENCES subjects(subjectID)
-   );
-   ```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-2. 老师表 teachers(teacherID, teacherName, teacherSex, teacherSubjectID, teacherType, teacherContact)
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-   | 属性名           | 数据类型      | 键型 | 非空 | 默认值 | 备注                     |
-   | ---------------- | :------------ | :--- | :--- | ------ | :----------------------- |
-   | teacherID        | varchar(50)   | 主键 | 是   |        | 老师id                   |
-   | teacherName      | nvarchar(200) |      | 是   |        | 老师姓名                 |
-   | teacherSex       | int           |      | 是   |        | 老师性别，0男1女         |
-   | teacherSubjectID | varchar(50)   | 外键 | 是   |        | 老师学科id               |
-   | teacherType      | int           |      | 是   |        | 老师类型，0授课教师1导师 |
-   | teacherContact   | longtext      |      |      |        | 老师联系方式             |
+## Learn More
 
-   ```sql
-   CREATE TABLE teachers (
-    teacherID varchar(50) NOT NULL,
-    teacherName nvarchar(200) NOT NULL,
-    teacherSex int NOT NULL,
-    teacherSubjectID varchar(50) NOT NULL,
-    teacherType int NOT NULL,
-    teacherContact longtext,
-    PRIMARY KEY (teacherID),
-    FOREIGN KEY (teacherSubjectID) REFERENCES subjects(subjectID)
-   );
-   ```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-3. 课程表 courses(courseID, courseName, courseHour, courseSelectedNum, courseTarget, courseType, courseTime)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-   | 属性名            | 数据类型      | 键型 | 非空 | 默认值 | 备注                     |
-   | ----------------- | :------------ | :--- | :--- | ------ | :----------------------- |
-   | courseID          | varchar(50)   | 主键 | 是   |        | 课程id                   |
-   | courseName        | nvarchar(200) |      | 是   |        | 课程名                   |
-   | courseHour        | int           |      | 是   | 32     | 课时                     |
-   | courseSelectedNum | int           |      | 是   | 0      | 选课人数                 |
-   | courseTarget      | int           |      | 是   |        | 授课对象，0本科1研究生   |
-   | courseType        | int           |      | 是   |        | 课程类型，0必修课1选修课 |
-   | courseTime        | nvarchar(MAX) |      | 是   |        | 授课时间                 |
+### Code Splitting
 
-   ```sql
-   CREATE TABLE courses (
-       courseID varchar(50) NOT NULL,
-       courseName nvarchar(200) NOT NULL,
-       courseHour int default 32  NOT NULL,
-       courseSelectedNum int default 0 NOT NULL,
-       courseTarget int NOT NULL,
-       courseType int NOT NULL,
-       courseTime nvarchar(MAX) NOT NULL,
-       PRIMARY KEY (`courseID`)
-   );
-   ```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-4. 学科表 subjects(subjectID, subjectName)
+### Analyzing the Bundle Size
 
-   | 属性名      | 数据类型      | 键型 | 非空 | 默认值 | 备注   |
-   | ----------- | :------------ | :--- | :--- | ------ | :----- |
-   | subjectID   | varchar(50)   | 主键 | 是   |        | 学科id |
-   | subjectName | nvarchar(200) |      | 是   |        | 学科名 |
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-      ```sql
-      CREATE TABLE subjects (
-          subjectID varchar(50) NOT NULL,
-          subjectName nvarchar(200) NOT NULL,
-          PRIMARY KEY (subjectID)
-      );
-      ```
+### Making a Progressive Web App
 
-##### 助教子系统表格
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-1. 助教志愿表 assistantVolunteers(volunteerID, volunteerTeacherID, volunteerStudentID, volunteerCourseID)
+### Advanced Configuration
 
-   | 属性名             | 数据类型    | 键型 | 非空 | 默认值 | 备注          |
-   | ------------------ | :---------- | :--- | :--- | ------ | :------------ |
-   | volunteerID        | int         | 主键 | 是   |        | 志愿id， 自增 |
-   | volunteerTeacherID | varchar(50) | 外键 | 是   |        | 志愿教师id    |
-   | volunteerStudentID | varchar(50) | 外键 | 是   |        | 志愿学生id    |
-   | volunteerCourseID  | varchar(50) | 外键 | 是   |        | 志愿课程id    |
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-      ```sql
-      CREATE TABLE assistantVolunteers (
-          
-      );
-      ```
+### Deployment
 
-2. 助教选定表 assistants(assistantID, assistantTeacherID, assistantStudentID, assistantCourseID, assistantRateID)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-   | 属性名             | 数据类型    | 键型 | 非空 | 默认值 | 备注          |
-   | ------------------ | :---------- | :--- | :--- | ------ | :------------ |
-   | assistantID        | int         | 主键 | 是   |        | 助教id， 自增 |
-   | assistantTeacherID | varchar(50) | 外键 | 是   |        | 助教教师id    |
-   | assistantStudentID | varchar(50) | 外键 | 是   |        | 助教学生id    |
-   | assistantCourseID  | varchar(50) | 外键 | 是   |        | 助教课程id    |
-   
-      ```sql
-      CREATE TABLE assistants (
-          
-      );
-      ```
-   
-3. 助教情况表 rates(rateID, rateAssistantID, rateSelf, rateTeacher)
+### `npm run build` fails to minify
 
-   | 属性名          | 数据类型    | 键型 | 非空 | 默认值 | 备注                   |
-   | --------------- | :---------- | :--- | :--- | ------ | :--------------------- |
-   | rateID          | int         | 主键 | 是   |        | 评定id， 自增          |
-   | rateAssistantID | int         | 外键 | 是   |        | 助教id                 |
-   | rateSelf        | varchar(50) |      | 是   |        | 助教工作自述           |
-   | rateTeacher     | varchar(50) |      | 是   |        | 授课教师评价           |
-   | rateResult      | int         |      | 是   |        | 评价结果，0合格1不合格 |
-
-      ```sql
-      CREATE TABLE rates (
-          
-      );
-      ```
-
-   
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

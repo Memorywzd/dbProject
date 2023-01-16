@@ -79,7 +79,7 @@ public class TeacherController implements AbstractTeacherController {
     @Override
     public boolean rateAcademicExchange(
             @RequestParam(value = "exchangeID") String exchangeID,
-            @RequestParam(value = "isValid") boolean isValid
+            @RequestParam(value = "teacherRate") boolean isValid
     ) {
         return DAOFactory.getDAO().getExchangeDAO().updateExchangeMentorValid(exchangeID, isValid);
     }

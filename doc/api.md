@@ -53,18 +53,28 @@
         * [reviewInfo](#i-example-request-reviewinfo)
 * [teacher](#teacher)
     1. [assignProject](#1-assignproject)
+        * [assignProject](#i-example-request-assignproject-1)
     1. [getAcademicExchangeList](#2-getacademicexchangelist)
+        * [getAcademicExchangeList](#i-example-request-getacademicexchangelist)
     1. [getAchievementList](#3-getachievementlist)
     1. [getCourseList](#4-getcourselist)
+        * [getCourseList](#i-example-request-getcourselist)
     1. [getProjectList](#5-getprojectlist)
+        * [getProjectList](#i-example-request-getprojectlist)
     1. [getRateList](#6-getratelist)
     1. [getStudentListByMentorID](#7-getstudentlistbymentorid)
+        * [getStudentListByMentorID](#i-example-request-getstudentlistbymentorid)
     1. [getVolunteerList](#8-getvolunteerlist)
+        * [getVolunteerList](#i-example-request-getvolunteerlist)
     1. [rateAcademicExchange](#9-rateacademicexchange)
+        * [rateAcademicExchange](#i-example-request-rateacademicexchange)
     1. [rateAssistant](#10-rateassistant)
+        * [rateAssistant](#i-example-request-rateassistant)
     1. [reviewAchievement](#11-reviewachievement)
     1. [selectAssistant](#12-selectassistant)
+        * [selectAssistant](#i-example-request-selectassistant)
     1. [submitCourse](#13-submitcourse)
+        * [submitCourse](#i-example-request-submitcourse)
 * [student](#student)
     1. [applyAcademicExchangeStatistics](#1-applyacademicexchangestatistics)
         * [applyAcademicExchangeStatistics](#i-example-request-applyacademicexchangestatistics)
@@ -82,6 +92,7 @@
         * [getAssistantStatus](#i-example-request-getassistantstatus)
     1. [getAttendProjectStatus](#8-getattendprojectstatus)
     1. [submitAttendProject](#9-submitattendproject)
+        * [submitAttendProject](#i-example-request-submitattendproject)
     1. [submitAcademicExchange](#10-submitacademicexchange)
         * [submitAcademicExchange](#i-example-request-submitacademicexchange)
     1. [submitAchievement](#11-submitachievement)
@@ -1267,6 +1278,39 @@ URL: {{host}}/teacher/assignProject
 
 
 
+***More example Requests/Responses:***
+
+
+#### I. Example Request: assignProject
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+| projectID | 1001 | str,项目id |
+| studentID | 0001 | str,学生id |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: assignProject
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
 ### 2. getAcademicExchangeList
 
 
@@ -1286,6 +1330,40 @@ URL: {{host}}/teacher/getAcademicExchangeList
 | Key | Value | Description |
 | --- | ------|-------------|
 | token |  | str,token |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getAcademicExchangeList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getAcademicExchangeList
+```js
+[
+    "Exchange{exchangeName='test', exchangeLocation='test', exchangeTime='test', exchangeReportName='test', exchangeImagePath='test', exchangeNote='test', isMentorValid=false, isLeaderValid=false}",
+    "Exchange{exchangeName='test', exchangeLocation='test', exchangeTime='test', exchangeReportName='test', exchangeImagePath='test', exchangeNote='test', isMentorValid=true, isLeaderValid=true}"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -1334,6 +1412,39 @@ URL: {{host}}/teacher/getCourseList
 
 
 
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getCourseList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getCourseList
+```js
+[
+    "Course{courseName='test', courseHour=48, courseSelectedNum=100, courseTarget=0, courseType=0, courseTime='test', coursePriority=2}"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
 ### 5. getProjectList
 
 
@@ -1353,6 +1464,39 @@ URL: {{host}}/teacher/getProjectList
 | Key | Value | Description |
 | --- | ------|-------------|
 | token |  | str,token |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getProjectList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getProjectList
+```js
+[
+    "Project{projectID='1001', projectSubjectID='1001', projectMentorID='1001', projectType='test', projectName='test', projectFund=10.1}"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -1402,6 +1546,40 @@ URL: {{host}}/teacher/getStudentListByMentorID
 
 
 
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getStudentListByMentorID
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+| mentorID | 1001 | str,导师id |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getStudentListByMentorID
+```js
+[
+    "学生ID：0002 学生姓名：test"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
 ### 8. getVolunteerList
 
 
@@ -1422,6 +1600,40 @@ URL: {{host}}/teacher/getVolunteerList
 | --- | ------|-------------|
 | token |  | str,token |
 | courseID |  | str,课程id |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getVolunteerList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+| courseID | 1001 | str,课程id |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getVolunteerList
+```js
+[
+    "Student{studentId='0001', studentName='张三', sex=0, MentorId='null', assistantStatus=false, assistantRateStatus=false, exchangeNum=0}"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -1449,6 +1661,39 @@ URL: {{host}}/teacher/rateAcademicExchange
 
 
 
+***More example Requests/Responses:***
+
+
+#### I. Example Request: rateAcademicExchange
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+| exchangeID | 2 | str,学术交流id |
+| teacherRate | true | boolean,是否评定 |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: rateAcademicExchange
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
 ### 10. rateAssistant
 
 
@@ -1470,6 +1715,39 @@ URL: {{host}}/teacher/rateAssistant
 | token |  | str,token |
 | rateID |  | str,评定id |
 | teacherRate |  | str,教师评价 |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: rateAssistant
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+| rateID | 4 | str,评定id |
+| teacherRate | test | str,教师评价 |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: rateAssistant
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -1521,6 +1799,38 @@ URL: {{host}}/teacher/selectAssistant
 
 
 
+***More example Requests/Responses:***
+
+
+#### I. Example Request: selectAssistant
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+| volunteerID | 1 | str,助教id |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: selectAssistant
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
 ### 13. submitCourse
 
 
@@ -1548,6 +1858,45 @@ URL: {{host}}/teacher/submitCourse
 | courseType |  | int,课程类型，0-必修课，1-选修课 |
 | courseTime |  | str,授课时间 |
 | coursePriority |  | int,课程优先级 |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: submitCourse
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+| CourseID | 1002 | str,课程id |
+| courseName | test1 | str,课程名 |
+| courseHour | 64 | int,课时 |
+| courseSelectedNum | 200 | int,选课人数 |
+| courseTarget | 1 | int,授课对象，0-本科，1-研究生 |
+| courseType | 1 | int,课程类型，0-必修课，1-选修课 |
+| courseTime | test | str,授课时间 |
+| coursePriority | 5 | int,课程优先级 |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: submitCourse
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -1999,6 +2348,41 @@ URL: {{host}}/student/getPsubmitAttendProjectrojectList
 
 
 
+***More example Requests/Responses:***
+
+
+#### I. Example Request: submitAttendProject
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | student-token | str,token |
+| AttendanceTime | test | str,参与时间 |
+| AttendanceTask | test | str,参与项目 |
+| AttendanceFund | 20.0 | double,参与资金 |
+| AttendanceID | 2 | int,参与id |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: submitAttendProject
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
 ### 10. submitAcademicExchange
 
 
@@ -2097,4 +2481,4 @@ URL: {{host}}/student/submitAchievement
 ---
 [Back to top](#new-collection)
 
->Generated at 2023-01-16 20:02:46 by [docgen](https://github.com/thedevsaddam/docgen)
+>Generated at 2023-01-16 20:34:07 by [docgen](https://github.com/thedevsaddam/docgen)

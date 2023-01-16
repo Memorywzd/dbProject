@@ -200,7 +200,7 @@ public class AssistantDAO extends DAO implements AbstractAssistantDAO {
     public boolean updateAssistantRate(String rateID, String newRate) {
         PreparedStatement stmt = null;
         Connection conn = null;
-        String sql = "UPDATE rates SET rateTeacher = ? WHERE rateID = ?";
+        String sql = "UPDATE rates SET rateTeacher = ? , isTeacherRated = 1 WHERE rateID = ?";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);

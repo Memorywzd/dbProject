@@ -22,7 +22,7 @@ public interface AbstractTeacherController {
     boolean selectAssistant(@RequestParam(value = "volunteerID") String volunteerID);
 
     @GetMapping("getRateList")
-    List<String> getRateList(@RequestParam(value = "courseID") String courseID);
+    List<String> getRateList(@RequestParam(value = "teacherID") String courseID);
 
     @GetMapping("rateAssistant")
     boolean rateAssistant(

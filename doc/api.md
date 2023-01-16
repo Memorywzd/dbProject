@@ -125,7 +125,7 @@ URL: {{host}}/app/login
 | --- | ------|-------------|
 | userID |  | str，userID,请注意不是username |
 | password |  | str，密码 |
-| role |  | int，身份 0-学生 1-教师 2-管理员 |
+| role |  | int，身份 0-学生 1-老师 2-导师 3-管理员 4-学科负责人 |
 
 
 
@@ -2331,7 +2331,7 @@ URL: {{host}}/student/getAttendProjectStatus
 ```bash
 Method: POST
 Type: 
-URL: {{host}}/student/getPsubmitAttendProjectrojectList
+URL: {{host}}/student/submitAttendProject
 ```
 
 
@@ -2481,4 +2481,4 @@ URL: {{host}}/student/submitAchievement
 ---
 [Back to top](#new-collection)
 
->Generated at 2023-01-16 20:34:07 by [docgen](https://github.com/thedevsaddam/docgen)
+>Generated at 2023-01-16 20:45:32 by [docgen](https://github.com/thedevsaddam/docgen)

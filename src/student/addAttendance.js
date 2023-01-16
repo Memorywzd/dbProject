@@ -30,19 +30,20 @@ export default function AddAttendance() {
 
 
     function  submitAttendance() {
+        const formData = new FormData();
+        formData.append("attendanceName", attendanceName);
+        formData.append("attendanceID", attendanceID);
+        formData.append("attendanceStudentID", attendanceStudentID);
+        formData.append("studentName", studentName);
+        formData.append("attendanceProjectID", attendanceProjectID);
+        formData.append("attendanceTime", attendanceTime);
+        formData.append("attendanceTask", attendanceTask);
+        formData.append("attendanceBudget", attendanceBudget);
+        formData.append("attendanceType", attendanceType);
+        formData.append("token", token);
+        
         axios
-            .post(serverURL + "/student/addAttendance", {
-                attendanceName: attendanceName,
-                attendanceID: attendanceID,
-                attendanceStudentID: attendanceStudentID,
-                studentName: studentName,
-                attendanceProjectID: attendanceProjectID,
-                attendanceTime: attendanceTime,
-                attendanceTask: attendanceTask,
-                attendanceBudget: attendanceBudget,
-                attendanceType: attendanceType,
-                token: token,
-            })
+            .post(serverURL + "/student/addAttendance", formData)
             .then((res) => {
                     console.log(res);
                     if (res.data.code === 200 && res.data === "true") {

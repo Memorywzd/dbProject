@@ -29,19 +29,20 @@ export default function AddExchange() {
 
 
     function submitExchange() {
+        const formData = new FormData();
+        formData.append("exchangeName", exchangeName);
+        formData.append("exchangeID", exchangeID);
+        formData.append("exchangeStudentID", exchangeStudentID);
+        formData.append("exchangeSubjectID", exchangeSubjectID);
+        formData.append("exchangeLocation", exchangeLocation);
+        formData.append("exchangeTime", exchangeTime);
+        formData.append("exchangeReportName", exchangeReportName);
+        formData.append("exchangeImagePath", exchangeImagePath);
+        formData.append("exchangeNote", exchangeNote);
+        formData.append("token", token);
+        
         axios
-            .post(serverURL + "/student/addExchange", {
-                exchangeName: exchangeName,
-                exchangeID: exchangeID,
-                exchangeStudentID: exchangeStudentID,
-                exchangeSubjectID: exchangeSubjectID,
-                exchangeLocation: exchangeLocation,
-                exchangeTime: exchangeTime,
-                exchangeReportName: exchangeReportName,
-                exchangeImagePath: exchangeImagePath,
-                exchangeNote: exchangeNote,
-                token: token,
-            })
+            .post(serverURL + "/student/addExchange", formData)
             .then((res) => {
                     console.log(res);
                     if (res.data.code === 200 && res.data === "true") {

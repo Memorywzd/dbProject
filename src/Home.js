@@ -123,13 +123,20 @@ function Home() {
                 state: { token: token }
             });
         }
+        //未实现此API AddLeader
         function addSubjectUser() {
             Navigate("/addSubjectUser", {
                 state: { token: token }
             });
         }
-        function addTutorUser() {
-            Navigate("/addTutorUser", {
+        //新加addLeaderUser
+        function addLeaderUser() {
+            Navigate("/addSubjectUser", {
+                state: { token: token }
+            });
+        }
+        function addMentorUser() {
+            Navigate("/addMentorUser", {
                 state: {token: token}
             });
         }
@@ -147,9 +154,9 @@ function Home() {
             <div>
                 <h1>研究生培养管理员登录成功</h1>
                 <p><button onClick={checkResult}>审核成果情况</button></p>
-                <p><button onClick={addSubjectUser}>新建学科负责人用户</button></p>
+                <p><button onClick={addLeaderUser}>新建学科负责人用户</button></p>
                 <p><button onClick={addTeacherUser}>新建授课教师用户</button></p>
-                <p><button onClick={addTutorUser}>新建导师用户</button></p>
+                <p><button onClick={addMentorUser}>新建导师用户</button></p>
                 <p><button onClick={addStudentUser}>新建研究生用户</button></p>
                 <p><button onClick={bindUser}>建立学生与导师联系</button></p>
                 <p><button onClick={addProject}>新建项目</button></p>

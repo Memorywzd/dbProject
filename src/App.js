@@ -13,6 +13,11 @@ import AddExchange from "./student/addExchange";
 // 新页面在这里导入
 import CheckInfo from "./leader/checkInfo";
 
+import AddMentorUser from './admin/addMentorUser';
+import BindUser from './admin/bindUser';
+import AddLeaderUser from './admin/addLeaderUser';
+
+
 // 结束导入新页面
 
 function App() {
@@ -21,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         {/* 新页面在这里添加 */}
+        
         <Route path="/addTeacherUser" element={<AddTeacherUser />} />
         <Route path="/addProject" element={<AddProject />} />
         <Route path="/addStudentUser" element={<AddStudentUser />} />
@@ -29,6 +35,9 @@ function App() {
         <Route path="/showAttendance" element={<ShowAttendance />} />
         <Route path="/addExchange" element={<AddExchange />} />
         <Route path="/checkInfo" element={<CheckInfo />} />
+        <Route path="/addMentorUser" element={<AddMentorUser />} />
+        <Route path="/bindUser" element={<BindUser />} />
+        <Route path="/addLeaderUser" element={<AddLeaderUser />} />
 
         {/* 结束添加新页面 */}
       </Routes>

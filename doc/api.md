@@ -1,6 +1,5 @@
 
-# New Collection
-
+# api
 
 
 <!--- If we have only one group/collection, then no need for the "ungrouped" heading -->
@@ -57,11 +56,13 @@
     1. [getAcademicExchangeList](#2-getacademicexchangelist)
         * [getAcademicExchangeList](#i-example-request-getacademicexchangelist)
     1. [getAchievementList](#3-getachievementlist)
+        * [getAchievementList](#i-example-request-getachievementlist)
     1. [getCourseList](#4-getcourselist)
         * [getCourseList](#i-example-request-getcourselist)
     1. [getProjectList](#5-getprojectlist)
         * [getProjectList](#i-example-request-getprojectlist)
     1. [getRateList](#6-getratelist)
+        * [getRateList](#i-example-request-getratelist)
     1. [getStudentListByMentorID](#7-getstudentlistbymentorid)
         * [getStudentListByMentorID](#i-example-request-getstudentlistbymentorid)
     1. [getVolunteerList](#8-getvolunteerlist)
@@ -71,6 +72,7 @@
     1. [rateAssistant](#10-rateassistant)
         * [rateAssistant](#i-example-request-rateassistant)
     1. [reviewAchievement](#11-reviewachievement)
+        * [reviewAchievement](#i-example-request-reviewachievement)
     1. [selectAssistant](#12-selectassistant)
         * [selectAssistant](#i-example-request-selectassistant)
     1. [submitCourse](#13-submitcourse)
@@ -96,6 +98,13 @@
     1. [submitAcademicExchange](#10-submitacademicexchange)
         * [submitAcademicExchange](#i-example-request-submitacademicexchange)
     1. [submitAchievement](#11-submitachievement)
+        * [award](#i-example-request-award)
+        * [paper](#ii-example-request-paper)
+        * [patent](#iii-example-request-patent)
+        * [platform](#iv-example-request-platform)
+        * [report](#v-example-request-report)
+        * [standard](#vi-example-request-standard)
+        * [textbook](#vii-example-request-textbook)
 
 --------
 
@@ -1390,6 +1399,40 @@ URL: {{host}}/teacher/getAchievementList
 
 
 
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getAchievementList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+| studentID | 0001 | str,学生id |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getAchievementList
+```js
+[
+    "test"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
 ### 4. getCourseList
 
 
@@ -1520,6 +1563,41 @@ URL: {{host}}/teacher/getRateList
 | --- | ------|-------------|
 | token |  | str,token |
 | courseID |  | str,课程id |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: getRateList
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+| teacherID | 1002 | str,课程id |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: getRateList
+```js
+[
+    "研究生姓名：test助教课程名称： test助教工作自述： test授课教师评价： test",
+    "研究生姓名：test助教课程名称： test助教工作自述： test1授课教师评价： test"
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -1769,10 +1847,44 @@ URL: {{host}}/teacher/reviewAchievement
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| token |  | str,token |
-| type |  | str:成果类型 |
-| achievementID |  | str,成果id |
-| isValid |  | boolean,是否有效 |
+| token | teacher-token | str,token |
+| type | award | str:成果类型,须为award,paper,patent,platform,report,standard,textbook |
+| achievementID | test | str,成果id |
+| isValid | 1 | boolean,是否有效 |
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: reviewAchievement
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | teacher-token | str,token |
+| type | award | str:成果类型 |
+| achievementID | test | str,成果id |
+| isValid | 1 | boolean,是否有效 |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: reviewAchievement
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 
@@ -2478,7 +2590,265 @@ URL: {{host}}/student/submitAchievement
 
 
 
+***More example Requests/Responses:***
+
+
+#### I. Example Request: award
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | student-token | str,token |
+| type | award | str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表 |
+| achievementID | test | str |
+| awardName | test | str |
+| awardLevel | test | str |
+| awardRanking | test | str |
+| awardPublishTime | test | str |
+| awardAttachment | test | str |
+| achievementStudentID | 0001 | str |
+
+
+
+***Body: None***
+
+
+
+#### I. Example Response: award
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+#### II. Example Request: paper
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | student-token | str,token |
+| type | paper | str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表 |
+| achievementID | test | str |
+| paperName | test | str |
+| paperPublication | test | str |
+| paperStatus | test | str |
+| paperPublishTime | test | str |
+| paperIndex | test | str |
+| paperBelong | test | str |
+| paperAttachment | test | str |
+| achievementStudentID | 0001 | str |
+
+
+
+***Body: None***
+
+
+
+#### II. Example Response: paper
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+#### III. Example Request: patent
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | student-token | str,token |
+| type | patent | str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表 |
+| achievementID | test | str |
+| patentName | test | str |
+| patentType | test | str |
+| patentID | test | str |
+| patentPublishTime | test | str |
+| patentState | test | str |
+| patentContribution | test | str |
+| patentAttachment | test | str |
+| achievementStudentID | 0001 | str |
+
+
+
+***Body: None***
+
+
+
+#### III. Example Response: patent
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+#### IV. Example Request: platform
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | student-token | str,token |
+| type | platform | str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表 |
+| achievementID | test | str |
+| platformName | test | str |
+| platformServiceOffice | test | str |
+| platformPublishTime | test | str |
+| platformContribution | test | str |
+| platformAttachment | test | str |
+| achievementStudentID | 0001 | str |
+
+
+
+***Body: None***
+
+
+
+#### IV. Example Response: platform
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+#### V. Example Request: report
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | student-token | str,token |
+| type | report | str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表 |
+| achievementID | test | str |
+| reportName | test | str |
+| reportServiceOffice | test | str |
+| reportPublishTime | test | str |
+| reportContribution | test | str |
+| reportAttachment | test | str |
+| achievementStudentID | 0001 | str |
+
+
+
+***Body: None***
+
+
+
+#### V. Example Response: report
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+#### VI. Example Request: standard
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | student-token | str,token |
+| type | standard | str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表 |
+| achievementID | test | str |
+| standardName | test | str |
+| standardLevel | test | str |
+| standardPublishTime | test | str |
+| standardAttachment | test | str |
+| achievementStudentID | 0001 | str |
+
+
+
+***Body: None***
+
+
+
+#### VI. Example Response: standard
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+#### VII. Example Request: textbook
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| token | student-token | str,token |
+| type | textbook | str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表 |
+| achievementID | test | str |
+| textbookName | test | str |
+| textbookPublishHouse | test | str |
+| textbookPublishTime | test | str |
+| textbookContribution | test | str |
+| textbookAttachment | test | str |
+| achievementStudentID | 0001 | str |
+
+
+
+***Body: None***
+
+
+
+#### VII. Example Response: textbook
+```js
+true
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
 ---
 [Back to top](#new-collection)
 
->Generated at 2023-01-16 20:45:32 by [docgen](https://github.com/thedevsaddam/docgen)
+>Generated at 2023-01-16 21:18:24 by [docgen](https://github.com/thedevsaddam/docgen)

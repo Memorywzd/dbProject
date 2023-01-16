@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4d60fc4-d9d1-434e-a879-e79b4caa4aa2" name="变更" comment="更新登录逻辑">
-      <change afterPath="$PROJECT_DIR$/src/leader/checkInfo.js" afterDir="false" />
+    <list default="true" id="b4d60fc4-d9d1-434e-a879-e79b4caa4aa2" name="变更" comment="完成post和get的示例，添加api文档">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/addStudentUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/addStudentUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/addTeacherUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/addTeacherUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/addAttendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/addAttendance.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +25,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "H:/dbProject",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
@@ -74,6 +71,7 @@
       <workItem from="1673846886383" duration="33000" />
       <workItem from="1673847148990" duration="3010000" />
       <workItem from="1673851336195" duration="26000" />
+      <workItem from="1673874894563" duration="340000" />
     </task>
     <task id="LOCAL-00001" summary="仅保留前端代码">
       <created>1673846707578</created>
@@ -103,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673856094855</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完成post和get的示例，添加api文档">
+      <created>1673874005193</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673874005193</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,9 +126,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="仅保留前端代码" />
     <MESSAGE value="优化项目文件" />
     <MESSAGE value="更新登录逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新登录逻辑" />
+    <MESSAGE value="完成post和get的示例，添加api文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成post和get的示例，添加api文档" />
   </component>
 </project>

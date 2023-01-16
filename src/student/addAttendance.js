@@ -3,51 +3,48 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Navigate, useLocation, NavLink } from "react-router-dom";
 
+const cache = localStorage;
 const serverURL = "http://az.pizzel.me";
-//const serverURL = "http://localhost:8080";
 
 export default function AddAttendance() {
     const location = useLocation();
-    const [token, setToken] = useState("");
-    const [attendanceName, setattendanceName] = useState("");
+
     const [attendanceID, setattendanceID] = useState("");
-    const [attendanceStudentID, setattendanceStudentID] = useState("");
-    const [studentName, setstudentName] = useState("");
-    const[attendanceProjectID, setattendanceProjectID] = useState("");
     const [attendanceTime, setattendanceTime] = useState("");
-    const[attendanceTask, setattendanceTask] = useState("");
-    const [attendanceBudget, setattendanceBudget] = useState("");
-    const [attendanceType, setattendanceType] = useState("");
+    const [attendanceTask, setattendanceTask] = useState("");
+    const [attendanceFund, setattendanceFund] = useState(0);
+
     const [isLogin, setIsLogin] = useState(false);
 
+    let token = cache.getItem("token");
+    function setToken(temp) {
+        token = temp;
+        console.log("token: " + token);
+    }
+
     useEffect(() => {
-        //判断是否登录
         if (location.state) {
-            console.log("登录成功");
+            console.log("已经登录");
+            console.log(location.state.token);
             setToken(location.state.token);
             setIsLogin(true);
         }
-    }, []);
+    }, [location.state]);
 
 
     function  submitAttendance() {
         const formData = new FormData();
-        formData.append("attendanceName", attendanceName);
         formData.append("attendanceID", attendanceID);
-        formData.append("attendanceStudentID", attendanceStudentID);
-        formData.append("studentName", studentName);
-        formData.append("attendanceProjectID", attendanceProjectID);
         formData.append("attendanceTime", attendanceTime);
         formData.append("attendanceTask", attendanceTask);
-        formData.append("attendanceBudget", attendanceBudget);
-        formData.append("attendanceType", attendanceType);
+
         formData.append("token", token);
         
         axios
-            .post(serverURL + "/student/addAttendance", formData)
+            .post(serverURL + "/student/submitAttendProject", formData)
             .then((res) => {
                     console.log(res);
-                    if (res.data.code === 200 && res.data === "true") {
+                    if (res.status === 200 && res.data === true) {
                         alert("添加成功")
                     }
                     else {
@@ -62,62 +59,13 @@ export default function AddAttendance() {
             {isLogin ? (
                 <div>
                     <form className="form">
-                        <label>学号:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入学号"
-                            onChange={(e) => {
-                                setattendanceStudentID(e.target.value);
-                            }}
-                        />
-
-                        <label>姓名:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入姓名"
-                            onChange={(e) => {
-                                setstudentName(e.target.value);
-                            }}
-                        />
-
-                        <label>学科id:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入学科id"
-                            onChange={(e) => {
-                                setattendanceProjectID(e.target.value);
-                            }}
-                        />
-
-                        <label>项目ID:</label>
+                        <label>参与项目ID:</label>
                         <input
                             className="input"
                             type="text"
                             placeholder="请输入项目ID"
                             onChange={(e) => {
                                 setattendanceID(e.target.value);
-                            }}
-                        />
-
-                        <label>项目名称:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入项目名称"
-                            onChange={(e) => {
-                                setattendanceName(e.target.value);
-                            }}
-                        />
-                        <label>项目类型:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入项目类型"
-                            onChange={(e) => {
-                                setattendanceType(e.target.value);
                             }}
                         />
                         <label>参与项目时间:</label>
@@ -144,7 +92,7 @@ export default function AddAttendance() {
                             type="text"
                             placeholder="请输入项目经费"
                             onChange={(e) => {
-                                setattendanceBudget(e.target.value);
+                                setattendanceFund(e.target.value);
                             }}
                         />
                     </form>

@@ -4,12 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4d60fc4-d9d1-434e-a879-e79b4caa4aa2" name="变更" comment="更新api文档">
+    <list default="true" id="b4d60fc4-d9d1-434e-a879-e79b4caa4aa2" name="变更" comment="更新主页">
+      <change afterPath="$PROJECT_DIR$/src/mentor/assignProject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mentor/rateExchange.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mentor/reviewAchievement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/student/addExchangeStatistics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/student/applyAchievement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/student/applyAttendance.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/student/applyVolunteer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/student/applyVolunteerRate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/student/getAssistantStatus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/student/getProjectStatus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/student/getVolunteerRateStatus.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/api.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/api.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/addProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/addProject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/addLeaderUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/addLeaderUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/admin/addStudentUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/addStudentUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leader/checkInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/leader/checkInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/addSubjectUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/student/addAttendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/addAttendance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/student/addExchange.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/addExchange.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/student/showAttendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/showAttendance.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,23 +46,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "H:/dbProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/dbProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="npm.调试">
     <configuration name="调试" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="start" />
@@ -64,6 +80,20 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="部署" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.调试" />
+      <item itemvalue="npm.部署" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -78,7 +108,7 @@
       <workItem from="1673846886383" duration="33000" />
       <workItem from="1673847148990" duration="3010000" />
       <workItem from="1673851336195" duration="26000" />
-      <workItem from="1673874894563" duration="3713000" />
+      <workItem from="1673874894563" duration="20115000" />
     </task>
     <task id="LOCAL-00001" summary="仅保留前端代码">
       <created>1673846707578</created>
@@ -122,7 +152,35 @@
       <option name="project" value="LOCAL" />
       <updated>1673875415311</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="更新说明">
+      <created>1673879355685</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673879355685</updated>
+    </task>
+    <task id="LOCAL-00008" summary="更新数据库说明">
+      <created>1673882066902</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673882066902</updated>
+    </task>
+    <task id="LOCAL-00009" summary="更新数据库说明">
+      <created>1673882488352</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673882488352</updated>
+    </task>
+    <task id="LOCAL-00010" summary="更新主页">
+      <created>1673884042398</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673884042398</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +204,9 @@
     <MESSAGE value="更新登录逻辑" />
     <MESSAGE value="完成post和get的示例，添加api文档" />
     <MESSAGE value="更新api文档" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新api文档" />
+    <MESSAGE value="更新说明" />
+    <MESSAGE value="更新数据库说明" />
+    <MESSAGE value="更新主页" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新主页" />
   </component>
 </project>

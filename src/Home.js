@@ -131,7 +131,7 @@ function Home() {
         }
         //新加addLeaderUser
         function addLeaderUser() {
-            Navigate("/addSubjectUser", {
+            Navigate("/addLeaderUser", {
                 state: { token: token }
             });
         }
@@ -283,7 +283,7 @@ function Home() {
                 state: { token: token }
             });
         }
-        function countCommuInfo() {
+        function submitExchangeStatistics() {
             Navigate("/countCommuInfo", {
                 state: {token: token}
             });
@@ -321,15 +321,14 @@ function Home() {
         return (
             <div >
                 <h1>研究生登录成功</h1>
-                <p><button onClick={countCommuInfo}>学术交流情况统计</button></p>
-                <p><button onClick={addExchange}>学术交流认定资料提交</button></p>
+                <p><button onClick={addExchange}>学术交流情况提交</button></p>
+                <p><button onClick={submitExchangeStatistics}>提交学术交流统计</button></p>
                 <p><button onClick={showTAVolun}>查看助教志愿选择结果</button></p>
                 <p><button onClick={chooseVolun}>助教志愿选择</button></p>
                 <p><button onClick={setTAForm}>助教评定表填写</button></p>
                 <p><button onClick={showTAEvaInfo}>查看助教评定结果</button></p>
                 <p><button onClick={showAttendance}>查看项目认定情况</button></p>
                 <p><button onClick={addAttendance}>项目认定表填写</button></p>
-                <p><button onClick={showStuCer}>成果认定情况</button></p>
                 <p><button onClick={setStuCer}>填写成果认定</button></p>
 
             </div>

@@ -122,7 +122,7 @@ export default function AddStudentUser() {
                         />
                     </form>
 
-                    <button onClick={submitStudent}>
+                    <button className="input" onClick={submitStudent}>
                             创建研究生用户
                     </button>
                 </div>

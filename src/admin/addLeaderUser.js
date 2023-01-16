@@ -10,17 +10,14 @@ const serverURL = "http://az.pizzel.me";
 export default function AddLeaderUser() {
     const location = useLocation();
 
-    const [teacherID, setTeacherID] = useState("");
-    const [teacherType, setTeacherType] = useState(0);
-    const [teacherName, setTeacherName] = useState("");
-    const [teacherSex, setTeacherSex] = useState(0);
-    const [teacherSubjectID, setTeacherSubjectID] = useState("");
+    const [adminID, setAdminID] = useState("");
+    const [adminType, setAdminType] = useState(1);
+    const [adminName, setAdminName] = useState("");
     const [password, setPassword] = useState("");
 
     const [isLogin, setIsLogin] = useState(false);
 
     let token = cache.getItem("token");
-
     function setToken(temp) {
         token = temp;
         console.log("token: " + token);
@@ -28,23 +25,23 @@ export default function AddLeaderUser() {
 
     useEffect(() => {
         if (location.state) {
-            console.log("登录成功");
+            console.log("已经登录");
+            console.log(location.state.token);
             setToken(location.state.token);
             setIsLogin(true);
         }
-    }, []);
+    }, [location.state]);
 
 
     function  submitLeader() {
         const formData = new FormData();
-        formData.append("teacherID", teacherID);
-        formData.append("teacherType", "0");
-        formData.append("teacherName", teacherName);
-        formData.append("teacherSex", teacherSex);
-        formData.append("teacherSubjectID", teacherSubjectID);
+        formData.append("adminID", adminID);
+        formData.append("adminType", adminType);
+        formData.append("adminName", adminName);
         formData.append("password", password);
+
         formData.append("token", token);
-        
+
         axios
             .post(serverURL + "/admin/addLeaderUser", formData)
             .then((res) => {
@@ -70,23 +67,7 @@ export default function AddLeaderUser() {
                             type="text"
                             placeholder="请输入负责人姓名"
                             onChange={(e) => {
-                                setTeacherName(e.target.value);
-                            }}
-                        />
-
-                        <label>学科负责人性别:</label>
-                        <select>
-                            <option value="0" onClick={() => setTeacherSex(0)}>男</option>
-                            <option value="1" onClick={() => setTeacherSex(1)}>女</option>
-                        </select>
-
-                        <label>负责人所属学科ID:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入负责人所属学科"
-                            onChange={(e) => {
-                                setTeacherSubjectID(e.target.value);
+                                setAdminName(e.target.value);
                             }}
                         />
 
@@ -96,7 +77,7 @@ export default function AddLeaderUser() {
                             type="text"
                             placeholder="请输入负责人账号"
                             onChange={(e) => {
-                                setTeacherID(e.target.value);
+                                setAdminID(e.target.value);
                             }}
                         />
 
@@ -104,16 +85,16 @@ export default function AddLeaderUser() {
                         <input
                             className="input"
                             type="password"
-                            placeholder="请输入教师密码"
+                            placeholder="请输入负责人密码"
                             onChange={(e) => {
                                 setPassword(e.target.value);
                             }}
                         />
-                     </form>
+                    </form>
 
-                        <button onClick={submitLeader}>
-                                创建学科负责人用户
-                        </button>
+                    <button onClick={submitLeader}>
+                        创建学科负责人用户
+                    </button>
                 </div>
             ) : (
                 <div>请登录</div>

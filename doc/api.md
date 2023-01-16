@@ -2140,7 +2140,7 @@ true
 ```bash
 Method: POST
 Type: 
-URL: {{host}}/student/applyVolunteer
+URL: {{host}}/student/applyVolunteer.js
 ```
 
 

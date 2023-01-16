@@ -1,5 +1,5 @@
 
-# api
+# api 
 
 
 <!--- If we have only one group/collection, then no need for the "ungrouped" heading -->
@@ -175,7 +175,8 @@ admin-token //登录成功返回token，前端应当保存这个token，在后�
 
 
 
-### 1. addStudentUser
+### 1. addStudentUser (outdate)
+
 
 
 

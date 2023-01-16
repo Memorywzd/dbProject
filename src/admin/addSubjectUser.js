@@ -3,10 +3,13 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Navigate, useLocation, NavLink } from "react-router-dom";
 
-const serverURL = "http://localhost:3054";
+const cache = localStorage;
+const serverURL = "http://az.pizzel.me";
+
 
 export default function AddSubjectUser() {
     const location = useLocation();
+    
     const [token, setToken] = useState("");
     const [adminName, setadminName] = useState("");
     const [adminID, setadminID] = useState("");

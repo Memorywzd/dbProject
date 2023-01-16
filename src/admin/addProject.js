@@ -10,11 +10,13 @@ const serverURL = "http://az.pizzel.me";
 export default function AddProject() {
     const location = useLocation();
 
-    const [projectName, setprojectName] = useState("");
-    const [MentorIdID, setMentorId] = useState("");
     const [projectID, setprojectID] = useState("");
-    const [projectFund, setprojectFund] = useState("");
+    const [projectSubjectID, setprojectSubjectID] = useState("");
+    const [projectMentorID, setprojectMentorID] = useState("");
     const [projectType, setprojectType] = useState("");
+    const [projectName, setprojectName] = useState("");
+    const [projectFund, setprojectFund] = useState(0);
+    
 
     const [isLogin, setIsLogin] = useState(false);
 
@@ -36,22 +38,25 @@ export default function AddProject() {
 
     function  submitProject() {
         const formData = new FormData();
-        formData.append("projectName", projectName);
-        formData.append("mentorId", MentorIdID);
         formData.append("projectID", projectID);
-        formData.append("projectFund", projectFund);
+        formData.append("projectSubjectID", projectSubjectID);
+        formData.append("projectMentorID", projectMentorID);
+        formData.append("projectName", projectName);
         formData.append("projectType", projectType);
+        formData.append("projectFund", projectFund);
+        
+
         formData.append("token", token);
         
         axios
-            .post(serverURL + "/admin/addProject", formData)
+            .post(serverURL + "/admin/assignProject", formData)
             .then((res) => {
                     console.log(res);
                     if (res.data.code === 200 && res.data === "true") {
                         alert("添加成功")
                     }
                     else {
-                        alert("添加失败")
+                        alert("分配失败")
                     }
                 }
             );
@@ -71,7 +76,26 @@ export default function AddProject() {
                                 setprojectID(e.target.value);
                             }}
                         />
+                        <label>项目学科:</label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="请输入项目学科"
+                            onChange={(e) => {
+                                setprojectSubjectID(e.target.value);
+                            }}
+                        />
 
+                        <label>项目负责人（导师）ID:</label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="请输入导师ID"
+                            onChange={(e) => {
+                                setprojectMentorID(e.target.value);
+                            }}
+                        />
+                        
                         <label>项目名称:</label>
                         <input
                             className="input"
@@ -81,6 +105,8 @@ export default function AddProject() {
                                 setprojectName(e.target.value);
                             }}
                         />
+
+                        
 
                         <label>项目类型:</label>
                         <input
@@ -92,15 +118,7 @@ export default function AddProject() {
                             }}
                         />
 
-                        <label>项目负责人（导师）ID:</label>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="请输入导师ID"
-                            onChange={(e) => {
-                                setMentorId(e.target.value);
-                            }}
-                        />
+                        
 
                         <label>项目经费:</label>
                         <input

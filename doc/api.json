@@ -1,0 +1,5289 @@
+{
+	"info": {
+		"_postman_id": "083ddbd1-c75b-45ee-9841-863a40613387",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25344669"
+	},
+	"item": [
+		{
+			"name": "app",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/app/login?userID&password&role",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"app",
+								"login"
+							],
+							"query": [
+								{
+									"key": "userID",
+									"value": null,
+									"description": "str，userID,请注意不是username"
+								},
+								{
+									"key": "password",
+									"value": null,
+									"description": "str，密码"
+								},
+								{
+									"key": "role",
+									"value": null,
+									"description": "int，身份 0-学生 1-老师 2-导师 3-管理员 4-学科负责人"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "succeed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/app/login?userID=2001&password=admin&role=2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"app",
+										"login"
+									],
+									"query": [
+										{
+											"key": "userID",
+											"value": "2001"
+										},
+										{
+											"key": "password",
+											"value": "admin"
+										},
+										{
+											"key": "role",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 01:49:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "admin-token //登录成功返回token，前端应当保存这个token，在后续流程中进行验证，请注意，后续流程中，token不需要载入请求头，只需作为请求参数传递即可"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "addStudentUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/addStudentUser?token&studentID&studentType&studentName&studentSex&studentMentorId&studentAssistantStatus&studentAssistantRateStatus&studentExchangeNum&password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"addStudentUser"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "studentID",
+									"value": null,
+									"description": "str,学号，uid"
+								},
+								{
+									"key": "studentType",
+									"value": null,
+									"description": "int,学生类型，0-专硕，1-学硕，2-博士"
+								},
+								{
+									"key": "studentName",
+									"value": null,
+									"description": "str,学生姓名"
+								},
+								{
+									"key": "studentSex",
+									"value": null,
+									"description": "int,性别，0-男，1-女"
+								},
+								{
+									"key": "studentMentorId",
+									"value": null,
+									"description": "str,导师工号"
+								},
+								{
+									"key": "studentAssistantStatus",
+									"value": null,
+									"description": "int,是否做过助教，0-否，1-是"
+								},
+								{
+									"key": "studentAssistantRateStatus",
+									"value": null,
+									"description": "int,助教评价，0-未评价，1-已评价"
+								},
+								{
+									"key": "studentExchangeNum",
+									"value": null,
+									"description": "int,交换次数"
+								},
+								{
+									"key": "password",
+									"value": null,
+									"description": "str,密码"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addStudentUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/addStudentUser?token=admin-token&studentID=0002&studentType=0&studentName=test&studentSex=0&studentMentorId=1001&studentAssistantStatus=0&studentAssistantRateStatus=1&studentExchangeNum=0&password=passwd",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"addStudentUser"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										},
+										{
+											"key": "studentID",
+											"value": "0002",
+											"description": "str,学号，uid"
+										},
+										{
+											"key": "studentType",
+											"value": "0",
+											"description": "int,学生类型，0-专硕，1-学硕，2-博士"
+										},
+										{
+											"key": "studentName",
+											"value": "test",
+											"description": "str,学生姓名"
+										},
+										{
+											"key": "studentSex",
+											"value": "0",
+											"description": "int,性别，0-男，1-女"
+										},
+										{
+											"key": "studentMentorId",
+											"value": "1001",
+											"description": "str,导师工号"
+										},
+										{
+											"key": "studentAssistantStatus",
+											"value": "0",
+											"description": "int,是否做过助教，0-否，1-是"
+										},
+										{
+											"key": "studentAssistantRateStatus",
+											"value": "1",
+											"description": "int,助教评价，0-未评价，1-已评价"
+										},
+										{
+											"key": "studentExchangeNum",
+											"value": "0",
+											"description": "int,交换次数"
+										},
+										{
+											"key": "password",
+											"value": "passwd",
+											"description": "str,密码"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:11:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true // 返回成功"
+						}
+					]
+				},
+				{
+					"name": "addTeacherUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/addTeacherUser?token&teacherID&teacherType&teacherName&teacherSex&teacherSubjectID&password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"addTeacherUser"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "teacherID",
+									"value": null,
+									"description": "str,教师id"
+								},
+								{
+									"key": "teacherType",
+									"value": null,
+									"description": "int,教师类型，0-授课教师，1-导师"
+								},
+								{
+									"key": "teacherName",
+									"value": null,
+									"description": "str,教师姓名"
+								},
+								{
+									"key": "teacherSex",
+									"value": null,
+									"description": "int,教师性别，0-男，1-女"
+								},
+								{
+									"key": "teacherSubjectID",
+									"value": null,
+									"description": "str,教师所教授科目id"
+								},
+								{
+									"key": "password",
+									"value": null,
+									"description": "str,密码"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addTeacherUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/addTeacherUser?token=admin-token&teacherID=1001&teacherType=0&teacherName=test&teacherSex=0&teacherSubjectID=1001&password=passwd",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"addTeacherUser"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token"
+										},
+										{
+											"key": "teacherID",
+											"value": "1001"
+										},
+										{
+											"key": "teacherType",
+											"value": "0"
+										},
+										{
+											"key": "teacherName",
+											"value": "test"
+										},
+										{
+											"key": "teacherSex",
+											"value": "0"
+										},
+										{
+											"key": "teacherSubjectID",
+											"value": "1001"
+										},
+										{
+											"key": "password",
+											"value": "passwd"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "true //成功"
+						}
+					]
+				},
+				{
+					"name": "assignProject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/assignProject?token=admin-token&projectID=1001&projectSubjectID=1001&projectMentorID=1001&projectType=test&projectName=test&projectFund=10.1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"assignProject"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								},
+								{
+									"key": "projectID",
+									"value": "1001",
+									"description": "str,评定id"
+								},
+								{
+									"key": "projectSubjectID",
+									"value": "1001",
+									"description": "str,项目学科id"
+								},
+								{
+									"key": "projectMentorID",
+									"value": "1001",
+									"description": "str,项目导师id"
+								},
+								{
+									"key": "projectType",
+									"value": "test",
+									"description": "str,项目类型"
+								},
+								{
+									"key": "projectName",
+									"value": "test",
+									"description": "str,项目名称"
+								},
+								{
+									"key": "projectFund",
+									"value": "10.1",
+									"description": "double,项目资金"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "assignProject",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/assignProject?token=admin-token&projectID=1001&projectSubjectID=1001&projectMentorID=1001&projectType=test&projectName=test&projectFund=10.1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"assignProject"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										},
+										{
+											"key": "projectID",
+											"value": "1001",
+											"description": "str,评定id"
+										},
+										{
+											"key": "projectSubjectID",
+											"value": "1001",
+											"description": "str,项目学科id"
+										},
+										{
+											"key": "projectMentorID",
+											"value": "1001",
+											"description": "str,项目导师id"
+										},
+										{
+											"key": "projectType",
+											"value": "test",
+											"description": "str,项目类型"
+										},
+										{
+											"key": "projectName",
+											"value": "test",
+											"description": "str,项目名称"
+										},
+										{
+											"key": "projectFund",
+											"value": "10.1",
+											"description": "double,项目资金"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:16:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true //成功"
+						}
+					]
+				},
+				{
+					"name": "bindMentorWithStudent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/bindMentorWithStudent?token=admin-token&studentID=0002&mentorID=1001",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"bindMentorWithStudent"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								},
+								{
+									"key": "studentID",
+									"value": "0002",
+									"description": "str,学生id"
+								},
+								{
+									"key": "mentorID",
+									"value": "1001",
+									"description": "str,导师id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "bindMentorWithStudent",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/bindMentorWithStudent?token=admin-token&studentID=0002&mentorID=1001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"bindMentorWithStudent"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										},
+										{
+											"key": "studentID",
+											"value": "0002",
+											"description": "str,学生id"
+										},
+										{
+											"key": "mentorID",
+											"value": "1001",
+											"description": "str,导师id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:19:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "editAcademicExchange",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/editAcademicExchange?token=admin-token&num=9",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"editAcademicExchange"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								},
+								{
+									"key": "num",
+									"value": "9",
+									"description": "int,更新后的次数"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "editAcademicExchange",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/editAcademicExchange?token=admin-token&num=9",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"editAcademicExchange"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										},
+										{
+											"key": "num",
+											"value": "9",
+											"description": "int,更新后的次数"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:21:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "editCourseList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/editCourseList?token=admin-token&courseID=1001&priority=2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"editCourseList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								},
+								{
+									"key": "courseID",
+									"value": "1001",
+									"description": "str,课程id"
+								},
+								{
+									"key": "priority",
+									"value": "2",
+									"description": "int,新的优先级"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "editCourseList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/editCourseList?token=admin-token&courseID=1001&priority=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"editCourseList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										},
+										{
+											"key": "courseID",
+											"value": "1001",
+											"description": "str,课程id"
+										},
+										{
+											"key": "priority",
+											"value": "2",
+											"description": "int,新的优先级"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:24:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "editProjectFounding",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/editProjectFounding?token=admin-token&num=20.0",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"editProjectFounding"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								},
+								{
+									"key": "num",
+									"value": "20.0",
+									"description": "double,新的项目资金"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "editProjectFounding",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/editProjectFounding?token=admin-token&num=20.0",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"editProjectFounding"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										},
+										{
+											"key": "num",
+											"value": "20.0",
+											"description": "double,新的项目资金"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:25:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "editVolunteerNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/editVolunteerNumber?token=admin-token&num=100",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"editVolunteerNumber"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								},
+								{
+									"key": "num",
+									"value": "100",
+									"description": "int,新的助教数量"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "editVolunteerNumber",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/editVolunteerNumber?token=admin-token&num=100",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"editVolunteerNumber"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										},
+										{
+											"key": "num",
+											"value": "100",
+											"description": "int,新的助教数量"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:27:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "getAcademicExchange",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/getAcademicExchange?token=admin-token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"getAcademicExchange"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAcademicExchange",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/getAcademicExchange?token=admin-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"getAcademicExchange"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:28:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "9"
+						}
+					]
+				},
+				{
+					"name": "getMentorList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/getMentorList?token=admin-token&subjectID=1001",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"getMentorList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								},
+								{
+									"key": "subjectID",
+									"value": "1001",
+									"description": "str,科目id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getMentorList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/getMentorList?token=admin-token&subjectID=1001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"getMentorList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										},
+										{
+											"key": "subjectID",
+											"value": "1001",
+											"description": "str,科目id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:30:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"导师ID：1002 导师姓名：test\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getProjectFounding",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/getProjectFounding?token=admin-token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"getProjectFounding"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getProjectFounding",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/getProjectFounding?token=admin-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"getProjectFounding"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:31:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "20"
+						}
+					]
+				},
+				{
+					"name": "getStudentList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/getStudentList?token=admin-token&subjectID=1001",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"getStudentList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								},
+								{
+									"key": "subjectID",
+									"value": "1001",
+									"description": "str,科目id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getStudentList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/getStudentList?token=admin-token&subjectID=1001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"getStudentList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										},
+										{
+											"key": "subjectID",
+											"value": "1001",
+											"description": "str,科目id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:33:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"学生ID：0002 学生姓名：test\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getSystemAcademicExchangeList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/getSystemAcademicExchangeList?token=admin-token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"getSystemAcademicExchangeList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getSystemAcademicExchangeList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/getSystemAcademicExchangeList?token=admin-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"getSystemAcademicExchangeList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:54:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Exchange{exchangeName='test', exchangeLocation='test', exchangeTime='test', exchangeReportName='test', exchangeImagePath='test', exchangeNote='test', isMentorValid=false, isLeaderValid=false}\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getSystemCourseList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/getSystemCourseList?token=admin-token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"getSystemCourseList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getSystemCourseList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/getSystemCourseList?token=admin-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"getSystemCourseList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:56:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Course{courseName='test', courseHour=48, courseSelectedNum=100, courseTarget=0, courseType=0, courseTime='test', coursePriority=2}\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getSystemProjectList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/getSystemProjectList?token=admin-token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"getSystemProjectList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getSystemProjectList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/getSystemProjectList?token=admin-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"getSystemProjectList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:56:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Project{projectID='1001', projectSubjectID='1001', projectMentorID='1001', projectType='test', projectName='test', projectFund=10.1}\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getSystemSubjectList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/getSystemSubjectList?token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"getSystemSubjectList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getSystemSubjectList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/getSystemSubjectList?token=admin-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"getSystemSubjectList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:57:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Subject{subjectID='1001', subjectName='test'}\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getSystemUserList",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/getSystemUserList?token=admin-token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"getSystemUserList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getSystemUserList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/getSystemUserList?token=admin-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"getSystemUserList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:57:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"用户名：2001 用户姓名：admin 身份：admin\",\n    \"用户名：0002 用户姓名：test 身份：student\",\n    \"用户名：1001 用户姓名：test 身份：teacher\",\n    \"用户名：1002 用户姓名：test 身份：mentor\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getVolunteerNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/getVolunteerNumber?token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"getVolunteerNumber"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getVolunteerNumber",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/getVolunteerNumber?token=admin-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"getVolunteerNumber"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:58:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "100"
+						}
+					]
+				},
+				{
+					"name": "reviewInfo(Not implemented)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/reviewInfo?token=admin-token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"reviewInfo"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "admin-token",
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "reviewInfo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/reviewInfo?token=admin-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"reviewInfo"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "admin-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 09:58:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "false"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "teacher",
+			"item": [
+				{
+					"name": "assignProject",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/assignProject?token&projectID&studentID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"assignProject"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "projectID",
+									"value": null,
+									"description": "str,项目id"
+								},
+								{
+									"key": "studentID",
+									"value": null,
+									"description": "str,学生id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "assignProject",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/assignProject?token=teacher-token&projectID=1001&studentID=0001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"assignProject"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										},
+										{
+											"key": "projectID",
+											"value": "1001",
+											"description": "str,项目id"
+										},
+										{
+											"key": "studentID",
+											"value": "0001",
+											"description": "str,学生id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:09:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "getAcademicExchangeList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/getAcademicExchangeList?token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"getAcademicExchangeList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAcademicExchangeList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/getAcademicExchangeList?token=teacher-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"getAcademicExchangeList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:13:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Exchange{exchangeName='test', exchangeLocation='test', exchangeTime='test', exchangeReportName='test', exchangeImagePath='test', exchangeNote='test', isMentorValid=false, isLeaderValid=false}\",\n    \"Exchange{exchangeName='test', exchangeLocation='test', exchangeTime='test', exchangeReportName='test', exchangeImagePath='test', exchangeNote='test', isMentorValid=true, isLeaderValid=true}\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getAchievementList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/getAchievementList?token&studentID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"getAchievementList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "studentID",
+									"value": null,
+									"description": "str,学生id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAchievementList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/getAchievementList?token=teacher-token&studentID=0001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"getAchievementList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										},
+										{
+											"key": "studentID",
+											"value": "0001",
+											"description": "str,学生id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 13:04:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"test\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getCourseList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/getCourseList?token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"getCourseList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getCourseList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/getCourseList?token=teacher-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"getCourseList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:14:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Course{courseName='test', courseHour=48, courseSelectedNum=100, courseTarget=0, courseType=0, courseTime='test', coursePriority=2}\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getProjectList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/getProjectList?token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"getProjectList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getProjectList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/getProjectList?token=teacher-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"getProjectList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:15:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Project{projectID='1001', projectSubjectID='1001', projectMentorID='1001', projectType='test', projectName='test', projectFund=10.1}\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getRateList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/getRateList?token&courseID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"getRateList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "courseID",
+									"value": null,
+									"description": "str,课程id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getRateList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/getRateList?token=teacher-token&teacherID=1002",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"getRateList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										},
+										{
+											"key": "teacherID",
+											"value": "1002",
+											"description": "str,课程id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 13:08:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"研究生姓名：test助教课程名称： test助教工作自述： test授课教师评价： test\",\n    \"研究生姓名：test助教课程名称： test助教工作自述： test1授课教师评价： test\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getStudentListByMentorID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/getStudentListByMentorID?token&mentorID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"getStudentListByMentorID"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "mentorID",
+									"value": null,
+									"description": "str,导师id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getStudentListByMentorID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/getStudentListByMentorID?token=teacher-token&mentorID=1001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"getStudentListByMentorID"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										},
+										{
+											"key": "mentorID",
+											"value": "1001",
+											"description": "str,导师id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:18:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"学生ID：0002 学生姓名：test\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getVolunteerList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/getVolunteerList?token&courseID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"getVolunteerList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "courseID",
+									"value": null,
+									"description": "str,课程id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getVolunteerList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/getVolunteerList?token=teacher-token&courseID=1001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"getVolunteerList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										},
+										{
+											"key": "courseID",
+											"value": "1001",
+											"description": "str,课程id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:21:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Student{studentId='0001', studentName='张三', sex=0, MentorId='null', assistantStatus=false, assistantRateStatus=false, exchangeNum=0}\"\n]"
+						}
+					]
+				},
+				{
+					"name": "rateAcademicExchange",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/rateAcademicExchange?token&exchangeID&teacherRate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"rateAcademicExchange"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "exchangeID",
+									"value": null,
+									"description": "str,学术交流id"
+								},
+								{
+									"key": "teacherRate",
+									"value": null,
+									"description": "boolean,是否评定"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rateAcademicExchange",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/rateAcademicExchange?token=teacher-token&exchangeID=2&teacherRate=true",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"rateAcademicExchange"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										},
+										{
+											"key": "exchangeID",
+											"value": "2",
+											"description": "str,学术交流id"
+										},
+										{
+											"key": "teacherRate",
+											"value": "true",
+											"description": "boolean,是否评定"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:24:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "rateAssistant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/rateAssistant?token&rateID&teacherRate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"rateAssistant"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "rateID",
+									"value": null,
+									"description": "str,评定id"
+								},
+								{
+									"key": "teacherRate",
+									"value": null,
+									"description": "str,教师评价"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rateAssistant",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/rateAssistant?token=teacher-token&rateID=4&teacherRate=test",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"rateAssistant"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										},
+										{
+											"key": "rateID",
+											"value": "4",
+											"description": "str,评定id"
+										},
+										{
+											"key": "teacherRate",
+											"value": "test",
+											"description": "str,教师评价"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:27:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "reviewAchievement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/reviewAchievement?token=teacher-token&type=award&achievementID=test&isValid=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"reviewAchievement"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "teacher-token",
+									"description": "str,token"
+								},
+								{
+									"key": "type",
+									"value": "award",
+									"description": "str:成果类型,须为award,paper,patent,platform,report,standard,textbook"
+								},
+								{
+									"key": "achievementID",
+									"value": "test",
+									"description": "str,成果id"
+								},
+								{
+									"key": "isValid",
+									"value": "1",
+									"description": "boolean,是否有效"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "reviewAchievement",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/reviewAchievement?token=teacher-token&type=award&achievementID=test&isValid=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"reviewAchievement"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										},
+										{
+											"key": "type",
+											"value": "award",
+											"description": "str:成果类型"
+										},
+										{
+											"key": "achievementID",
+											"value": "test",
+											"description": "str,成果id"
+										},
+										{
+											"key": "isValid",
+											"value": "1",
+											"description": "boolean,是否有效"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 13:01:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "selectAssistant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/selectAssistant?token&colunteerID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"selectAssistant"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "colunteerID",
+									"value": null,
+									"description": "str,助教id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "selectAssistant",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/selectAssistant?token=teacher-token&volunteerID=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"selectAssistant"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										},
+										{
+											"key": "volunteerID",
+											"value": "1",
+											"description": "str,助教id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:29:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "submitCourse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/submitCourse?token&CourseID&courseName&courseHour&courseSelectedNum&courseTarget&courseType&courseTime&coursePriority",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"submitCourse"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "CourseID",
+									"value": null,
+									"description": "str,课程id"
+								},
+								{
+									"key": "courseName",
+									"value": null,
+									"description": "str,课程名"
+								},
+								{
+									"key": "courseHour",
+									"value": null,
+									"description": "int,课时"
+								},
+								{
+									"key": "courseSelectedNum",
+									"value": null,
+									"description": "int,选课人数"
+								},
+								{
+									"key": "courseTarget",
+									"value": null,
+									"description": "int,授课对象，0-本科，1-研究生"
+								},
+								{
+									"key": "courseType",
+									"value": null,
+									"description": "int,课程类型，0-必修课，1-选修课"
+								},
+								{
+									"key": "courseTime",
+									"value": null,
+									"description": "str,授课时间"
+								},
+								{
+									"key": "coursePriority",
+									"value": null,
+									"description": "int,课程优先级"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "submitCourse",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/submitCourse?token=teacher-token&CourseID=1002&courseName=test1&courseHour=64&courseSelectedNum=200&courseTarget=1&courseType=1&courseTime=test&coursePriority=5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"submitCourse"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "teacher-token",
+											"description": "str,token"
+										},
+										{
+											"key": "CourseID",
+											"value": "1002",
+											"description": "str,课程id"
+										},
+										{
+											"key": "courseName",
+											"value": "test1",
+											"description": "str,课程名"
+										},
+										{
+											"key": "courseHour",
+											"value": "64",
+											"description": "int,课时"
+										},
+										{
+											"key": "courseSelectedNum",
+											"value": "200",
+											"description": "int,选课人数"
+										},
+										{
+											"key": "courseTarget",
+											"value": "1",
+											"description": "int,授课对象，0-本科，1-研究生"
+										},
+										{
+											"key": "courseType",
+											"value": "1",
+											"description": "int,课程类型，0-必修课，1-选修课"
+										},
+										{
+											"key": "courseTime",
+											"value": "test",
+											"description": "str,授课时间"
+										},
+										{
+											"key": "coursePriority",
+											"value": "5",
+											"description": "int,课程优先级"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:31:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "applyAcademicExchangeStatistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/applyAcademicExchangeStatistics?token&exchangeID&studentID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"applyAcademicExchangeStatistics"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "exchangeID",
+									"value": null,
+									"description": "str,交流项目id"
+								},
+								{
+									"key": "studentID",
+									"value": null,
+									"description": "str,交流项目学生id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "applyAcademicExchangeStatistics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/applyAcademicExchangeStatistics?token=student-token&exchangeID=2&studentID=0002",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"applyAcademicExchangeStatistics"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "exchangeID",
+											"value": "2",
+											"description": "str,交流项目id"
+										},
+										{
+											"key": "studentID",
+											"value": "0002",
+											"description": "str,交流项目学生id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 10:14:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "applyAssistantRate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/applyAssistantRate?token=&rateAssistantID=&rateSelf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"applyAssistantRate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "",
+									"description": "str,token"
+								},
+								{
+									"key": "rateAssistantID",
+									"value": "",
+									"description": "str,助教评价id"
+								},
+								{
+									"key": "rateSelf",
+									"value": null,
+									"description": "str,助教工作自述"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "applyAssistantRate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/applyAssistantRate?token=student-token&rateAssistantID=1&rateSelf=test1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"applyAssistantRate"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "rateAssistantID",
+											"value": "1",
+											"description": "str,助教评价id"
+										},
+										{
+											"key": "rateSelf",
+											"value": "test1",
+											"description": "str,助教工作自述"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 11:36:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "applyVolunteer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/applyVolunteer?token&assistantStudentID&assistantTeacherID&assistantCourseID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"applyVolunteer"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "assistantStudentID",
+									"value": null,
+									"description": "str,助教学号"
+								},
+								{
+									"key": "assistantTeacherID",
+									"value": null,
+									"description": "str,助教所属教师工号"
+								},
+								{
+									"key": "assistantCourseID",
+									"value": null,
+									"description": "str,助教所属课程ID"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "applyVolunteer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/applyVolunteer?token=student-token&assistantStudentID=0001&assistantTeacherID=1001&assistantCourseID=1001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"applyVolunteer"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "assistantStudentID",
+											"value": "0001",
+											"description": "str,助教学号"
+										},
+										{
+											"key": "assistantTeacherID",
+											"value": "1001",
+											"description": "str,助教所属教师工号"
+										},
+										{
+											"key": "assistantCourseID",
+											"value": "1001",
+											"description": "str,助教所属课程ID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 11:32:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "getAcademicExchangeStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/getAcademicExchangeStatus?token&studentID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"getAcademicExchangeStatus"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "studentID",
+									"value": null,
+									"description": "str,学生id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAcademicExchangeStatus",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/getAcademicExchangeStatus?token=student-token&studentID=0002",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"getAcademicExchangeStatus"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "studentID",
+											"value": "0002",
+											"description": "str,学生id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 11:41:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Exchange{exchangeName='test', exchangeLocation='test', exchangeTime='test', exchangeReportName='test', exchangeImagePath='test', exchangeNote='test', isMentorValid=false, isLeaderValid=false}\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getAssistantCourseList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/getAssistantCourseList?token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"getAssistantCourseList"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAssistantCourseList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/getAssistantCourseList?token=student-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"getAssistantCourseList"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 11:41:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Course{courseName='test', courseHour=48, courseSelectedNum=100, courseTarget=0, courseType=0, courseTime='test', coursePriority=2}\"\n]"
+						}
+					]
+				},
+				{
+					"name": "getAssistantRateStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/getAssistantRateStatus?token&studentID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"getAssistantRateStatus"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "studentID",
+									"value": null,
+									"description": "str,学生id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAssistantRateStatus",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/getAssistantRateStatus?token=student-token&studentID=0002",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"getAssistantRateStatus"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "studentID",
+											"value": "0002",
+											"description": "str,学生id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 11:42:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true //注意可以返回false"
+						}
+					]
+				},
+				{
+					"name": "getAssistantStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/getAssistantStatus?token&studentID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"getAssistantStatus"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "studentID",
+									"value": null,
+									"description": "str,学生id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAssistantStatus",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/getAssistantStatus?token=student-token&studentID=0002",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"getAssistantStatus"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "studentID",
+											"value": "0002",
+											"description": "str,学生id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 11:43:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "false"
+						}
+					]
+				},
+				{
+					"name": "getAttendProjectStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/getAttendProjectStatus?token&studentID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"getAttendProjectStatus"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "studentID",
+									"value": null,
+									"description": "str,学生id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submitAttendProject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/submitAttendProject?token&AttendanceTime&AttendanceTask&AttendanceFund&AttendanceID",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"submitAttendProject"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "AttendanceTime",
+									"value": null,
+									"description": "str,参与时间"
+								},
+								{
+									"key": "AttendanceTask",
+									"value": null,
+									"description": "str,参与项目"
+								},
+								{
+									"key": "AttendanceFund",
+									"value": null,
+									"description": "double,参与资金"
+								},
+								{
+									"key": "AttendanceID",
+									"value": null,
+									"description": "int,参与id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "submitAttendProject",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/submitAttendProject?token=student-token&AttendanceTime=test&AttendanceTask=test&AttendanceFund=20.0&AttendanceID=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"submitAttendProject"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "AttendanceTime",
+											"value": "test",
+											"description": "str,参与时间"
+										},
+										{
+											"key": "AttendanceTask",
+											"value": "test",
+											"description": "str,参与项目"
+										},
+										{
+											"key": "AttendanceFund",
+											"value": "20.0",
+											"description": "double,参与资金"
+										},
+										{
+											"key": "AttendanceID",
+											"value": "2",
+											"description": "int,参与id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:12:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "submitAcademicExchange",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/submitAcademicExchange?token&ExchangeID&ExchangeStudentID&ExchangeSubjectID&ExchangeName&ExchangeLocation&ExchangeTime&ExchangeReportName&ExchangeImagePath&ExchangeNote",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"submitAcademicExchange"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "ExchangeID",
+									"value": null,
+									"description": "str,交流项目ID"
+								},
+								{
+									"key": "ExchangeStudentID",
+									"value": null,
+									"description": "str,交流项目学生ID"
+								},
+								{
+									"key": "ExchangeSubjectID",
+									"value": null,
+									"description": "str,交流项目学科ID"
+								},
+								{
+									"key": "ExchangeName",
+									"value": null,
+									"description": "str,交流项目名称"
+								},
+								{
+									"key": "ExchangeLocation",
+									"value": null,
+									"description": "str,交流项目地点"
+								},
+								{
+									"key": "ExchangeTime",
+									"value": null,
+									"description": "str,交流项目时间"
+								},
+								{
+									"key": "ExchangeReportName",
+									"value": null,
+									"description": "str,交流项目报告名称"
+								},
+								{
+									"key": "ExchangeImagePath",
+									"value": null,
+									"description": "str,交流项目图片路径"
+								},
+								{
+									"key": "ExchangeNote",
+									"value": null,
+									"description": "str,交流项目备注"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "submitAcademicExchange",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/submitAcademicExchange?token=student-token&ExchangeStudentID=0001&ExchangeSubjectID=1001&ExchangeName=test&ExchangeLocation=test&ExchangeTime=test&ExchangeReportName=test&ExchangeImagePath=test&ExchangeNote=test&isMentorValid=true&isLeaderValid=true",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"submitAcademicExchange"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "ExchangeStudentID",
+											"value": "0001",
+											"description": "str,交流项目学生ID"
+										},
+										{
+											"key": "ExchangeSubjectID",
+											"value": "1001",
+											"description": "str,交流项目学科ID"
+										},
+										{
+											"key": "ExchangeName",
+											"value": "test",
+											"description": "str,交流项目名称"
+										},
+										{
+											"key": "ExchangeLocation",
+											"value": "test",
+											"description": "str,交流项目地点"
+										},
+										{
+											"key": "ExchangeTime",
+											"value": "test",
+											"description": "str,交流项目时间"
+										},
+										{
+											"key": "ExchangeReportName",
+											"value": "test",
+											"description": "str,交流项目报告名称"
+										},
+										{
+											"key": "ExchangeImagePath",
+											"value": "test",
+											"description": "str,交流项目图片路径"
+										},
+										{
+											"key": "ExchangeNote",
+											"value": "test",
+											"description": "str,交流项目备注"
+										},
+										{
+											"key": "isMentorValid",
+											"value": "true",
+											"description": "boolean,导师是否通过"
+										},
+										{
+											"key": "isLeaderValid",
+											"value": "true",
+											"description": "boolean,领导是否通过"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 12:00:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "submitAchievement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/submitAchievement?token&type",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"submitAchievement"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"description": "str,token"
+								},
+								{
+									"key": "type",
+									"value": null,
+									"description": "str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "award",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/submitAchievement?token=student-token&type=award&achievementID=test&awardName=test&awardLevel=test&awardRanking=test&awardPublishTime=test&awardAttachment=test&achievementStudentID=0001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"submitAchievement"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "type",
+											"value": "award",
+											"description": "str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表"
+										},
+										{
+											"key": "achievementID",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "awardName",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "awardLevel",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "awardRanking",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "awardPublishTime",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "awardAttachment",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "achievementStudentID",
+											"value": "0001",
+											"description": "str"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 13:00:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						},
+						{
+							"name": "paper",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/submitAchievement?token=student-token&type=paper&achievementID=test&paperName=test&paperPublication=test&paperStatus=test&paperPublishTime=test&paperIndex=test&paperBelong=test&paperAttachment=test&achievementStudentID=0001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"submitAchievement"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "type",
+											"value": "paper",
+											"description": "str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表"
+										},
+										{
+											"key": "achievementID",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "paperName",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "paperPublication",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "paperStatus",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "paperPublishTime",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "paperIndex",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "paperBelong",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "paperAttachment",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "achievementStudentID",
+											"value": "0001",
+											"description": "str"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 13:00:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						},
+						{
+							"name": "patent",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/submitAchievement?token=student-token&type=patent&achievementID=test&patentName=test&patentType=test&patentID=test&patentPublishTime=test&patentState=test&patentContribution=test&patentAttachment=test&achievementStudentID=0001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"submitAchievement"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "type",
+											"value": "patent",
+											"description": "str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表"
+										},
+										{
+											"key": "achievementID",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "patentName",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "patentType",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "patentID",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "patentPublishTime",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "patentState",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "patentContribution",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "patentAttachment",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "achievementStudentID",
+											"value": "0001",
+											"description": "str"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 13:00:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						},
+						{
+							"name": "platform",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/submitAchievement?token=student-token&type=platform&achievementID=test&platformName=test&platformServiceOffice=test&platformPublishTime=test&platformContribution=test&platformAttachment=test&achievementStudentID=0001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"submitAchievement"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "type",
+											"value": "platform",
+											"description": "str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表"
+										},
+										{
+											"key": "achievementID",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "platformName",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "platformServiceOffice",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "platformPublishTime",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "platformContribution",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "platformAttachment",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "achievementStudentID",
+											"value": "0001",
+											"description": "str"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 13:00:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						},
+						{
+							"name": "report",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/submitAchievement?token=student-token&type=report&achievementID=test&reportName=test&reportServiceOffice=test&reportPublishTime=test&reportContribution=test&reportAttachment=test&achievementStudentID=0001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"submitAchievement"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "type",
+											"value": "report",
+											"description": "str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表"
+										},
+										{
+											"key": "achievementID",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "reportName",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "reportServiceOffice",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "reportPublishTime",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "reportContribution",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "reportAttachment",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "achievementStudentID",
+											"value": "0001",
+											"description": "str"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 13:00:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						},
+						{
+							"name": "standard",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/submitAchievement?token=student-token&type=standard&achievementID=test&standardName=test&standardLevel=test&standardPublishTime=test&standardAttachment=test&achievementStudentID=0001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"submitAchievement"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "type",
+											"value": "standard",
+											"description": "str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表"
+										},
+										{
+											"key": "achievementID",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "standardName",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "standardLevel",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "standardPublishTime",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "standardAttachment",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "achievementStudentID",
+											"value": "0001",
+											"description": "str"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 13:00:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						},
+						{
+							"name": "textbook",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/student/submitAchievement?token=student-token&type=textbook&achievementID=test&textbookName=test&textbookPublishHouse=test&textbookPublishTime=test&textbookContribution=test&textbookAttachment=test&achievementStudentID=0001",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"submitAchievement"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "student-token",
+											"description": "str,token"
+										},
+										{
+											"key": "type",
+											"value": "textbook",
+											"description": "str,成果类型,须为 award,paper,patent,platform,report,standard,textbook之一，不同成果对应参数见附表"
+										},
+										{
+											"key": "achievementID",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "textbookName",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "textbookPublishHouse",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "textbookPublishTime",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "textbookContribution",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "textbookAttachment",
+											"value": "test",
+											"description": "str"
+										},
+										{
+											"key": "achievementStudentID",
+											"value": "0001",
+											"description": "str"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Jan 2023 13:00:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				}
+			]
+		}
+	]
+}

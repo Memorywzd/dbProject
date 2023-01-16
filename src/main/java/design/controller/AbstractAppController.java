@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface AbstractAppController {
     @PostMapping("login")
     String login(
-            @RequestParam("username") String username,
+            @RequestParam("userID") String userID,
             @RequestParam("password") String password,
             @RequestParam("role") int role
     );

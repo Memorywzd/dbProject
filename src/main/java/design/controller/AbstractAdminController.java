@@ -1,6 +1,7 @@
 package design.controller;
 
 import design.model.attendance.Project;
+import design.model.user.Admin;
 import design.model.user.Student;
 import design.model.user.Teacher;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,9 @@ public interface AbstractAdminController {
 
     @GetMapping("reviewInfo")
     boolean reviewInfo();
+
+    @PostMapping("addLeaderUser")
+    boolean addLeaderUser(Admin newAdmin);
 
     @PostMapping("addTeacherUser")
     boolean addTeacherUser(Teacher addTeacher);

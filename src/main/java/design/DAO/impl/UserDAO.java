@@ -2,6 +2,7 @@ package design.DAO.impl;
 
 import design.DAO.AbstractUserDAO;
 import design.model.exchange.Exchange;
+import design.model.user.Admin;
 import design.model.user.Student;
 import design.model.user.Teacher;
 
@@ -64,6 +65,32 @@ public class UserDAO extends DAO implements AbstractUserDAO {
         }
         closeAll(conn, stmt, rs);
         return userList;
+    }
+
+    /**
+     * @param newAdmin
+     * @return
+     */
+    @Override
+    public boolean addLeaderUser(Admin newAdmin) {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        String sql = "INSERT INTO admins (adminID,adminType,adminName,password" +
+                ") VALUES (? , ? , ? , ?)";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, newAdmin.getAdminID());
+            stmt.setInt(2, newAdmin.getAdminType());
+            stmt.setString(3, newAdmin.getAdminName());
+            stmt.setString(4, newAdmin.getPassword());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        closeAll(conn, stmt, null);
+        return true;
     }
 
     /**

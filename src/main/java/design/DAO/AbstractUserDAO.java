@@ -1,5 +1,6 @@
 package design.DAO;
 
+import design.model.user.Admin;
 import design.model.user.Student;
 import design.model.user.Teacher;
 
@@ -7,6 +8,8 @@ import java.util.List;
 
 public interface AbstractUserDAO {
     List<String> getUserList();
+
+    boolean addLeaderUser(Admin newAdmin);
 
     boolean addTeacher(Teacher teacher);
 

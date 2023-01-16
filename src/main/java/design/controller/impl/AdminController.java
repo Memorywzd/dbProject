@@ -3,6 +3,7 @@ package design.controller.impl;
 import design.DAO.impl.DAOFactory;
 import design.controller.AbstractAdminController;
 import design.model.attendance.Project;
+import design.model.user.Admin;
 import design.model.user.Student;
 import design.model.user.Teacher;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -61,6 +62,15 @@ public class AdminController implements AbstractAdminController {
     @Override
     public boolean reviewInfo() {
         return false;
+    }
+
+    /**
+     * @param newAdmin
+     * @return
+     */
+    @Override
+    public boolean addLeaderUser(Admin newAdmin) {
+        return DAOFactory.getDAO().getUserDAO().addLeaderUser(newAdmin);
     }
 
     /**

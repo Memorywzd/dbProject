@@ -41,7 +41,7 @@ public interface AbstractAdminController {
             @RequestParam(value = "mentorID") String mentorID
     );
 
-    @GetMapping("assignProject")
+    @PostMapping("assignProject")
     boolean assignProject(Project newProject);
 
     //学科负责人

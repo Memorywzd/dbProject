@@ -110,7 +110,7 @@
     teacherSex int NOT NULL,
     teacherSubjectID varchar(50) NOT NULL,
     teacherType int NOT NULL,
-    teacherContact longtext,
+    teacherContact text,
     PRIMARY KEY (teacherID),
     FOREIGN KEY (teacherSubjectID) REFERENCES subjects(subjectID)
    );
@@ -175,16 +175,16 @@
 ##### 助教子系统表格
 0. 课程表 courses(courseID, courseName, courseHour, courseSelectedNum, courseTarget, courseType, courseTime)
 
-    | 属性名            | 数据类型      | 键型 | 非空 | 备注                     |
-    | ----------------- | :------------ | :--- | :--- | :----------------------- |
-    | courseID          | varchar(50)   | 主键 | 是   | 课程id                   |
-    | courseName        | nvarchar(200) |      | 是   | 课程名                   |
-    | courseHour        | int           |      | 是   | 课时                     |
-    | courseSelectedNum | int           |      | 是   | 选课人数                 |
-    | courseTarget      | int           |      | 是   | 授课对象，0本科1研究生   |
-    | courseType        | int           |      | 是   | 课程类型，0必修课1选修课 |
-    | courseTime        | nvarchar(200) |      | 是   | 授课时间                 |
-    | coursePriority    | int           |      | 是   | 课程优先级               |
+    | 属性名            | 数据类型      | 键型 | 非空 | 默认值 | 备注                     |
+    | ----------------- | ------------- | ---- | ---- | ------ | ------------------------ |
+    | courseID          | varchar(50)   | 主键 | 是   |        | 课程id                   |
+    | courseName        | nvarchar(200) |      | 是   |        | 课程名                   |
+    | courseHour        | int           |      | 是   |        | 课时                     |
+    | courseSelectedNum | int           |      | 是   |        | 选课人数                 |
+    | courseTarget      | int           |      | 是   |        | 授课对象，0本科1研究生   |
+    | courseType        | int           |      | 是   |        | 课程类型，0必修课1选修课 |
+    | courseTime        | nvarchar(200) |      | 是   |        | 授课时间                 |
+    | coursePriority    | int           |      | 是   | 0      | 课程优先级               |
 
     ```sql
     CREATE TABLE courses (
@@ -252,17 +252,17 @@
 
 1. 奖励表 awards
 
-   | 属性名               | 数据类型      | 键型 | 非空 | 备注          |
-   | -------------------- | :------------ | :--- | :--- | :------------ |
-   | achievementID        | varchar(50)   | 主键 | 是   | 评定id， 自增 |
-   | achievementStudentID | varchar(50)   |      |      |               |
-   | awardName            | nvarchar(200) |      |      |               |
-   | awardLevel           | nvarchar(200) |      |      |               |
-   | awardRanking         | nvarchar(200) |      |      |               |
-   | awardPublishTime     | nvarchar(200) |      |      |               |
-   | awardAttachment      | nvarchar(200) |      |      |               |
-   | isMentorValid        |               |      |      |               |
-   | isAdminValid         |               |      |      |               |
+   | 属性名               | 数据类型      | 键型 | 非空 | 备注       |
+   | -------------------- | ------------- | ---- | ---- | ---------- |
+   | achievementID        | varchar(50)   | 主键 | 是   | 成果id     |
+   | achievementStudentID | varchar(50)   | 外键 | 是   | 成果学生id |
+   | awardName            | nvarchar(200) |      | 是   |            |
+   | awardLevel           | nvarchar(200) |      | 是   |            |
+   | awardRanking         | nvarchar(200) |      | 是   |            |
+   | awardPublishTime     | nvarchar(200) |      | 是   |            |
+   | awardAttachment      | nvarchar(200) |      | 是   |            |
+   | isMentorValid        | int           |      |      |            |
+   | isAdminValid         | int           |      |      |            |
 
       ```sql
       CREATE TABLE rates (
@@ -272,19 +272,19 @@
 
 2. 论文表 papers
 
-   | 属性名               | 数据类型    | 键型 | 非空 | 备注          |
-   | -------------------- | :---------- | :--- | :--- | :------------ |
-   | achievementID        | varchar(50) | 主键 | 是   | 评定id， 自增 |
-   | achievementStudentID | varchar(50) |      |      |               |
-   | paperName            |             |      |      |               |
-   | paperPublication     |             |      |      |               |
-   | paperStatus          |             |      |      |               |
-   | paperPublishTime     |             |      |      |               |
-   | paperIndex           |             |      |      |               |
-   | paperBelong          |             |      |      |               |
-   | paperAttachment      |             |      |      |               |
-   | isMentorValid        |             |      |      |               |
-   | isAdminValid         |             |      |      |               |
+   | 属性名               | 数据类型      | 键型 | 非空 | 备注       |
+   | -------------------- | ------------- | ---- | ---- | ---------- |
+   | achievementID        | varchar(50)   | 主键 | 是   | 成果id     |
+   | achievementStudentID | varchar(50)   | 外键 | 是   | 成果学生id |
+   | paperName            | nvarchar(200) |      | 是   |            |
+   | paperPublication     | nvarchar(200) |      | 是   |            |
+   | paperStatus          | nvarchar(200) |      | 是   |            |
+   | paperPublishTime     | nvarchar(200) |      | 是   |            |
+   | paperIndex           | nvarchar(200) |      | 是   |            |
+   | paperBelong          | nvarchar(200) |      | 是   |            |
+   | paperAttachment      | nvarchar(200) |      | 是   |            |
+   | isMentorValid        | int           |      |      |            |
+   | isAdminValid         | int           |      |      |            |
 
       ```sql
       CREATE TABLE rates (
@@ -294,19 +294,19 @@
 
 3. 专利 patents
 
-   | 属性名               | 数据类型    | 键型 | 非空 | 备注          |
-   | -------------------- | :---------- | :--- | :--- | :------------ |
-   | achievementID        | varchar(50) | 主键 | 是   | 评定id， 自增 |
-   | achievementStudentID | varchar(50) |      |      |               |
-   | patentName           |             |      |      |               |
-   | patentType           |             |      |      |               |
-   | patentID             |             |      |      |               |
-   | patentPublishTime    |             |      |      |               |
-   | patentState          |             |      |      |               |
-   | patentContribution   |             |      |      |               |
-   | patentAttachment     |             |      |      |               |
-   | isMentorValid        |             |      |      |               |
-   | isAdminValid         |             |      |      |               |
+   | 属性名               | 数据类型      | 键型 | 非空 | 备注       |
+   | -------------------- | ------------- | ---- | ---- | ---------- |
+   | achievementID        | varchar(50)   | 主键 | 是   | 成果id     |
+   | achievementStudentID | varchar(50)   | 外键 | 是   | 成果学生id |
+   | patentName           | nvarchar(200) |      | 是   |            |
+   | patentType           | nvarchar(200) |      | 是   |            |
+   | patentID             | nvarchar(200) |      | 是   |            |
+   | patentPublishTime    | nvarchar(200) |      | 是   |            |
+   | patentState          | nvarchar(200) |      | 是   |            |
+   | patentContribution   | nvarchar(200) |      | 是   |            |
+   | patentAttachment     | nvarchar(200) |      | 是   |            |
+   | isMentorValid        | int           |      |      |            |
+   | isAdminValid         | int           |      |      |            |
 
       ```sql
       CREATE TABLE rates (
@@ -316,17 +316,17 @@
 
 4. 软硬件平台表 platforms
 
-   | 属性名                | 数据类型    | 键型 | 非空 | 备注          |
-   | --------------------- | :---------- | :--- | :--- | :------------ |
-   | achievementID         | varchar(50) | 主键 | 是   | 评定id， 自增 |
-   | achievementStudentID  | varchar(50) |      |      |               |
-   | platformName          |             |      |      |               |
-   | platformServiceOffice |             |      |      |               |
-   | platformPublishTime   |             |      |      |               |
-   | platformContribution  |             |      |      |               |
-   | platformAttachment    |             |      |      |               |
-   | isMentorValid         |             |      |      |               |
-   | isAdminValid          |             |      |      |               |
+   | 属性名                | 数据类型      | 键型 | 非空 | 备注       |
+   | --------------------- | ------------- | ---- | ---- | ---------- |
+   | achievementID         | varchar(50)   | 主键 | 是   | 成果id     |
+   | achievementStudentID  | varchar(50)   | 外键 | 是   | 成果学生id |
+   | platformName          | nvarchar(200) |      | 是   |            |
+   | platformServiceOffice | nvarchar(200) |      | 是   |            |
+   | platformPublishTime   | nvarchar(200) |      | 是   |            |
+   | platformContribution  | nvarchar(200) |      | 是   |            |
+   | platformAttachment    | nvarchar(200) |      | 是   |            |
+   | isMentorValid         | int           |      |      |            |
+   | isAdminValid          | int           |      |      |            |
 
       ```sql
       CREATE TABLE rates (
@@ -336,18 +336,18 @@
 
 5. 报告表 reports
 
-   | 属性名               | 数据类型    | 键型 | 非空 | 备注          |
-   | -------------------- | :---------- | :--- | :--- | :------------ |
-   | achievementID        | varchar(50) | 主键 | 是   | 评定id， 自增 |
-   | achievementStudentID | varchar(50) |      |      |               |
-   | reportName           |             |      |      |               |
-   | reportType           |             |      |      |               |
-   | reportServiceOffice  |             |      |      |               |
-   | reportPublishTime    |             |      |      |               |
-   | reportContribution   |             |      |      |               |
-   | reportAttachment     |             |      |      |               |
-   | isMentorValid        |             |      |      |               |
-   | isAdminValid         |             |      |      |               |
+   | 属性名               | 数据类型      | 键型 | 非空 | 备注       |
+   | -------------------- | ------------- | ---- | ---- | ---------- |
+   | achievementID        | varchar(50)   | 主键 | 是   | 成果id     |
+   | achievementStudentID | varchar(50)   | 外键 | 是   | 成果学生id |
+   | reportName           | nvarchar(200) |      | 是   |            |
+   | reportType           | nvarchar(200) |      | 是   |            |
+   | reportServiceOffice  | nvarchar(200) |      | 是   |            |
+   | reportPublishTime    | nvarchar(200) |      | 是   |            |
+   | reportContribution   | nvarchar(200) |      | 是   |            |
+   | reportAttachment     | nvarchar(200) |      | 是   |            |
+   | isMentorValid        | int           |      |      |            |
+   | isAdminValid         | int           |      |      |            |
 
       ```sql
       CREATE TABLE rates (
@@ -357,16 +357,16 @@
 
 6. 标准表 standards
 
-   | 属性名               | 数据类型    | 键型 | 非空 | 备注          |
-   | -------------------- | :---------- | :--- | :--- | :------------ |
-   | achievementID        | varchar(50) | 主键 | 是   | 评定id， 自增 |
-   | achievementStudentID | varchar(50) |      |      |               |
-   | standardName         |             |      |      |               |
-   | standardLevel        |             |      |      |               |
-   | standardPublishTime  |             |      |      |               |
-   | standardAttachment   |             |      |      |               |
-   | isMentorValid        |             |      |      |               |
-   | isAdminValid         |             |      |      |               |
+   | 属性名               | 数据类型      | 键型 | 非空 | 备注       |
+   | -------------------- | ------------- | ---- | ---- | ---------- |
+   | achievementID        | varchar(50)   | 主键 | 是   | 成果id     |
+   | achievementStudentID | varchar(50)   | 外键 | 是   | 成果学生id |
+   | standardName         | nvarchar(200) |      | 是   |            |
+   | standardLevel        | nvarchar(200) |      | 是   |            |
+   | standardPublishTime  | nvarchar(200) |      | 是   |            |
+   | standardAttachment   | nvarchar(200) |      | 是   |            |
+   | isMentorValid        | int           |      |      |            |
+   | isAdminValid         | int           |      |      |            |
 
       ```sql
       CREATE TABLE rates (
@@ -376,17 +376,17 @@
 
 7. 教材表 textbooks
 
-   | 属性名               | 数据类型    | 键型 | 非空 | 备注          |
-   | -------------------- | :---------- | :--- | :--- | :------------ |
-   | achievementID        | varchar(50) | 主键 | 是   | 评定id， 自增 |
-   | achievementStudentID | varchar(50) |      |      |               |
-   | textbookName         |             |      |      |               |
-   | textbookPublishHouse |             |      |      |               |
-   | textbookPublishTime  |             |      |      |               |
-   | textbookContribution |             |      |      |               |
-   | textbookAttachment   |             |      |      |               |
-   | isMentorValid        |             |      |      |               |
-   | isAdminValid         |             |      |      |               |
+   | 属性名               | 数据类型      | 键型 | 非空 | 备注       |
+   | -------------------- | ------------- | ---- | ---- | ---------- |
+   | achievementID        | varchar(50)   | 主键 | 是   | 成果id     |
+   | achievementStudentID | varchar(50)   | 外键 | 是   | 成果学生id |
+   | textbookName         | nvarchar(200) |      | 是   |            |
+   | textbookPublishHouse | nvarchar(200) |      | 是   |            |
+   | textbookPublishTime  | nvarchar(200) |      | 是   |            |
+   | textbookContribution | nvarchar(200) |      | 是   |            |
+   | textbookAttachment   | nvarchar(200) |      | 是   |            |
+   | isMentorValid        | int           |      |      |            |
+   | isAdminValid         | int           |      |      |            |
    
       ```sql
       CREATE TABLE rates (
@@ -415,16 +415,16 @@
 
 2. 参与情况表 attendances
 
-   | 属性名              | 数据类型    | 键型 | 非空 | 备注          |
-   | ------------------- | :---------- | :--- | :--- | :------------ |
-   | attendanceID        | int         | 主键 | 是   | 评定id， 自增 |
-   | attendanceProjectID | varchar(50) |      |      |               |
-   | attendanceStudentID | varchar(50) |      |      |               |
-   | attendanceTime      |             |      |      |               |
-   | attendanceTask      |             |      |      |               |
-   | attendanceFund      |             |      |      |               |
-   | isMentorValid       |             |      |      |               |
-   | isLeaderValid       |             |      |      |               |
+   | 属性名              | 数据类型      | 键型 | 非空 | 默认值 | 备注          |
+   | ------------------- | ------------- | ---- | ---- | ------ | ------------- |
+   | attendanceID        | int           | 主键 | 是   |        | 评定id， 自增 |
+   | attendanceProjectID | varchar(50)   | 外键 | 是   |        |               |
+   | attendanceStudentID | varchar(50)   | 外键 | 是   |        |               |
+   | attendanceTime      | nvarchar(200) |      | 是   |        |               |
+   | attendanceTask      | nvarchar(200) |      | 是   |        |               |
+   | attendanceFund      | decimal(9,3)  |      | 是   |        |               |
+   | isMentorValid       | int           |      |      | 0      |               |
+   | isLeaderValid       | int           |      |      | 0      |               |
    
       ```sql
       CREATE TABLE rates (
@@ -438,16 +438,16 @@
 1. 交流表 exchanges
 
    | 属性名             | 数据类型      | 键型 | 默认值 | 非空 | 备注          |
-   | ------------------ | :------------ | :--- | ------ | :--- | :------------ |
+   | ------------------ | ------------- | ---- | ------ | ---- | ------------- |
    | exchangeID         | int           | 主键 |        | 是   | 评定id， 自增 |
-   | exchangeStudentID  | varchar(50)   | 外键 |        |      |               |
-   | exchangeSubjectID  | varchar(50)   | 外键 |        |      |               |
-   | exchangeName       | nvarchar(200) |      |        |      |               |
-   | exchangeLocation   | nvarchar(200) |      |        |      |               |
-   | exchangeTime       | nvarchar(200) |      |        |      |               |
-   | exchangeReportName | nvarchar(200) |      |        |      |               |
-   | exchangeImagePath  | nvarchar(200) |      |        |      |               |
-   | exchangeNote       | nvarchar(200) |      |        |      |               |
+   | exchangeStudentID  | varchar(50)   | 外键 |        | 是   |               |
+   | exchangeSubjectID  | varchar(50)   | 外键 |        | 是   |               |
+   | exchangeName       | nvarchar(200) |      |        | 是   |               |
+   | exchangeLocation   | nvarchar(200) |      |        | 是   |               |
+   | exchangeTime       | nvarchar(200) |      |        | 是   |               |
+   | exchangeReportName | nvarchar(200) |      |        | 是   |               |
+   | exchangeImagePath  | nvarchar(200) |      |        | 是   |               |
+   | exchangeNote       | nvarchar(MAX) |      |        | 是   |               |
    | isMentorValid      | int           |      | 0      |      |               |
    | isLeaderValid      | int           |      | 0      |      |               |
    
@@ -461,9 +461,9 @@
 2. 交流统计表 exchangeStatistics
 
    | 属性名            | 数据类型    | 键型 | 非空 | 备注          |
-   | ----------------- | :---------- | :--- | :--- | :------------ |
+   | ----------------- | ----------- | ---- | ---- | ------------- |
    | exchangeID        | int         | 主键 | 是   | 评定id， 自增 |
-   | exchangeStudentID | varchar(50) |      |      |               |
+   | exchangeStudentID | varchar(50) |      | 是   |               |
    
       ```sql
       CREATE TABLE rates (

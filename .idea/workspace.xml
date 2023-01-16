@@ -1,45 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="35afe48c-4129-4bf2-bc3f-bf2cf9b0cd0a" name="变更" comment="" />
+    <list default="true" id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="修复成就管理">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/AbstractAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/AbstractAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/impl/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/impl/AdminController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2IcCtp3LjWCB4ZXGSEpz01Z8PT2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2KHQRRPNPCyBjEywJrWslj7jjEu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/dbProject&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/dbz/sureness-master/sample-tom&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.20804597&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.packagesearch.PackageSearchGeneralConfigurable&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;31c13f47ad87dd7baa2d558a91e0fbb9&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;
+    ]
   }
 }</component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="DbProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="design" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="design.DbProjectApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="design.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.DbProjectApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="35afe48c-4129-4bf2-bc3f-bf2cf9b0cd0a" name="变更" comment="" />
-      <created>1670471702016</created>
+      <changelist id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="" />
+      <created>1673629020706</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1670471702016</updated>
-      <workItem from="1670471703059" duration="1312000" />
-      <workItem from="1672133840818" duration="5000" />
-      <workItem from="1673266917980" duration="48000" />
-      <workItem from="1673266979151" duration="49000" />
-      <workItem from="1673272401815" duration="10000" />
+      <updated>1673629020706</updated>
+      <workItem from="1673629022252" duration="132000" />
+      <workItem from="1673629263885" duration="3172000" />
+      <workItem from="1673632445801" duration="2063000" />
+      <workItem from="1673667096602" duration="31274000" />
+      <workItem from="1673709763367" duration="11679000" />
+      <workItem from="1673750161786" duration="44638000" />
+      <workItem from="1673836640676" duration="6530000" />
+      <workItem from="1673843807896" duration="1987000" />
+      <workItem from="1673846187622" duration="52000" />
+      <workItem from="1673846260834" duration="28000" />
+      <workItem from="1673851363606" duration="17004000" />
+      <workItem from="1673875290467" duration="15000" />
+      <workItem from="1673876314328" duration="7267000" />
     </task>
+    <task id="LOCAL-00001" summary="使用springboot，实现接口和大多数dao">
+      <created>1673721470312</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673721470312</updated>
+    </task>
+    <task id="LOCAL-00002" summary="完成DAO实现">
+      <created>1673771030832</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673771030832</updated>
+    </task>
+    <task id="LOCAL-00003" summary="完成后端实现">
+      <created>1673777770074</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673777770074</updated>
+    </task>
+    <task id="LOCAL-00004" summary="完成数据库初步设计">
+      <created>1673782707353</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673782707353</updated>
+    </task>
+    <task id="LOCAL-00005" summary="更新数据库表">
+      <created>1673788053488</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673788053488</updated>
+    </task>
+    <task id="LOCAL-00006" summary="删掉teacher的contact属性">
+      <created>1673788312316</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673788312316</updated>
+    </task>
+    <task id="LOCAL-00007" summary="更新数据库">
+      <created>1673794668991</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673794668991</updated>
+    </task>
+    <task id="LOCAL-00008" summary="更新数据库">
+      <created>1673840412700</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673840412700</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix wrong push">
+      <created>1673840486846</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673840486846</updated>
+    </task>
+    <task id="LOCAL-00010" summary="更新数据库，更新addStudent操作和addAssistantByVolunteerID操作">
+      <created>1673843241837</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673843241837</updated>
+    </task>
+    <task id="LOCAL-00011" summary="修正接口与实现不一致">
+      <created>1673845378806</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673845378806</updated>
+    </task>
+    <task id="LOCAL-00012" summary="配置项目，打包准备部署">
+      <created>1673846229786</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673846229786</updated>
+    </task>
+    <task id="LOCAL-00013" summary="修复错误学生实体类">
+      <created>1673864613281</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1673864613281</updated>
+    </task>
+    <task id="LOCAL-00014" summary="修复成就管理">
+      <created>1673873881668</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673873881668</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -57,8 +251,20 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="使用springboot，实现接口和大多数dao" />
+    <MESSAGE value="完成DAO实现" />
+    <MESSAGE value="完成后端实现" />
+    <MESSAGE value="完成数据库初步设计" />
+    <MESSAGE value="更新数据库表" />
+    <MESSAGE value="删掉teacher的contact属性" />
+    <MESSAGE value="更新数据库" />
+    <MESSAGE value="fix wrong push" />
+    <MESSAGE value="更新数据库，更新addStudent操作和addAssistantByVolunteerID操作" />
+    <MESSAGE value="修正接口与实现不一致" />
+    <MESSAGE value="配置项目，打包准备部署" />
+    <MESSAGE value="修复错误学生实体类" />
+    <MESSAGE value="修复成就管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复成就管理" />
   </component>
 </project>

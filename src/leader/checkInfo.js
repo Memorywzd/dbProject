@@ -35,6 +35,7 @@ export default function CheckInfo() {
         axios
             .get(serverURL + "/admin/getMentorList", {
                 params: {
+                    //token参数必须带上
                     token: token,
                     subjectID: subjectID,
                 }

@@ -5,17 +5,18 @@ import { Navigate, useLocation, NavLink } from "react-router-dom";
 
 const cache = localStorage;
 const serverURL = "http://az.pizzel.me";
-//const serverURL = "http://localhost:8080";
 
 export default function AddStudentUser() {
     const location = useLocation();
 
+    //定义变量
     const [studentId, setStudentId] = useState("");
     const [studentType, setStudentType] = useState(0);
     const [studentName, setStudentName] = useState("");
     const [studentSex, setStudentSex] = useState(0);
     const [studentSubjectID, setStudentSubjectID] = useState("");
     const [password, setPassword] = useState("");
+    //以上定义变量
     const [isLogin, setIsLogin] = useState(false);
 
     let token = cache.getItem("token");
@@ -32,9 +33,10 @@ export default function AddStudentUser() {
             setIsLogin(true);
         }
     }, [location.state]);
-
+    //以上照抄
 
     function  submitStudent() {
+        //post请求，照着写
         const formData = new FormData();
         formData.append("studentID", studentId);
         formData.append("studentType", studentType);
@@ -42,6 +44,7 @@ export default function AddStudentUser() {
         formData.append("studentSex", studentSex);
         formData.append("studentSubjectID", studentSubjectID);
         formData.append("password", password);
+        //token参数必须照抄
         formData.append("token", token);
         
         axios

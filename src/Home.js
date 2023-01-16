@@ -5,7 +5,6 @@ import axios from "axios";
 
 const cache = localStorage;
 const serverURL = "http://az.pizzel.me";
-//const serverURL = "http://localhost:8080";
 
 function Home() {
     //定义页面跳转函数

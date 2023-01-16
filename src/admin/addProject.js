@@ -3,25 +3,34 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Navigate, useLocation, NavLink } from "react-router-dom";
 
-const serverURL = "http://localhost:3054";
+const cache = localStorage;
+const serverURL = "http://az.pizzel.me";
 
 export default function AddProject() {
     const location = useLocation();
-    const [token, setToken] = useState("");
+
     const [projectName, setprojectName] = useState("");
     const [MentorIdID, setMentorId] = useState("");
     const [projectID, setprojectID] = useState("");
     const [projectFund, setprojectFund] = useState("");
     const [projectType, setprojectType] = useState("");
+
     const [isLogin, setIsLogin] = useState(false);
+
+    let token = cache.getItem("token");
+    function setToken(temp) {
+        token = temp;
+        console.log("token: " + token);
+    }
 
     useEffect(() => {
         if (location.state) {
-            console.log("登录成功");
+            console.log("已经登录");
+            console.log(location.state.token);
             setToken(location.state.token);
             setIsLogin(true);
         }
-    }, []);
+    }, [location.state]);
 
 
     function  submitProject() {

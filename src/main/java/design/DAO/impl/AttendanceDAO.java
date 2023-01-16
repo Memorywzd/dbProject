@@ -78,15 +78,14 @@ public class AttendanceDAO extends DAO implements AbstractAttendanceDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "update attendances set " +
-                "attendanceTime = ?, attendanceTask = ?, attendanceFund = ? " +
+                "attendanceTime = ?, attendanceTask = ? " +
                 "where attendanceID = ?";
         try{
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, newAttendance.getAttendanceTime());
             stmt.setString(2, newAttendance.getAttendanceTask());
-            stmt.setDouble(3, newAttendance.getAttendanceFund());
-            stmt.setInt(4, newAttendance.getAttendanceID());
+            stmt.setInt(3, newAttendance.getAttendanceID());
             stmt.executeUpdate();
         }catch (Exception e) {
             e.printStackTrace();
@@ -101,7 +100,7 @@ public class AttendanceDAO extends DAO implements AbstractAttendanceDAO {
      * @return
      */
     @Override
-    public boolean addAttendanceByID(String projectID, String studentID) {
+    public boolean addAttendanceByID(String projectID, String studentID, double fund) {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "insert into attendances values(?,?,?,?,?,?,?)";
@@ -112,7 +111,7 @@ public class AttendanceDAO extends DAO implements AbstractAttendanceDAO {
             stmt.setString(2, studentID);
             stmt.setString(3, null);
             stmt.setString(4, null);
-            stmt.setString(5, null);
+            stmt.setDouble(5, fund);
             stmt.setBoolean(6, false);
             stmt.setBoolean(7, false);
             stmt.executeUpdate();

@@ -107,9 +107,10 @@ public class TeacherController implements AbstractTeacherController {
     @Override
     public boolean assignProject(
             @RequestParam(value = "projectID") String projectID,
-            @RequestParam(value = "studentID") String studentID
+            @RequestParam(value = "studentID") String studentID,
+            @RequestParam(value = "fund") double fund
     ) {
-        return DAOFactory.getDAO().getAttendanceDAO().addAttendanceByID(projectID, studentID);
+        return DAOFactory.getDAO().getAttendanceDAO().addAttendanceByID(projectID, studentID, fund);
     }
 
     /**

@@ -49,7 +49,8 @@ public interface AbstractTeacherController {
     @GetMapping("assignProject")
     boolean assignProject(
             @RequestParam(value = "projectID") String projectID,
-            @RequestParam(value = "studentID") String studentID
+            @RequestParam(value = "studentID") String studentID,
+            @RequestParam(value = "fund") double fund
     );
 
     @GetMapping("getAchievementList")

@@ -104,10 +104,10 @@ public class UserDAO extends DAO implements AbstractUserDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "INSERT INTO students" +
-                "(studentID,studentType,studentName,studentSex," +
+                "(studentID,studentType,studentName,studentSex,studentSubjectID, " +
                 "studentMentorId,studentAssistantStatus,studentAssistantRateStatus," +
                 "studentExchangeNum,password) " +
-                "VALUES(?,?,?,?,?,?,?,?,?)";
+                "VALUES(?,?,?,?,?,?,?,?,?,?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
@@ -115,11 +115,12 @@ public class UserDAO extends DAO implements AbstractUserDAO {
             stmt.setInt(2, student.getStudentType());
             stmt.setString(3, student.getStudentName());
             stmt.setInt(4, student.getStudentSex());
-            stmt.setString(5, student.getStudentMentorId());
-            stmt.setBoolean(6, student.isStudentAssistantStatus());
-            stmt.setBoolean(7, student.isStudentAssistantRateStatus());
-            stmt.setInt(8, student.getStudentExchangeNum());
-            stmt.setString(9, student.getPassword());
+            stmt.setString(5, student.getStudentSubjectID());
+            stmt.setString(6, student.getStudentMentorId());
+            stmt.setBoolean(7, student.isStudentAssistantStatus());
+            stmt.setBoolean(8, student.isStudentAssistantRateStatus());
+            stmt.setInt(9, student.getStudentExchangeNum());
+            stmt.setString(10, student.getPassword());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

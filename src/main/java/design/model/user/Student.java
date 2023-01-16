@@ -5,6 +5,7 @@ public class Student {
     private int studentType;                //0:专硕 1:学硕 2:博士
     private String studentName;             //姓名
     private int studentSex;                 //性别 0:男 1:女
+    private String studentSubjectID;        //学科ID
     private String studentMentorId;                //导师工号
     private boolean studentAssistantStatus;        //是否做过助教 0:否 1:是
     private boolean studentAssistantRateStatus;    //助教评价 0:未评价 1:已评价
@@ -42,6 +43,14 @@ public class Student {
 
     public void setStudentSex(int studentSex) {
         this.studentSex = studentSex;
+    }
+
+    public String getStudentSubjectID() {
+        return studentSubjectID;
+    }
+
+    public void setStudentSubjectID(String studentSubjectID) {
+        this.studentSubjectID = studentSubjectID;
     }
 
     public String getStudentMentorId() {

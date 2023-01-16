@@ -106,7 +106,7 @@ public class UserDAO extends DAO implements AbstractUserDAO {
         String sql = "INSERT INTO students" +
                 "(studentID,studentType,studentName,studentSex," +
                 "studentMentorId,studentAssistantStatus,studentAssistantRateStatus," +
-                "studentExchangeNum,studentPassword) " +
+                "studentExchangeNum,password) " +
                 "VALUES(?,?,?,?,?,?,?,?,?)";
         try {
             conn = getDruidConnection();

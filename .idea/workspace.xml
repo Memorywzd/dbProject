@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="更新数据库">
+    <list default="true" id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="fix wrong push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AssistantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AssistantDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +125,7 @@
       <workItem from="1673667096602" duration="31274000" />
       <workItem from="1673709763367" duration="11679000" />
       <workItem from="1673750161786" duration="44638000" />
-      <workItem from="1673836640676" duration="3626000" />
+      <workItem from="1673836640676" duration="6146000" />
     </task>
     <task id="LOCAL-00001" summary="使用springboot，实现接口和大多数dao">
       <created>1673721470312</created>
@@ -175,7 +176,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673794668991</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="更新数据库">
+      <created>1673840412700</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673840412700</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix wrong push">
+      <created>1673840486846</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673840486846</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +216,7 @@
     <MESSAGE value="更新数据库表" />
     <MESSAGE value="删掉teacher的contact属性" />
     <MESSAGE value="更新数据库" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新数据库" />
+    <MESSAGE value="fix wrong push" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix wrong push" />
   </component>
 </project>

@@ -32,6 +32,33 @@
 
 1. 成果视图 achievements，包含各类成果
 
+   ```sql
+   CREATE VIEW achievements AS
+   CREATE VIEW achievements AS
+   SELECT achievementID, achievementStudentID, awardName as achievementName, 'award' as achievementType
+   FROM awards
+   UNION
+   SELECT achievementID, achievementStudentID, paperName as achievementName, 'paper' as achievementType
+   FROM papers
+   UNION
+   SELECT achievementID, achievementStudentID, patentName as achievementName, 'patent' as achievementType
+   FROM patents
+   UNION
+   SELECT achievementID, achievementStudentID, platformName as achievementName, 'platform' as achievementType
+   FROM platforms
+   UNION
+   SELECT achievementID, achievementStudentID, reportName as achievementName, 'report' as achievementType
+   FROM reports
+   UNION
+   SELECT achievementID, achievementStudentID, standardName as achievementName, 'standard' as achievementType
+   FROM standards
+   UNION
+   SELECT achievementID, achievementStudentID, textbookName as achievementName, 'textbook' as achievementType
+   FROM textbooks
+   ```
+
+   
+
 2. 用户视图 users，包含各类用户账号密码
 
    ```sql
@@ -463,7 +490,7 @@
    | 属性名            | 数据类型    | 键型 | 非空 | 备注          |
    | ----------------- | ----------- | ---- | ---- | ------------- |
    | exchangeID        | int         | 主键 | 是   | 评定id， 自增 |
-   | exchangeStudentID | varchar(50) |      | 是   |               |
+   | exchangeStudentID | varchar(50) | 外键 | 是   |               |
    
       ```sql
       CREATE TABLE rates (

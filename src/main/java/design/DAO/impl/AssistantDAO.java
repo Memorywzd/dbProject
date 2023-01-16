@@ -106,8 +106,8 @@ public class AssistantDAO extends DAO implements AbstractAssistantDAO {
         Connection conn = null;
         PreparedStatement stmt = null;
         String sql = "INSERT INTO assistants " +
-                "(assistantStudentID, assistantTeacherID, assistantCourseID, assistantRateID) " +
-                "SELECT volunteerStudentID, volunteerTeacherID, volunteerCourseID, 0 " +
+                "(assistantStudentID, assistantTeacherID, assistantCourseID) " +
+                "SELECT volunteerStudentID, volunteerTeacherID, volunteerCourseID " +
                 "FROM assistantVolunteers WHERE volunteerID = ?";
         try {
             conn = getDruidConnection();

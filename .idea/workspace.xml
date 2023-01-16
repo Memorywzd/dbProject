@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4d60fc4-d9d1-434e-a879-e79b4caa4aa2" name="变更" comment="仅保留前端代码">
+    <list default="true" id="b4d60fc4-d9d1-434e-a879-e79b4caa4aa2" name="变更" comment="优化项目文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,14 +32,28 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.部署">
+    <configuration name="调试" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="start" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="部署" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.部署" />
+      <item itemvalue="npm.调试" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -52,7 +66,7 @@
       <workItem from="1673846576462" duration="33000" />
       <workItem from="1673846640002" duration="213000" />
       <workItem from="1673846886383" duration="33000" />
-      <workItem from="1673847148990" duration="18000" />
+      <workItem from="1673847148990" duration="283000" />
     </task>
     <task id="LOCAL-00001" summary="仅保留前端代码">
       <created>1673846707578</created>
@@ -61,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673846707578</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="优化项目文件">
+      <created>1673847324115</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673847324115</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,6 +101,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="仅保留前端代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="仅保留前端代码" />
+    <MESSAGE value="优化项目文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化项目文件" />
   </component>
 </project>

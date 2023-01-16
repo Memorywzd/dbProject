@@ -19,8 +19,8 @@ public class AchievementDAO extends DAO implements AbstractAchievementDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "INSERT INTO awards (achievementID, awardName, awardLevel, awardRanking, " +
-                "awardPublishTime, awardAttachment) " +
-                "VALUES (?, ?, ?, ?, ?, ?)";
+                "awardPublishTime, awardAttachment, achievementStudentID, isMentorValid, isAdminValid) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ? ,?, ?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
@@ -30,6 +30,9 @@ public class AchievementDAO extends DAO implements AbstractAchievementDAO {
             stmt.setString(4, params.get("awardRanking"));
             stmt.setString(5, params.get("awardPublishTime"));
             stmt.setString(6, params.get("awardAttachment"));
+            stmt.setString(7, params.get("achievementStudentID"));
+            stmt.setBoolean(8, false);
+            stmt.setBoolean(9, false);
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,8 +50,8 @@ public class AchievementDAO extends DAO implements AbstractAchievementDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "INSERT INTO papers (achievementID, paperName, paperPublication, paperStatus, " +
-                "paperPublishTime, paperIndex, paperBelong, paperAttachment, isMentorValid, isAdminValid) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "paperPublishTime, paperIndex, paperBelong, paperAttachment, isMentorValid, isAdminValid, achievementStudentID) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
@@ -62,6 +65,7 @@ public class AchievementDAO extends DAO implements AbstractAchievementDAO {
             stmt.setString(8, params.get("paperAttachment"));
             stmt.setBoolean(9, false);
             stmt.setBoolean(10, false);
+            stmt.setString(11, params.get("achievementStudentID"));
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,8 +83,8 @@ public class AchievementDAO extends DAO implements AbstractAchievementDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "INSERT INTO patents (achievementID, patentName, patentType, patentID, patentPublishTime, " +
-                "patentState, patentContribution, patentAttachment, isMentorValid, isAdminValid) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "patentState, patentContribution, patentAttachment, isMentorValid, isAdminValid, achievementStudentID) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
@@ -94,6 +98,7 @@ public class AchievementDAO extends DAO implements AbstractAchievementDAO {
             stmt.setString(8, params.get("patentAttachment"));
             stmt.setBoolean(9, false);
             stmt.setBoolean(10, false);
+            stmt.setString(11, params.get("achievementStudentID"));
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -111,8 +116,8 @@ public class AchievementDAO extends DAO implements AbstractAchievementDAO {
 PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "INSERT INTO platforms (achievementID, platformName, platformServiceOffice, " +
-                "platformPublishTime, platformContribution, platformAttachment, isMentorValid, isAdminValid) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                "platformPublishTime, platformContribution, platformAttachment, isMentorValid, isAdminValid, achievementStudentID) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
@@ -124,6 +129,7 @@ PreparedStatement stmt = null;
             stmt.setString(6, params.get("platformAttachment"));
             stmt.setBoolean(7, false);
             stmt.setBoolean(8, false);
+            stmt.setString(9, params.get("achievementStudentID"));
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -141,8 +147,8 @@ PreparedStatement stmt = null;
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "INSERT INTO reports (achievementID, reportName, reportType, reportServiceOffice, " +
-                "reportPublishTime, reportContribution, reportAttachment, isMentorValid, isAdminValid) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "reportPublishTime, reportContribution, reportAttachment, isMentorValid, isAdminValid, achievementStudentID) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? ,?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
@@ -155,6 +161,7 @@ PreparedStatement stmt = null;
             stmt.setString(7, params.get("reportAttachment"));
             stmt.setBoolean(8, false);
             stmt.setBoolean(9, false);
+            stmt.setString(10, params.get("achievementStudentID"));
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -172,8 +179,8 @@ PreparedStatement stmt = null;
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "INSERT INTO standards (achievementID, standardName, standardLevel, " +
-                "standardPublishTime, standardAttachment, isMentorValid, isAdminValid) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+                "standardPublishTime, standardAttachment, isMentorValid, isAdminValid, achievementStudentID) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ? ,?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
@@ -184,6 +191,7 @@ PreparedStatement stmt = null;
             stmt.setString(5, params.get("standardAttachment"));
             stmt.setBoolean(6, false);
             stmt.setBoolean(7, false);
+            stmt.setString(8, params.get("achievementStudentID"));
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -201,8 +209,8 @@ PreparedStatement stmt = null;
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "INSERT INTO textbooks (achievementID, textbookName, textbookPublishHouse, " +
-                "textbookPublishTime, textbookContribution, textbookAttachment, isMentorValid, isAdminValid) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                "textbookPublishTime, textbookContribution, textbookAttachment, isMentorValid, isAdminValid, achievementStudentID) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
@@ -214,6 +222,7 @@ PreparedStatement stmt = null;
             stmt.setString(6, params.get("textbookAttachment"));
             stmt.setBoolean(7, false);
             stmt.setBoolean(8, false);
+            stmt.setString(9, params.get("achievementStudentID"));
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

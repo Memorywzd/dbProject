@@ -17,6 +17,10 @@ import SetFund from './leader/setFund';
 import SetCommu from './leader/setCommu';
 import SetPriority from './leader/setPriority';
 
+import AddClass from './teacher/addClass';
+import VerifyVolun from './teacher/verifyVolun';
+import VerifyForm from './teacher/verifyForm';
+
 // 结束导入新页面
 
 function App() {
@@ -38,6 +42,11 @@ function App() {
         <Route path="/setCommu" element={<SetCommu />} />
         <Route path="/setPriority" element={<SetPriority />} />
         
+        <Route path="/addClass" element={<AddClass />} />
+        <Route path="/VerifyVolun" element={<VerifyVolun />} />
+        <Route path="/VerifyForm" element={<VerifyForm />} />
+
+
 
         {/* 结束添加新页面 */}
       </Routes>

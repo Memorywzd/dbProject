@@ -11,7 +11,7 @@ export default function RateExchange() {
 
     const [exchangeList, setExchangeList] = useState([]);
     const [exchangeID, setExchangeID] = useState("");
-    const [teacherRate, setTeacherRate] = useState(0);
+    const [teacherRate, setTeacherRate] = useState("");
 
 
 
@@ -33,6 +33,8 @@ export default function RateExchange() {
     }, [location.state]);
 
     function submitRate(){
+        console.log("submitRate");
+        console.log(teacherRate);
         axios
             .get(serverURL + "/teacher/rateAcademicExchange", {
                 params: {
@@ -94,9 +96,9 @@ export default function RateExchange() {
                     }
                     />
                     <label>评价结果:</label>
-                    <select>
-                        <option value="0" onClick={() => setTeacherRate(0)}>不合格</option>
-                        <option value="1" onClick={() => setTeacherRate(1)}>合格</option>
+                    <select onChange = {(e) => {setTeacherRate(e.target.value)}}>
+                        <option value = "false">不合格</option>
+                        <option value ="true">合格</option>
                     </select>
                     <button onClick={submitRate}>提交审核</button>
                 </div>

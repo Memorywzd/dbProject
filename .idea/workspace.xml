@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4d60fc4-d9d1-434e-a879-e79b4caa4aa2" name="变更" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/admin/reviewAll.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mentor/assignProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mentor/assignProject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/addProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/addProject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/reviewAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/reviewAll.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mentor/rateExchange.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mentor/rateExchange.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mentor/reviewAchievement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mentor/reviewAchievement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/addExchangeStatistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/addExchangeStatistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/applyAchievement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/applyAchievement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/applyAttendance.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/applyVolunteer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/applyVolunteer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/applyVolunteerRate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/applyVolunteerRate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/getAssistantStatus.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/getProjectStatus.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/getVolunteerRateStatus.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/showAttendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/showAttendance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teacher/addClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/teacher/addClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teacher/verifyVolun.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/teacher/verifyVolun.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,23 +31,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "H:/dbProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "D:\\Program Files\\WebStorm 2022.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/dbProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Program Files\\WebStorm 2022.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="调试" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -102,7 +91,9 @@
       <workItem from="1673847148990" duration="3010000" />
       <workItem from="1673851336195" duration="26000" />
       <workItem from="1673874894563" duration="20433000" />
-      <workItem from="1673924499261" duration="20001000" />
+      <workItem from="1673924499261" duration="20079000" />
+      <workItem from="1673950597141" duration="52000" />
+      <workItem from="1673950815241" duration="3620000" />
     </task>
     <task id="LOCAL-00001" summary="仅保留前端代码">
       <created>1673846707578</created>
@@ -181,7 +172,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673897191545</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update">
+      <created>1673946440011</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673946440011</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update">
+      <created>1673950629271</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1673950629271</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

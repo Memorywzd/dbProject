@@ -31,11 +31,12 @@ export default function VerifyVolun() {
     }, [location.state]);
 
     function submitVolun() {
+        console.log("colunteerID");
         axios
             .get(serverURL + "/teacher/selectAssistant", {
                 params: {
                     token: token,
-                    colunteerID: colunteerID,
+                    volunteerID: colunteerID,
                 }
             })
             .then((res) => {

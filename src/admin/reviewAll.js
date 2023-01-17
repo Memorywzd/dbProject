@@ -18,7 +18,7 @@ export default function ReviewAll() {
     const [achievementList, setAchievementList] = useState([]);
 
     const [validID, setValidID] = useState("");
-    const [valid, setValid] = useState(1);
+    const [valid, setValid] = useState(0);
     const [type, setType] = useState("attendance");
 
 
@@ -214,13 +214,14 @@ export default function ReviewAll() {
                         />
 
                         <label>审核是否有效:</label>
-                        <select>
-                            <option value="0" onClick={() => setValid(1)}>有效</option>
-                            <option value="1" onClick={() => setValid(0)}>无效</option>
+                        <select onChange = {(e) => {setValid(e.target.value)}}>
+                            <option value="1" onClick={() => setValid(1)}>有效</option>
+                            <option value="0" onClick={() => setValid(0)}>无效</option>
                         </select>
                     </form>
 
                     <button onClick={() => {
+                        console.log("valid: " + valid);
                         console.log(type);
                         axios
                             .get(serverURL + "/admin/reviewInfo", {

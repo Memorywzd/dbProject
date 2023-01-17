@@ -52,11 +52,11 @@ export default function AddProject() {
             .post(serverURL + "/admin/assignProject", formData)
             .then((res) => {
                     console.log(res);
-                    if (res.data.code === 200 && res.data === "true") {
+                    if (res.status === 200 && res.data === true) {
                         alert("添加成功")
                     }
                     else {
-                        alert("分配失败")
+                        alert("添加失败")
                     }
                 }
             );

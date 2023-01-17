@@ -12,7 +12,7 @@ export default function ReviewAchievement() {
     const [studentID, setStudentID] = useState("");
     const [type, setType] = useState("");
     const [achievementID, setAchievementID] = useState("");
-    const [isValid, setIsValid] = useState(false);
+    const [isValid, setIsValid] = useState("");
     const [achievementList, setAchievementList] = useState([]);
 
     const [isLogin, setIsLogin] = useState(false);
@@ -98,9 +98,9 @@ export default function ReviewAchievement() {
                             }
                         />
                         <label>评价结果:</label>
-                        <select>
-                            <option value="0" onClick={() => setIsValid(0)}>不合格</option>
-                            <option value="1" onClick={() => setIsValid(1)}>合格</option>
+                        <select onChange = {(e) => {setIsValid(e.target.value)}}>
+                            <option value="0" onChange={() => setIsValid(0)}>不合格</option>
+                            <option value="1" onChange={() => setIsValid(1)}>合格</option>
                         </select>
                     </form>
 

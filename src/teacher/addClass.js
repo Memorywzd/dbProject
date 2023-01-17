@@ -12,6 +12,7 @@ export default function AddClass() {
 
     //定义变量
     const [courseID, setCourseID] = useState("");
+    const [courseTeacherID, setCourseTeacherID] = useState("");
     const [courseName, setCourseName] = useState("");
     const [courseHour, setCourseHour] = useState(0);
     const [courseSelectedNum, setCourseSelectedNum] = useState(0);
@@ -43,6 +44,7 @@ export default function AddClass() {
         //post请求，照着写
         const formData = new FormData();
         formData.append("courseID", courseID);
+        formData.append("courseTeacherID", courseTeacherID);
         formData.append("courseName", courseName);
         formData.append("courseHour", courseHour);
         formData.append("courseSelectedNum", courseSelectedNum);
@@ -80,6 +82,16 @@ export default function AddClass() {
                             placeholder="请输入课程ID"
                             onChange={(e) => {
                                 setCourseID(e.target.value);
+                            }}
+                        />
+
+                        <label>教师ID:</label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="教师ID"
+                            onChange={(e) => {
+                                setCourseTeacherID(e.target.value);
                             }}
                         />
 

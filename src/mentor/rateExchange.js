@@ -9,8 +9,9 @@ const serverURL = "http://az.pizzel.me";
 export default function RateExchange() {
     const location = useLocation();
 
-
-
+    const [exchangeList, setExchangeList] = useState([]);
+    const [exchangeID, setExchangeID] = useState("");
+    const [teacherRate, setTeacherRate] = useState(0);
 
 
 
@@ -32,12 +33,79 @@ export default function RateExchange() {
     }, [location.state]);
 
     function submitRate(){
-
+        axios
+            .get(serverURL + "/teacher/rateAcademicExchange", {
+                params: {
+                    //token参数必须带上
+                    token: token,
+                    exchangeID: exchangeID,
+                    teacherRate: teacherRate,
+                }
+            })
+            .then((res) => {
+                    console.log(res);
+                    if (res.status === 200 && res.data !== "") {
+                        alert("评价成功！");
+                    }
+                    else {
+                        alert("评价失败！");
+                    }
+                }
+            );
     }
 
     return (
-        <div>
-            <h1>RateExchange</h1>
+        <div className="App">
+            <h1>审核学术交流情况</h1>
+            {isLogin ? (
+                <div>
+                    <h3>现有学术交流</h3>
+                    <p><button onClick={
+                        () => {
+                            console.log("token: " + token);
+                            axios
+                                .get(serverURL + "/teacher/getAcademicExchangeList", {
+                                    params: {
+                                        //token参数必须带上
+                                        token: token,
+                                    }
+                                })
+                                .then((res) => {
+                                        console.log(res);
+                                        if (res.status === 200 && res.data !== "") {
+                                            setExchangeList(res.data);
+                                        }
+                                        else {
+                                            alert("查询失败！");
+                                        }
+                                    }
+                                );
+                        }
+                    }>显示信息</button></p>
+                    <p>{exchangeList}</p>
+                    <label>请输入交流ID</label>
+                    <input
+                        className={"input"}
+                        type="text"
+                        placeholder={"请输入交流ID"}
+                        onChange={(e) => {
+                            setExchangeID(e.target.value);
+                        }
+                    }
+                    />
+                    <label>评价结果:</label>
+                    <select>
+                        <option value="0" onClick={() => setTeacherRate(0)}>不合格</option>
+                        <option value="1" onClick={() => setTeacherRate(1)}>合格</option>
+                    </select>
+                    <button onClick={submitRate}>提交审核</button>
+                </div>
+            ) : (
+                <div>请登录</div>
+            )}
+
+            {/* <Navigate to="/">返回</Navigate> */}
+            <NavLink to="../">返回</NavLink>
         </div>
     )
 }

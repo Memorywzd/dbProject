@@ -51,7 +51,7 @@ export default function ShowAttendance() {
                             })
                             .then((res) => {
                                 console.log(res);
-                                if (res.status === 200) {
+                                if (res.status === 200 && res.data !== "") {
                                     setResult(res.data);
                                 }
                                 else {

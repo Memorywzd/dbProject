@@ -21,12 +21,18 @@ import AddMentorUser from './admin/addMentorUser';
 import BindUser from './admin/bindUser';
 import AddLeaderUser from './admin/addLeaderUser';
 
-import AddAttendance from "./student/addAttendance";
-import ShowAttendance from "./student/showAttendance";
-import AddExchange from "./student/addExchange";
 import AssignProject from "./mentor/assignProject";
 import RateExchange from "./mentor/rateExchange";
 import ReviewAchievement from "./mentor/reviewAchievement";
+
+import AddAttendance from "./student/addAttendance";
+import ShowAttendance from "./student/showAttendance";
+import AddExchange from "./student/addExchange";
+import AddExchangeStatistics from "./student/addExchangeStatistics";
+import ApplyVolunteer from "./student/applyVolunteer";
+import ApplyVolunteerRate from "./student/applyVolunteerRate";
+import ApplyAchievement from "./student/applyAchievement";
+import ReviewAll from "./admin/reviewAll";
 // 结束导入新页面
 
 function App() {
@@ -56,7 +62,13 @@ function App() {
         <Route path="/assignProject" element={<AssignProject />} />
         <Route path="/verifyCommuInfo" element={<RateExchange />} />
         <Route path="/checkStuCer" element={<ReviewAchievement />} />
-
+        <Route path="/countCommuInfo" element={<AddExchangeStatistics />} />
+        <Route path="/chooseVolun" element={<ApplyVolunteer />} />
+        <Route path="/setTAForm" element={<ApplyVolunteerRate />} />
+        <Route path="/showAttendance" element={<ShowAttendance />} />
+        <Route path="/addAttendance" element={<AddAttendance />} />
+        <Route path="/setStuCer" element={<ApplyAchievement />} />
+        <Route path="/checkResult" element={<ReviewAll />} />
         {/* 结束添加新页面 */}
       </Routes>
     </Router>

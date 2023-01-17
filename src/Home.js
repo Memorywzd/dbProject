@@ -123,12 +123,6 @@ function Home() {
                 state: { token: token }
             });
         }
-        //未实现此API AddLeader
-        function addSubjectUser() {
-            Navigate("/addSubjectUser", {
-                state: { token: token }
-            });
-        }
         //新加addLeaderUser
         function addLeaderUser() {
             Navigate("/addLeaderUser", {
@@ -229,18 +223,8 @@ function Home() {
     }
 
     function afterMentorLogin() {
-        function checkTutorProject() {
-            Navigate("/checkTutorProject", {
-                state: {token: token}
-            });
-        }
         function assignProject() {
             Navigate("/assignProject", {
-                state: {token: token}
-            });
-        }
-        function checkFund() {
-            Navigate("/checkFund", {
                 state: {token: token}
             });
         }
@@ -258,10 +242,8 @@ function Home() {
             <div>
                 <h1>导师登录成功</h1>
                 <p><button onClick={verifyCommuInfo}>审核学术交流情况</button></p>
-                <p><button onClick={checkTutorProject}>查看导师个人项目</button></p>
-                <p><button onClick={assignProject}>为未完成项目认定的研究生分配项目</button></p>
-                <p><button onClick={checkFund}>查看项目认定表，确认金额</button></p>
-                <p><button onClick={checkStuCer}>查看/修改学生成果认证</button></p>
+                <p><button onClick={assignProject}>研究生项目管理</button></p>
+                <p><button onClick={checkStuCer}>研究生成果认证</button></p>
             </div>
         )
     }
@@ -285,11 +267,6 @@ function Home() {
         }
         function submitExchangeStatistics() {
             Navigate("/countCommuInfo", {
-                state: {token: token}
-            });
-        }
-        function showStuCer() {
-            Navigate("/showStuCer", {
                 state: {token: token}
             });
         }
@@ -323,10 +300,8 @@ function Home() {
                 <h1>研究生登录成功</h1>
                 <p><button onClick={addExchange}>学术交流情况提交</button></p>
                 <p><button onClick={submitExchangeStatistics}>提交学术交流统计</button></p>
-                <p><button onClick={showTAVolun}>查看助教志愿选择结果</button></p>
                 <p><button onClick={chooseVolun}>助教志愿选择</button></p>
                 <p><button onClick={setTAForm}>助教评定表填写</button></p>
-                <p><button onClick={showTAEvaInfo}>查看助教评定结果</button></p>
                 <p><button onClick={showAttendance}>查看项目认定情况</button></p>
                 <p><button onClick={addAttendance}>项目认定表填写</button></p>
                 <p><button onClick={setStuCer}>填写成果认定</button></p>

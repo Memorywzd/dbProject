@@ -12,7 +12,7 @@ public interface AbstractExchangeDAO {
 
     boolean applyAcademicExchangeStatistics(String exchangeID, String studentID);
 
-    boolean updateExchangeMentorValid(String exchangeID, Boolean isMentorValid);
+    boolean updateExchangeMentorValid(String exchangeID, boolean isMentorValid);
 
-    boolean updateExchangeLeaderValid(String exchangeID, Boolean isLeaderValid);
+    boolean updateExchangeLeaderValid(String exchangeID, boolean isLeaderValid);
 }

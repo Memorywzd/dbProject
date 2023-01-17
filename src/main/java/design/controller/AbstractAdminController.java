@@ -36,7 +36,7 @@ public interface AbstractAdminController {
     @GetMapping("reviewInfo")
     boolean reviewInfo(
             @RequestParam("id") String id,
-            @RequestParam("valid") boolean valid,
+            @RequestParam("valid") int valid,
             @RequestParam("type") String type
     );
 

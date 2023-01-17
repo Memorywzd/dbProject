@@ -6,20 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="修改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAchievementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAchievementDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAssistantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAssistantDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAttendanceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAttendanceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AchievementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AchievementDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AssistantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AssistantDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AttendanceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AttendanceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/CourseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/CourseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractExchangeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractExchangeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/ExchangeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/ExchangeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/AbstractAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/AbstractAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/AbstractStudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/AbstractStudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/impl/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/impl/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/impl/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/impl/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/assistant/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/model/assistant/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/attendance/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/model/attendance/Attendance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +138,10 @@
       <workItem from="1673920826802" duration="1789000" />
       <workItem from="1673924742799" duration="14559000" />
       <workItem from="1673941606546" duration="3777000" />
-      <workItem from="1673945425589" duration="633000" />
+      <workItem from="1673945425589" duration="884000" />
+      <workItem from="1673949719236" duration="17000" />
+      <workItem from="1673950846139" duration="958000" />
+      <workItem from="1673951876335" duration="2617000" />
     </task>
     <task id="LOCAL-00001" summary="使用springboot，实现接口和大多数dao">
       <created>1673721470312</created>
@@ -276,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673935025723</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="修改">
+      <created>1673946305806</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673946305806</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -12,10 +12,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry.addInterceptor(new AdminRequestInterceptor())
                 .addPathPatterns("/admin/**");
         registry.addInterceptor(new StudentRequestInterceptor())
-                .addPathPatterns("/student/**")
-                .addPathPatterns("/admin/getVolunteerNumber")
-                .addPathPatterns("/admin/getProjectFounding")
-                .addPathPatterns("/admin/getAcademicExchange");
+                .addPathPatterns("/student/**");
         registry.addInterceptor(new TeacherRequestInterceptor())
                 .addPathPatterns("/teacher/**");
     }

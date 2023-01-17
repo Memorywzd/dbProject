@@ -118,7 +118,10 @@ public class Exchange {
     @Override
     public String toString() {
         return "Exchange{" +
-                "exchangeName='" + exchangeName + '\'' +
+                "exchangeID='" + exchangeID + '\'' +
+                ", exchangeStudentID='" + exchangeStudentID + '\'' +
+                ", exchangeSubjectID='" + exchangeSubjectID + '\'' +
+                ", exchangeName='" + exchangeName + '\'' +
                 ", exchangeLocation='" + exchangeLocation + '\'' +
                 ", exchangeTime='" + exchangeTime + '\'' +
                 ", exchangeReportName='" + exchangeReportName + '\'' +

@@ -249,7 +249,10 @@ PreparedStatement stmt = null;
             stmt.setString(1, studentID);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                achievementList.add(rs.getString("achievementID"));
+                String temp = rs.getString("achievementID") +
+                        " " + rs.getString("achievementName") +
+                        " " + rs.getString("achievementType");
+                achievementList.add(temp);
             }
         } catch (Exception e) {
             e.printStackTrace();

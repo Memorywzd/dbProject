@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { Navigate, useLocation, NavLink } from "react-router-dom";
 
 const cache = localStorage;
-const serverURL ="http://localhost:8080";
-//const serverURL = "http://az.pizzel.me";
+//const serverURL ="http://localhost:8080";
+const serverURL = "http://az.pizzel.me";
 
 export default function ApplyAchievement() {
     const location = useLocation();

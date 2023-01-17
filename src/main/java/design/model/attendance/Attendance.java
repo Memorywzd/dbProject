@@ -73,4 +73,18 @@ public class Attendance {
     public void setLeaderValid(boolean leaderValid) {
         isLeaderValid = leaderValid;
     }
+
+    @Override
+    public String toString() {
+        return "Attendance{" +
+                "attendanceID=" + attendanceID +
+                ", attendanceProjectID='" + attendanceProjectID + '\'' +
+                ", attendanceStudentID='" + attendanceStudentID + '\'' +
+                ", attendanceTime='" + attendanceTime + '\'' +
+                ", attendanceTask='" + attendanceTask + '\'' +
+                ", attendanceFund=" + attendanceFund +
+                ", isMentorValid=" + isMentorValid +
+                ", isLeaderValid=" + isLeaderValid +
+                '}';
+    }
 }

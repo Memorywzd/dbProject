@@ -51,4 +51,13 @@ public interface AbstractStudentController {
     //成果认定
     @PostMapping("submitAchievement")
     boolean submitAchievement(@RequestParam Map<String, String> newAchievement);
+
+    @GetMapping("getVolunteerNumber")
+    int getVolunteerNumber();
+
+    @GetMapping("getProjectFounding")
+    double getProjectFounding();
+
+    @GetMapping("getAcademicExchange")
+    int getAcademicExchange();
 }

@@ -137,8 +137,12 @@ public class ExchangeDAO extends DAO implements AbstractExchangeDAO {
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
-            stmt.setBoolean(1, isLeaderValid);
-            stmt.setString(1, exchangeID);
+            if(isLeaderValid){
+                stmt.setInt(1, 1);
+            }else{
+                stmt.setInt(1, 0);
+            }
+            stmt.setString(2, exchangeID);
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

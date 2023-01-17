@@ -20,4 +20,8 @@ public interface AbstractAssistantDAO {
     List<String> getRateListByTeacherID(String courseID);
 
     boolean updateAssistantRate(String rateID, String newRate);
+
+    boolean reviewRate(String id, boolean valid);
+
+    List<String> getRateList();
 }

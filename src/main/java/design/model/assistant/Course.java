@@ -2,6 +2,7 @@ package design.model.assistant;
 
 public class Course {
     private String courseID;
+    private String courseTeacherID;
     private String courseName;
     private int courseHour;
     private int courseSelectedNum;
@@ -16,6 +17,14 @@ public class Course {
 
     public void setCourseID(String courseID) {
         this.courseID = courseID;
+    }
+
+    public String getCourseTeacherID() {
+        return courseTeacherID;
+    }
+
+    public void setCourseTeacherID(String courseTeacherID) {
+        this.courseTeacherID = courseTeacherID;
     }
 
     public String getCourseName() {
@@ -77,7 +86,9 @@ public class Course {
     @Override
     public String toString() {
         return "Course{" +
-                "courseName='" + courseName + '\'' +
+                "courseID='" + courseID + '\'' +
+                ", courseTeacherID='" + courseTeacherID + '\'' +
+                ", courseName='" + courseName + '\'' +
                 ", courseHour=" + courseHour +
                 ", courseSelectedNum=" + courseSelectedNum +
                 ", courseTarget=" + courseTarget +

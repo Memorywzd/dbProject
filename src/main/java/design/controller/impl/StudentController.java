@@ -109,6 +109,7 @@ public class StudentController implements AbstractStudentController {
      */
     @Override
     public boolean submitAchievement(Map<String, String> params) {
+        System.out.println(params);
         if (params.get("type").equals("award")) {
             return DAOFactory.getDAO().getAchievementDAO().addAward(params);
         } else if (params.get("type").equals("paper")) {
@@ -125,5 +126,26 @@ public class StudentController implements AbstractStudentController {
             return DAOFactory.getDAO().getAchievementDAO().addTextbook(params);
         }
         return false;
+    }
+
+    @Override
+    public int getVolunteerNumber() {
+        return DAOFactory.getDAO().getUserDAO().getVolunteerNumber();
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public double getProjectFounding() {
+        return DAOFactory.getDAO().getUserDAO().getProjectFounding();
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public int getAcademicExchange() {
+        return DAOFactory.getDAO().getUserDAO().getAcademicExchange();
     }
 }

@@ -27,8 +27,18 @@ public interface AbstractAdminController {
     @GetMapping("getSystemSubjectList")
     List<String> getSystemSubjectList();
 
+    @GetMapping("getRateList")
+    List<String> getRateList();
+
+    @GetMapping("getAchievementList")
+    List<String> getAchievementList();
+
     @GetMapping("reviewInfo")
-    boolean reviewInfo();
+    boolean reviewInfo(
+            @RequestParam("id") String id,
+            @RequestParam("valid") boolean valid,
+            @RequestParam("type") String type
+    );
 
     @PostMapping("addLeaderUser")
     boolean addLeaderUser(Admin newAdmin);

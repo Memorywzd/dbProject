@@ -27,6 +27,7 @@ public class CourseDAO extends DAO implements AbstractCourseDAO {
             while (rs.next()) {
                 Course tempCourse = new Course();
                 tempCourse.setCourseID(rs.getString("courseID"));
+                tempCourse.setCourseTeacherID(rs.getString("courseTeacherID"));
                 tempCourse.setCourseName(rs.getString("courseName"));
                 tempCourse.setCourseHour(rs.getInt("courseHour"));
                 tempCourse.setCourseSelectedNum(rs.getInt("courseSelectedNum"));
@@ -75,7 +76,7 @@ public class CourseDAO extends DAO implements AbstractCourseDAO {
     public boolean addCourse(Course newCourse) {
         PreparedStatement stmt = null;
         Connection conn = null;
-        String sql = "INSERT INTO courses VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO courses VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
@@ -87,6 +88,7 @@ public class CourseDAO extends DAO implements AbstractCourseDAO {
             stmt.setInt(6, newCourse.getCourseType());
             stmt.setString(7, newCourse.getCourseTime());
             stmt.setInt(8, newCourse.getCoursePriority());
+            stmt.setString(9, newCourse.getCourseTeacherID());
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

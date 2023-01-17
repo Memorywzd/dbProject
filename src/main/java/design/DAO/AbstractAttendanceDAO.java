@@ -12,5 +12,7 @@ public interface AbstractAttendanceDAO {
 
     boolean updateAttendance(Attendance newAttendance);
 
-    boolean addAttendanceByID(String projectID, String studentID);
+    boolean addAttendanceByID(String projectID, String studentI, double fund);
+
+    boolean reviewAttendance(String id, boolean valid);
 }

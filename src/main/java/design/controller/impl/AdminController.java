@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("admin")
@@ -57,11 +58,42 @@ public class AdminController implements AbstractAdminController {
     }
 
     /**
+     * @return
+     */
+    @Override
+    public List<String> getRateList() {
+        return DAOFactory.getDAO().getAssistantDAO().getRateList();
+    }
+
+    @Override
+    public List<String> getAchievementList() {
+        return DAOFactory.getDAO().getAchievementDAO().getAchievementListAll();
+    }
+
+    /**
      *
      */
     @Override
-    public boolean reviewInfo() {
-        return false;
+    public boolean reviewInfo(
+            @RequestParam("id") String id,
+            @RequestParam("valid") boolean valid,
+            @RequestParam("type") String type
+    ) {
+        if(Objects.equals(type, "attendance")){
+            return DAOFactory.getDAO().getAttendanceDAO().reviewAttendance(id, valid);
+        }
+        else if(Objects.equals(type, "exchange")){
+            return DAOFactory.getDAO().getExchangeDAO().updateExchangeLeaderValid(id, valid);
+        }
+        else if(Objects.equals(type, "rate")){
+            return DAOFactory.getDAO().getAssistantDAO().reviewRate(id, valid);
+        }
+        else if(Objects.equals(type, "achievement")){
+            return DAOFactory.getDAO().getAchievementDAO().updateAchievementAdminValid(id, valid);
+        }
+        else{
+            return false;
+        }
     }
 
     /**

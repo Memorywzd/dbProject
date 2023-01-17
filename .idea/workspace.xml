@@ -4,12 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="修复成就管理">
+    <list default="true" id="a32e3e0c-e485-4ee4-b83d-1f49dd97e50a" name="变更" comment="修改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAchievementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAchievementDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAssistantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAssistantDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAttendanceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/AbstractAttendanceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AchievementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AchievementDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AssistantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AssistantDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AttendanceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/AttendanceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/CourseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/CourseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/DAO/impl/ExchangeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/DAO/impl/ExchangeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/AbstractAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/AbstractAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/AbstractStudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/AbstractStudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/impl/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/impl/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/controller/impl/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/controller/impl/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/assistant/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/model/assistant/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/design/model/attendance/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/design/model/attendance/Attendance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +143,12 @@
       <workItem from="1673846260834" duration="28000" />
       <workItem from="1673851363606" duration="17004000" />
       <workItem from="1673875290467" duration="15000" />
-      <workItem from="1673876314328" duration="7267000" />
+      <workItem from="1673876314328" duration="8776000" />
+      <workItem from="1673894393763" duration="2475000" />
+      <workItem from="1673920826802" duration="1789000" />
+      <workItem from="1673924742799" duration="14559000" />
+      <workItem from="1673941606546" duration="3777000" />
+      <workItem from="1673945425589" duration="633000" />
     </task>
     <task id="LOCAL-00001" summary="使用springboot，实现接口和大多数dao">
       <created>1673721470312</created>
@@ -233,7 +248,35 @@
       <option name="project" value="LOCAL" />
       <updated>1673873881668</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="修复bug">
+      <created>1673891330277</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673891330277</updated>
+    </task>
+    <task id="LOCAL-00016" summary="修改一个接口">
+      <created>1673897252931</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673897252931</updated>
+    </task>
+    <task id="LOCAL-00017" summary="修改">
+      <created>1673934321314</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673934321314</updated>
+    </task>
+    <task id="LOCAL-00018" summary="修改">
+      <created>1673935025723</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673935025723</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +308,9 @@
     <MESSAGE value="配置项目，打包准备部署" />
     <MESSAGE value="修复错误学生实体类" />
     <MESSAGE value="修复成就管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复成就管理" />
+    <MESSAGE value="修复bug" />
+    <MESSAGE value="修改一个接口" />
+    <MESSAGE value="修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改" />
   </component>
 </project>

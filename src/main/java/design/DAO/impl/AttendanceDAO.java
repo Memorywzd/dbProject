@@ -22,17 +22,19 @@ public class AttendanceDAO extends DAO implements AbstractAttendanceDAO {
         List<String> projectList = new ArrayList<>();
         try{
             conn = getDruidConnection();
-            String sql = "select * from projects";
+            String sql = "select * from attendances";
             stmt = conn.prepareStatement(sql);
             rs = stmt.executeQuery();
             while (rs.next()){
-                Project tempProject = new Project();
-                tempProject.setProjectID(rs.getString("projectID"));
-                tempProject.setProjectSubjectID(rs.getString("projectSubjectID"));
-                tempProject.setProjectMentorID(rs.getString("projectMentorID"));
-                tempProject.setProjectType(rs.getString("projectType"));
-                tempProject.setProjectName(rs.getString("projectName"));
-                tempProject.setProjectFund(rs.getDouble("projectFund"));
+                Attendance tempProject = new Attendance();
+                tempProject.setAttendanceID(rs.getInt("attendanceID"));
+                tempProject.setAttendanceProjectID(rs.getString("attendanceProjectID"));
+                tempProject.setAttendanceStudentID(rs.getString("attendanceStudentID"));
+                tempProject.setAttendanceTime(rs.getString("attendanceTime"));
+                tempProject.setAttendanceTask(rs.getString("attendanceTask"));
+                tempProject.setAttendanceFund(rs.getDouble("attendanceFund"));
+                tempProject.setMentorValid(rs.getBoolean("isMentorValid"));
+                tempProject.setLeaderValid(rs.getBoolean("isLeaderValid"));
                 projectList.add(tempProject.toString());
             }
         }catch (Exception e) {
@@ -78,15 +80,14 @@ public class AttendanceDAO extends DAO implements AbstractAttendanceDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "update attendances set " +
-                "attendanceTime = ?, attendanceTask = ?, attendanceFund = ? " +
+                "attendanceTime = ?, attendanceTask = ? " +
                 "where attendanceID = ?";
         try{
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, newAttendance.getAttendanceTime());
             stmt.setString(2, newAttendance.getAttendanceTask());
-            stmt.setDouble(3, newAttendance.getAttendanceFund());
-            stmt.setInt(4, newAttendance.getAttendanceID());
+            stmt.setInt(3, newAttendance.getAttendanceID());
             stmt.executeUpdate();
         }catch (Exception e) {
             e.printStackTrace();
@@ -101,7 +102,7 @@ public class AttendanceDAO extends DAO implements AbstractAttendanceDAO {
      * @return
      */
     @Override
-    public boolean addAttendanceByID(String projectID, String studentID) {
+    public boolean addAttendanceByID(String projectID, String studentID, double fund) {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "insert into attendances values(?,?,?,?,?,?,?)";
@@ -112,9 +113,35 @@ public class AttendanceDAO extends DAO implements AbstractAttendanceDAO {
             stmt.setString(2, studentID);
             stmt.setString(3, null);
             stmt.setString(4, null);
-            stmt.setString(5, null);
+            stmt.setDouble(5, fund);
             stmt.setBoolean(6, false);
             stmt.setBoolean(7, false);
+            stmt.executeUpdate();
+        }catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return closeAll(conn, stmt, null);
+    }
+
+    /**
+     * @param id
+     * @param valid
+     * @return
+     */
+    @Override
+    public boolean reviewAttendance(String id, boolean valid) {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        String sql = "update attendances set isLeaderValid = ? where attendanceID = ?";
+        try{
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            if(valid)
+                stmt.setInt(1, 1);
+            else
+                stmt.setInt(1, 0);
+            stmt.setString(2, id);
             stmt.executeUpdate();
         }catch (Exception e) {
             e.printStackTrace();

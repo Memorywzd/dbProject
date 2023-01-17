@@ -241,7 +241,7 @@ PreparedStatement stmt = null;
         PreparedStatement stmt = null;
         Connection conn = null;
         ResultSet rs = null;
-        String sql = "SELECT achievementID FROM achievements " +
+        String sql = "SELECT * FROM achievements " +
                 "WHERE achievementStudentID = ?";
         try {
             conn = getDruidConnection();
@@ -249,7 +249,35 @@ PreparedStatement stmt = null;
             stmt.setString(1, studentID);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                achievementList.add(rs.getString("achievementID"));
+                String temp = rs.getString("achievementID") +
+                        " " + rs.getString("achievementName") +
+                        " " + rs.getString("achievementType");
+                achievementList.add(temp);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        closeAll(conn, stmt, rs);
+        return achievementList;
+    }
+
+    @Override
+    public List<String> getAchievementListAll() {
+        List<String> achievementList = new ArrayList<>();
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        String sql = "SELECT * FROM achievements";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                String temp = rs.getString("achievementID") +
+                        " " + rs.getString("achievementName") +
+                        " " + rs.getString("achievementType");
+                achievementList.add(temp);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -275,6 +303,28 @@ PreparedStatement stmt = null;
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
             stmt.setBoolean(1, isValid);
+            stmt.setString(2, achievementID);
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return closeAll(conn, stmt, null);
+    }
+
+    @Override
+    public boolean updateAchievementAdminValid(String achievementID, boolean isValid) {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        String sql = "UPDATE awards SET isMentorValid = ? " +
+                "WHERE achievementID = ?";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            if(isValid)
+                stmt.setInt(1, 1);
+            else
+                stmt.setInt(1, 0);
             stmt.setString(2, achievementID);
             stmt.executeUpdate();
         } catch (Exception e) {

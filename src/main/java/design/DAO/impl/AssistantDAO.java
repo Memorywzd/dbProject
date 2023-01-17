@@ -191,6 +191,38 @@ public class AssistantDAO extends DAO implements AbstractAssistantDAO {
         return rateList;
     }
 
+    @Override
+    public List<String> getRateList() {
+        ResultSet rs = null;
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        List<String> rateList = new ArrayList<>();
+        String sql = "SELECT studentName, courseName, rateID ,rateSelf, rateTeacher , rateResult " +
+                "FROM rates " +
+                "LEFT JOIN assistants a ON rateAssistantID = a.assistantID " +
+                "LEFT JOIN students s1 ON s1.studentID = a.assistantStudentID " +
+                "LEFT JOIN courses c1 on c1.courseID = a.assistantCourseID ";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                String tempRate = "研究生姓名：" + rs.getString("studentName") + "助教ID： " +
+                        rs.getInt("rateID") + "助教工作自述： " +
+                        rs.getString("courseName") + "助教工作自述： " +
+                        rs.getString("rateSelf") + "授课教师评价： " +
+                        rs.getString("rateTeacher") + "评价结果： " +
+                        rs.getString("rateResult");
+                rateList.add(tempRate);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        closeAll(conn, stmt, rs);
+        return rateList;
+    }
+
     /**
      * @param rateID
      * @param newRate
@@ -206,6 +238,33 @@ public class AssistantDAO extends DAO implements AbstractAssistantDAO {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, newRate);
             stmt.setString(2, rateID);
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return closeAll(conn, stmt, null);
+    }
+
+    /**
+     * @param id
+     * @param valid
+     * @return
+     */
+    @Override
+    public boolean reviewRate(String id, boolean valid) {
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        String sql = "UPDATE rates SET rateResult = ? WHERE rateID = ?";
+        try {
+            conn = getDruidConnection();
+            stmt = conn.prepareStatement(sql);
+            if(valid){
+                stmt.setInt(1, 1);
+            }else{
+                stmt.setInt(1, 0);
+            }
+            stmt.setString(2, id);
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

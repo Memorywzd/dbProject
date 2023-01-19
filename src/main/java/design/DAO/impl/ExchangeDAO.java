@@ -108,14 +108,18 @@ public class ExchangeDAO extends DAO implements AbstractExchangeDAO {
      * @return
      */
     @Override
-    public boolean updateExchangeMentorValid(String exchangeID, Boolean isMentorValid) {
+    public boolean updateExchangeMentorValid(String exchangeID, boolean isMentorValid) {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "UPDATE exchanges SET isMentorValid = ? WHERE exchangeID = ?";
         try {
             conn = getDruidConnection();
             stmt = conn.prepareStatement(sql);
-            stmt.setBoolean(1, isMentorValid);
+            if(isMentorValid){
+                stmt.setString(1, "1");
+            }else{
+                stmt.setString(1, "0");
+            }
             stmt.setString(2, exchangeID);
             stmt.executeUpdate();
         } catch (Exception e) {
@@ -130,7 +134,7 @@ public class ExchangeDAO extends DAO implements AbstractExchangeDAO {
      * @return
      */
     @Override
-    public boolean updateExchangeLeaderValid(String exchangeID, Boolean isLeaderValid) {
+    public boolean updateExchangeLeaderValid(String exchangeID, boolean isLeaderValid) {
         PreparedStatement stmt = null;
         Connection conn = null;
         String sql = "UPDATE exchanges SET isLeaderValid = ? WHERE exchangeID = ?";

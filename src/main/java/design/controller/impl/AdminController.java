@@ -76,9 +76,15 @@ public class AdminController implements AbstractAdminController {
     @Override
     public boolean reviewInfo(
             @RequestParam("id") String id,
-            @RequestParam("valid") boolean valid,
+            @RequestParam("valid") int Valid,
             @RequestParam("type") String type
     ) {
+        boolean valid;
+        if(Valid == 1){
+            valid = true;
+        }else{
+            valid = false;
+        }
         if(Objects.equals(type, "attendance")){
             return DAOFactory.getDAO().getAttendanceDAO().reviewAttendance(id, valid);
         }
